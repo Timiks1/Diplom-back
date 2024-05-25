@@ -14,4 +14,8 @@ public interface IScheduleService
     Task<DetailsResponseDto<ScheduleResponseDto>> GetByIdAsync(Guid id, CancellationToken cancellationToken = default!);
     Task<ListResponseDto<ScheduleResponseDto>> GetAllAsync(CancellationToken cancellationToken = default!);
     Task<ListResponseDto<ScheduleResponseDto>> GetByDepartmentIdAsync(Guid departmentId, CancellationToken cancellationToken = default!);
+    Task<byte[]> GetFileByNameAsync(string fileName, CancellationToken cancellationToken);
+    Task<List<ScheduleDto>> GetSchedulesByTeacherAsync(string fileName, Guid teacherId, CancellationToken cancellationToken);
+    Task<List<ScheduleDto>> GetSchedulesByTeacherAndDayAsync(string fileName, Guid teacherId, DateTime day, CancellationToken cancellationToken);
+
 }

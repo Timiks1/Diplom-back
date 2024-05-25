@@ -29,7 +29,7 @@ public class AppExceptionsMiddleware
                 errorResponseDto.ErrorMessage = dbUpdateException.InnerException?.Message;
                 errorResponseDto.StatusCode = 400;
                 break;
-            
+
             default:
                 errorResponseDto.ErrorMessage = ex.Message;
                 errorResponseDto.StatusCode = 400;
@@ -54,6 +54,7 @@ public class AppExceptionsMiddleware
     {
         try
         {
+
             await _next(context);
         }
         catch (Exception ex)

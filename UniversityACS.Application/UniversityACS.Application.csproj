@@ -7,6 +7,14 @@
     </PropertyGroup>
 
     <ItemGroup>
+      <Compile Include="..\UniversityACS.API\Program.cs" Link="Program.cs" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="EPPlus" Version="7.1.2" />
+    </ItemGroup>
+
+    <ItemGroup>
       <ProjectReference Include="..\UniversityACS.Core\UniversityACS.Core.csproj" />
       <ProjectReference Include="..\UniversityACS.Data\UniversityACS.Data.csproj" />
     </ItemGroup>
