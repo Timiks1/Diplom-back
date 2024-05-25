@@ -1,33 +1,40 @@
 {
   "format": 1,
   "restore": {
-    "H:\\Git\\UniversityACS\\UniversityACS.API\\UniversityACS.API.csproj": {}
+    "C:\\Users\\Tim\\Desktop\\diplom-back3\\universityasu\\UniversityACS.API\\UniversityACS.API.csproj": {}
   },
   "projects": {
-    "H:\\Git\\UniversityACS\\UniversityACS.API\\UniversityACS.API.csproj": {
+    "C:\\Users\\Tim\\Desktop\\diplom-back3\\universityasu\\UniversityACS.API\\UniversityACS.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "H:\\Git\\UniversityACS\\UniversityACS.API\\UniversityACS.API.csproj",
+        "projectUniqueName": "C:\\Users\\Tim\\Desktop\\diplom-back3\\universityasu\\UniversityACS.API\\UniversityACS.API.csproj",
         "projectName": "UniversityACS.API",
-        "projectPath": "H:\\Git\\UniversityACS\\UniversityACS.API\\UniversityACS.API.csproj",
-        "packagesPath": "C:\\Users\\trale\\.nuget\\packages\\",
-        "outputPath": "H:\\Git\\UniversityACS\\UniversityACS.API\\obj\\",
+        "projectPath": "C:\\Users\\Tim\\Desktop\\diplom-back3\\universityasu\\UniversityACS.API\\UniversityACS.API.csproj",
+        "packagesPath": "C:\\Users\\Tim\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Tim\\Desktop\\diplom-back3\\universityasu\\UniversityACS.API\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\trale\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\Tim\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "H:\\Git\\UniversityACS\\UniversityACS.Application\\UniversityACS.Application.csproj": {
-                "projectPath": "H:\\Git\\UniversityACS\\UniversityACS.Application\\UniversityACS.Application.csproj"
+              "C:\\Users\\Tim\\Desktop\\diplom-back3\\universityasu\\UniversityACS.Application\\UniversityACS.Application.csproj": {
+                "projectPath": "C:\\Users\\Tim\\Desktop\\diplom-back3\\universityasu\\UniversityACS.Application\\UniversityACS.Application.csproj"
               }
             }
           }
@@ -36,12 +43,21 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "EPPlus": {
+              "target": "Package",
+              "version": "[7.1.2, )"
+            },
             "Microsoft.AspNetCore.Authentication.JwtBearer": {
               "target": "Package",
               "version": "[8.0.4, )"
@@ -84,33 +100,40 @@
         }
       }
     },
-    "H:\\Git\\UniversityACS\\UniversityACS.Application\\UniversityACS.Application.csproj": {
+    "C:\\Users\\Tim\\Desktop\\diplom-back3\\universityasu\\UniversityACS.Application\\UniversityACS.Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "H:\\Git\\UniversityACS\\UniversityACS.Application\\UniversityACS.Application.csproj",
+        "projectUniqueName": "C:\\Users\\Tim\\Desktop\\diplom-back3\\universityasu\\UniversityACS.Application\\UniversityACS.Application.csproj",
         "projectName": "UniversityACS.Application",
-        "projectPath": "H:\\Git\\UniversityACS\\UniversityACS.Application\\UniversityACS.Application.csproj",
-        "packagesPath": "C:\\Users\\trale\\.nuget\\packages\\",
-        "outputPath": "H:\\Git\\UniversityACS\\UniversityACS.Application\\obj\\",
+        "projectPath": "C:\\Users\\Tim\\Desktop\\diplom-back3\\universityasu\\UniversityACS.Application\\UniversityACS.Application.csproj",
+        "packagesPath": "C:\\Users\\Tim\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Tim\\Desktop\\diplom-back3\\universityasu\\UniversityACS.Application\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\trale\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\Tim\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "H:\\Git\\UniversityACS\\UniversityACS.Core\\UniversityACS.Core.csproj": {
-                "projectPath": "H:\\Git\\UniversityACS\\UniversityACS.Core\\UniversityACS.Core.csproj"
+              "C:\\Users\\Tim\\Desktop\\diplom-back3\\universityasu\\UniversityACS.Core\\UniversityACS.Core.csproj": {
+                "projectPath": "C:\\Users\\Tim\\Desktop\\diplom-back3\\universityasu\\UniversityACS.Core\\UniversityACS.Core.csproj"
               },
-              "H:\\Git\\UniversityACS\\UniversityACS.Data\\UniversityACS.Data.csproj": {
-                "projectPath": "H:\\Git\\UniversityACS\\UniversityACS.Data\\UniversityACS.Data.csproj"
+              "C:\\Users\\Tim\\Desktop\\diplom-back3\\universityasu\\UniversityACS.Data\\UniversityACS.Data.csproj": {
+                "projectPath": "C:\\Users\\Tim\\Desktop\\diplom-back3\\universityasu\\UniversityACS.Data\\UniversityACS.Data.csproj"
               }
             }
           }
@@ -119,11 +142,22 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
+          "dependencies": {
+            "EPPlus": {
+              "target": "Package",
+              "version": "[7.1.2, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -144,22 +178,29 @@
         }
       }
     },
-    "H:\\Git\\UniversityACS\\UniversityACS.Core\\UniversityACS.Core.csproj": {
+    "C:\\Users\\Tim\\Desktop\\diplom-back3\\universityasu\\UniversityACS.Core\\UniversityACS.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "H:\\Git\\UniversityACS\\UniversityACS.Core\\UniversityACS.Core.csproj",
+        "projectUniqueName": "C:\\Users\\Tim\\Desktop\\diplom-back3\\universityasu\\UniversityACS.Core\\UniversityACS.Core.csproj",
         "projectName": "UniversityACS.Core",
-        "projectPath": "H:\\Git\\UniversityACS\\UniversityACS.Core\\UniversityACS.Core.csproj",
-        "packagesPath": "C:\\Users\\trale\\.nuget\\packages\\",
-        "outputPath": "H:\\Git\\UniversityACS\\UniversityACS.Core\\obj\\",
+        "projectPath": "C:\\Users\\Tim\\Desktop\\diplom-back3\\universityasu\\UniversityACS.Core\\UniversityACS.Core.csproj",
+        "packagesPath": "C:\\Users\\Tim\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Tim\\Desktop\\diplom-back3\\universityasu\\UniversityACS.Core\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\trale\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\Tim\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -172,6 +213,11 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -207,30 +253,37 @@
         }
       }
     },
-    "H:\\Git\\UniversityACS\\UniversityACS.Data\\UniversityACS.Data.csproj": {
+    "C:\\Users\\Tim\\Desktop\\diplom-back3\\universityasu\\UniversityACS.Data\\UniversityACS.Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "H:\\Git\\UniversityACS\\UniversityACS.Data\\UniversityACS.Data.csproj",
+        "projectUniqueName": "C:\\Users\\Tim\\Desktop\\diplom-back3\\universityasu\\UniversityACS.Data\\UniversityACS.Data.csproj",
         "projectName": "UniversityACS.Data",
-        "projectPath": "H:\\Git\\UniversityACS\\UniversityACS.Data\\UniversityACS.Data.csproj",
-        "packagesPath": "C:\\Users\\trale\\.nuget\\packages\\",
-        "outputPath": "H:\\Git\\UniversityACS\\UniversityACS.Data\\obj\\",
+        "projectPath": "C:\\Users\\Tim\\Desktop\\diplom-back3\\universityasu\\UniversityACS.Data\\UniversityACS.Data.csproj",
+        "packagesPath": "C:\\Users\\Tim\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Tim\\Desktop\\diplom-back3\\universityasu\\UniversityACS.Data\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\trale\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\Tim\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "H:\\Git\\UniversityACS\\UniversityACS.Core\\UniversityACS.Core.csproj": {
-                "projectPath": "H:\\Git\\UniversityACS\\UniversityACS.Core\\UniversityACS.Core.csproj"
+              "C:\\Users\\Tim\\Desktop\\diplom-back3\\universityasu\\UniversityACS.Core\\UniversityACS.Core.csproj": {
+                "projectPath": "C:\\Users\\Tim\\Desktop\\diplom-back3\\universityasu\\UniversityACS.Core\\UniversityACS.Core.csproj"
               }
             }
           }
@@ -239,6 +292,11 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {

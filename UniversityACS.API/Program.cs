@@ -15,6 +15,16 @@ builder.Services.AddIdentityServices(builder.Configuration);
 builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseNpgsql(
     builder.Configuration.GetConnectionString("Default"),
     x => x.MigrationsAssembly("UniversityACS.API")));
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowAnyOrigin",
+        builder =>
+        {
+            builder.AllowAnyOrigin()
+                   .AllowAnyHeader()
+                   .AllowAnyMethod();
+        });
+});
 
 
 var app = builder.Build();
@@ -26,6 +36,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+app.UseCors("AllowAnyOrigin");
 app.UseAuthentication();
 app.UseAuthorization();
 

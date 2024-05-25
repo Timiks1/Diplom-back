@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.IdentityModel.Tokens;
 using UniversityACS.API.Services.Identity;
 using UniversityACS.Application.Services.ApplicationUserServices;
+using UniversityACS.Application.Services.AttendanceServices;
 using UniversityACS.Application.Services.CertificationReportServices;
 using UniversityACS.Application.Services.CurriculumServices;
 using UniversityACS.Application.Services.DepartmentMeetingPlanServices;
@@ -58,10 +59,11 @@ public static class ServiceCollectionExtension
         services.AddScoped<ITeacherTestService, TeacherTestService>();
         services.AddScoped<ITeachingLoadService, TeachingLoadService>();
         services.AddScoped<IWorkingCurriculumService, WorkingCurriculumService>();
+        services.AddScoped<IAttendanceService, AttendanceService>();
 
         return services;
     }
-    
+
     public static IServiceCollection AddIdentityServices(this IServiceCollection services,
         IConfiguration configuration)
     {

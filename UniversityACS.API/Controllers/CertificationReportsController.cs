@@ -17,16 +17,16 @@ public class CertificationReportsController : ControllerBase
     {
         _certificationReportService = certificationReportService;
     }
-    
+
     [HttpPost(ApiEndpoints.CertificationReports.Create)]
     public async Task<ActionResult<CreateResponseDto<CertificationReportDto>>> CreateAsync(CertificationReportDto dto,
         CancellationToken cancellationToken = default)
     {
         var response = await _certificationReportService.CreateAsync(dto, cancellationToken);
-        if(response.Success) return Ok(response);
+        if (response.Success) return Ok(response);
         return BadRequest(response);
     }
-    
+
     [HttpPut(ApiEndpoints.CertificationReports.Update)]
     public async Task<ActionResult<UpdateResponseDto<CertificationReportDto>>> UpdateAsync(Guid id,
         CertificationReportDto dto, CancellationToken cancellationToken = default)
@@ -35,7 +35,7 @@ public class CertificationReportsController : ControllerBase
         if (response.Success) return Ok(response);
         return BadRequest(response);
     }
-    
+
     [HttpDelete(ApiEndpoints.CertificationReports.Delete)]
     public async Task<ActionResult<ResponseDto>> DeleteAsync(Guid id, CancellationToken cancellationToken = default)
     {
@@ -43,7 +43,7 @@ public class CertificationReportsController : ControllerBase
         if (response.Success) return Ok(response);
         return BadRequest(response);
     }
-    
+
     [HttpGet(ApiEndpoints.CertificationReports.GetById)]
     public async Task<ActionResult<DetailsResponseDto<CertificationReportResponseDto>>> GetByIdAsync(Guid id,
         CancellationToken cancellationToken = default)
@@ -52,7 +52,7 @@ public class CertificationReportsController : ControllerBase
         if (response.Success) return Ok(response);
         return BadRequest(response);
     }
-    
+
     [HttpGet(ApiEndpoints.CertificationReports.GetAll)]
     public async Task<ActionResult<ListResponseDto<CertificationReportResponseDto>>> GetAllAsync(
         CancellationToken cancellationToken = default)
