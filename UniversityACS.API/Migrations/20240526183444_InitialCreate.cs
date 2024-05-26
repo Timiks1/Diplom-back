@@ -10,7 +10,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace UniversityACS.API.Migrations
 {
     /// <inheritdoc />
-    public partial class initial : Migration
+    public partial class InitialCreate : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -55,6 +55,34 @@ namespace UniversityACS.API.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Disciplines", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Groups",
+                columns: table => new
+                {
+                    Id = table.Column<Guid>(type: "uuid", nullable: false),
+                    Name = table.Column<string>(type: "character varying(100)", maxLength: 100, nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Groups", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Lessons",
+                columns: table => new
+                {
+                    Id = table.Column<Guid>(type: "uuid", nullable: false),
+                    Date = table.Column<DateTime>(type: "timestamp without time zone", nullable: false),
+                    SubjectName = table.Column<string>(type: "text", nullable: false),
+                    LessonName = table.Column<string>(type: "text", nullable: false),
+                    TeacherId = table.Column<Guid>(type: "uuid", nullable: false),
+                    TeacherName = table.Column<string>(type: "text", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Lessons", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -127,6 +155,112 @@ namespace UniversityACS.API.Migrations
                         name: "FK_AspNetRoleClaims_AspNetRoles_RoleId",
                         column: x => x.RoleId,
                         principalTable: "AspNetRoles",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Students",
+                columns: table => new
+                {
+                    Id = table.Column<Guid>(type: "uuid", nullable: false),
+                    FirstName = table.Column<string>(type: "text", nullable: false),
+                    LastName = table.Column<string>(type: "text", nullable: false),
+                    Phone = table.Column<string>(type: "text", nullable: false),
+                    Email = table.Column<string>(type: "text", nullable: false),
+                    Address = table.Column<string>(type: "text", nullable: false),
+                    Photo = table.Column<string>(type: "text", nullable: false),
+                    GroupId = table.Column<Guid>(type: "uuid", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Students", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Students_Groups_GroupId",
+                        column: x => x.GroupId,
+                        principalTable: "Groups",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "StudentAttendance",
+                columns: table => new
+                {
+                    Id = table.Column<Guid>(type: "uuid", nullable: false),
+                    StudentName = table.Column<string>(type: "text", nullable: false),
+                    IsPresent = table.Column<bool>(type: "boolean", nullable: false),
+                    Grade = table.Column<int>(type: "integer", nullable: false),
+                    LessonId = table.Column<Guid>(type: "uuid", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_StudentAttendance", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_StudentAttendance_Lessons_LessonId",
+                        column: x => x.LessonId,
+                        principalTable: "Lessons",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Homeworks",
+                columns: table => new
+                {
+                    Id = table.Column<Guid>(type: "uuid", nullable: false),
+                    Title = table.Column<string>(type: "text", nullable: false),
+                    Description = table.Column<string>(type: "text", nullable: false),
+                    DueDate = table.Column<DateTime>(type: "timestamp without time zone", nullable: false),
+                    IsCompleted = table.Column<bool>(type: "boolean", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Homeworks", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Homeworks_Students_Id",
+                        column: x => x.Id,
+                        principalTable: "Students",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Reviews",
+                columns: table => new
+                {
+                    Id = table.Column<Guid>(type: "uuid", nullable: false),
+                    TeacherId = table.Column<Guid>(type: "uuid", nullable: false),
+                    StudentId = table.Column<Guid>(type: "uuid", nullable: false),
+                    Date = table.Column<DateTime>(type: "timestamp without time zone", nullable: false),
+                    Discipline = table.Column<string>(type: "text", nullable: false),
+                    Comment = table.Column<string>(type: "text", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Reviews", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Reviews_Students_StudentId",
+                        column: x => x.StudentId,
+                        principalTable: "Students",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "ApplicationUserGroup",
+                columns: table => new
+                {
+                    GroupsId = table.Column<Guid>(type: "uuid", nullable: false),
+                    TeachersId = table.Column<Guid>(type: "uuid", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_ApplicationUserGroup", x => new { x.GroupsId, x.TeachersId });
+                    table.ForeignKey(
+                        name: "FK_ApplicationUserGroup_Groups_GroupsId",
+                        column: x => x.GroupsId,
+                        principalTable: "Groups",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
@@ -554,12 +688,17 @@ namespace UniversityACS.API.Migrations
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "Address", "ConcurrencyStamp", "DepartmentEmail", "DepartmentId", "Email", "EmailConfirmed", "FirstName", "LastName", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { new Guid("4d82beb4-5e7b-48e6-b084-5bdc485bc1e7"), 0, null, "e25f6067-a360-4b65-96b5-0fe73ad1e44e", null, null, "admin@gmail.com", false, null, null, false, null, "ADMIN@GMAIL.COM", "ADMIN", "AQAAAAIAAYagAAAAEIqhAJJQovc9DThjjSM5DBN/pRn0T2E3wPbFJx5rgQLEEUUF9nOcTq41aTgBvA4iZw==", null, false, "", false, "admin" });
+                values: new object[] { new Guid("4d82beb4-5e7b-48e6-b084-5bdc485bc1e7"), 0, null, "4cf5a270-355a-4ab5-8379-a8a880fb3b06", null, null, "admin@gmail.com", false, null, null, false, null, "ADMIN@GMAIL.COM", "ADMIN", "AQAAAAIAAYagAAAAEJg296Pj/U/+C18P1tFouJCWdTo59asvpPqBjc9gLvsappqZh6GoWuI93aGtJ0EEqQ==", null, false, "", false, "admin" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUserRoles",
                 columns: new[] { "RoleId", "UserId" },
                 values: new object[] { new Guid("5890b8ca-a2fd-48e4-a9b7-9e1ba1bd4b9f"), new Guid("4d82beb4-5e7b-48e6-b084-5bdc485bc1e7") });
+
+            migrationBuilder.CreateIndex(
+                name: "IX_ApplicationUserGroup_TeachersId",
+                table: "ApplicationUserGroup",
+                column: "TeachersId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetRoleClaims_RoleId",
@@ -644,6 +783,11 @@ namespace UniversityACS.API.Migrations
                 column: "DepartmentId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_Reviews_StudentId",
+                table: "Reviews",
+                column: "StudentId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Schedules_DepartmentId",
                 table: "Schedules",
                 column: "DepartmentId");
@@ -653,6 +797,16 @@ namespace UniversityACS.API.Migrations
                 table: "ScientificAndPedagogicalActivities",
                 column: "TeacherId",
                 unique: true);
+
+            migrationBuilder.CreateIndex(
+                name: "IX_StudentAttendance_LessonId",
+                table: "StudentAttendance",
+                column: "LessonId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Students_GroupId",
+                table: "Students",
+                column: "GroupId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Syllabi_TeacherId",
@@ -684,6 +838,14 @@ namespace UniversityACS.API.Migrations
                 name: "IX_WorkingCurricula_TeacherId",
                 table: "WorkingCurricula",
                 column: "TeacherId");
+
+            migrationBuilder.AddForeignKey(
+                name: "FK_ApplicationUserGroup_AspNetUsers_TeachersId",
+                table: "ApplicationUserGroup",
+                column: "TeachersId",
+                principalTable: "AspNetUsers",
+                principalColumn: "Id",
+                onDelete: ReferentialAction.Cascade);
 
             migrationBuilder.AddForeignKey(
                 name: "FK_AspNetUserClaims_AspNetUsers_UserId",
@@ -725,6 +887,9 @@ namespace UniversityACS.API.Migrations
                 table: "Departments");
 
             migrationBuilder.DropTable(
+                name: "ApplicationUserGroup");
+
+            migrationBuilder.DropTable(
                 name: "AspNetRoleClaims");
 
             migrationBuilder.DropTable(
@@ -758,10 +923,16 @@ namespace UniversityACS.API.Migrations
                 name: "ExchangeVisitsPlans");
 
             migrationBuilder.DropTable(
+                name: "Homeworks");
+
+            migrationBuilder.DropTable(
                 name: "IndividualPlans");
 
             migrationBuilder.DropTable(
                 name: "News");
+
+            migrationBuilder.DropTable(
+                name: "Reviews");
 
             migrationBuilder.DropTable(
                 name: "Schedules");
@@ -771,6 +942,9 @@ namespace UniversityACS.API.Migrations
 
             migrationBuilder.DropTable(
                 name: "Statements");
+
+            migrationBuilder.DropTable(
+                name: "StudentAttendance");
 
             migrationBuilder.DropTable(
                 name: "SubmissionToCertificationThemes");
@@ -803,7 +977,16 @@ namespace UniversityACS.API.Migrations
                 name: "AspNetRoles");
 
             migrationBuilder.DropTable(
+                name: "Students");
+
+            migrationBuilder.DropTable(
+                name: "Lessons");
+
+            migrationBuilder.DropTable(
                 name: "Disciplines");
+
+            migrationBuilder.DropTable(
+                name: "Groups");
 
             migrationBuilder.DropTable(
                 name: "AspNetUsers");
