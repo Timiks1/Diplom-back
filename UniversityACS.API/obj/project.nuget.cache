@@ -1,9 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "UsYWK4rjlChm3B91AgztbdjgI6NyD0TxCMN96n1BFoMaXFEfoCnV+8Z2FtA/MNFVH6QIdWOQjlViIzvZZZWDdg==",
+  "dgSpecHash": "kAa+U/skS5O58pUGGiaxxSfu2gLCq+dnnYPBafkyymCoXf8UjHj6F7i4Q5AE3+iRvm/hQ9EZQ8bfD8ljlYrHdA==",
   "success": true,
   "projectFilePath": "C:\\Users\\Tim\\Desktop\\diplom-back3\\universityasu\\UniversityACS.API\\UniversityACS.API.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Tim\\.nuget\\packages\\documentformat.openxml\\3.0.2\\documentformat.openxml.3.0.2.nupkg.sha512",
+    "C:\\Users\\Tim\\.nuget\\packages\\documentformat.openxml.framework\\3.0.2\\documentformat.openxml.framework.3.0.2.nupkg.sha512",
     "C:\\Users\\Tim\\.nuget\\packages\\epplus\\7.1.2\\epplus.7.1.2.nupkg.sha512",
     "C:\\Users\\Tim\\.nuget\\packages\\epplus.interfaces\\6.1.1\\epplus.interfaces.6.1.1.nupkg.sha512",
     "C:\\Users\\Tim\\.nuget\\packages\\epplus.system.drawing\\6.1.1\\epplus.system.drawing.6.1.1.nupkg.sha512",
@@ -72,6 +74,7 @@
     "C:\\Users\\Tim\\.nuget\\packages\\system.drawing.common\\7.0.0\\system.drawing.common.7.0.0.nupkg.sha512",
     "C:\\Users\\Tim\\.nuget\\packages\\system.formats.asn1\\8.0.0\\system.formats.asn1.8.0.0.nupkg.sha512",
     "C:\\Users\\Tim\\.nuget\\packages\\system.identitymodel.tokens.jwt\\7.1.2\\system.identitymodel.tokens.jwt.7.1.2.nupkg.sha512",
+    "C:\\Users\\Tim\\.nuget\\packages\\system.io.packaging\\8.0.0\\system.io.packaging.8.0.0.nupkg.sha512",
     "C:\\Users\\Tim\\.nuget\\packages\\system.io.pipelines\\6.0.3\\system.io.pipelines.6.0.3.nupkg.sha512",
     "C:\\Users\\Tim\\.nuget\\packages\\system.reflection.metadata\\6.0.1\\system.reflection.metadata.6.0.1.nupkg.sha512",
     "C:\\Users\\Tim\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",
@@ -79,7 +82,10 @@
     "C:\\Users\\Tim\\.nuget\\packages\\system.text.encoding.codepages\\8.0.0\\system.text.encoding.codepages.8.0.0.nupkg.sha512",
     "C:\\Users\\Tim\\.nuget\\packages\\system.text.encodings.web\\8.0.0\\system.text.encodings.web.8.0.0.nupkg.sha512",
     "C:\\Users\\Tim\\.nuget\\packages\\system.text.json\\8.0.0\\system.text.json.8.0.0.nupkg.sha512",
-    "C:\\Users\\Tim\\.nuget\\packages\\system.threading.channels\\6.0.0\\system.threading.channels.6.0.0.nupkg.sha512"
+    "C:\\Users\\Tim\\.nuget\\packages\\system.threading.channels\\6.0.0\\system.threading.channels.6.0.0.nupkg.sha512",
+    "C:\\Users\\Tim\\.nuget\\packages\\xceed.document.net\\3.0.24152.1219\\xceed.document.net.3.0.24152.1219.nupkg.sha512",
+    "C:\\Users\\Tim\\.nuget\\packages\\xceed.pdf\\3.0.24152.1219\\xceed.pdf.3.0.24152.1219.nupkg.sha512",
+    "C:\\Users\\Tim\\.nuget\\packages\\xceed.words.net\\3.0.24152.1219\\xceed.words.net.3.0.24152.1219.nupkg.sha512"
   ],
   "logs": []
 }

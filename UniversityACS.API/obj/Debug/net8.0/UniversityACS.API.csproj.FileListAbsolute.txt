@@ -258,3 +258,7 @@ C:\Users\Tim\Desktop\diplom-back3\universityasu\UniversityACS.API\obj\Debug\net8
 C:\Users\Tim\Desktop\diplom-back3\universityasu\UniversityACS.API\obj\Debug\net8.0\Universi.3D828E80.Up2Date
 C:\Users\Tim\Desktop\diplom-back3\universityasu\UniversityACS.API\obj\Debug\net8.0\UniversityACS.API.genruntimeconfig.cache
 C:\Users\Tim\Desktop\diplom-back3\universityasu\UniversityACS.API\obj\Debug\net8.0\ref\UniversityACS.API.dll
+C:\Users\Tim\Desktop\diplom-back3\universityasu\UniversityACS.API\bin\Debug\net8.0\System.IO.Packaging.dll
+C:\Users\Tim\Desktop\diplom-back3\universityasu\UniversityACS.API\bin\Debug\net8.0\Xceed.Document.NET.dll
+C:\Users\Tim\Desktop\diplom-back3\universityasu\UniversityACS.API\bin\Debug\net8.0\Xceed.PDF.NET.dll
+C:\Users\Tim\Desktop\diplom-back3\universityasu\UniversityACS.API\bin\Debug\net8.0\Xceed.Words.NET.dll

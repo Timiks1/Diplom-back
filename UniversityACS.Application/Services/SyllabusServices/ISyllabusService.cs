@@ -14,4 +14,6 @@ public interface ISyllabusService
     Task<DetailsResponseDto<SyllabusResponseDto>> GetByIdAsync(Guid id, CancellationToken cancellationToken = default!);
     Task<ListResponseDto<SyllabusResponseDto>> GetAllAsync(CancellationToken cancellationToken = default!);
     Task<ListResponseDto<SyllabusResponseDto>> GetByUserIdAsync(Guid userId, CancellationToken cancellationToken = default!);
+    Task<Guid> CreateSyllabusFromJsonAsync(SyllabusFileDto syllabusDto, Guid teacherId, string fileName, CancellationToken cancellationToken);
+
 }

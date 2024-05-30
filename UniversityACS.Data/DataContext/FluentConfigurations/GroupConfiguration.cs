@@ -20,8 +20,7 @@ namespace UniversityACS.Data.DataContext.FluentConfigurations
                 .HasForeignKey(s => s.GroupId)
                 .OnDelete(DeleteBehavior.Cascade);
 
-            builder.HasMany(g => g.Teachers)
-                .WithMany(t => t.Groups);
+
         }
     }
 }

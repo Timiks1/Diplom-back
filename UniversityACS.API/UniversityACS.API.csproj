@@ -15,6 +15,7 @@
           <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
         </PackageReference>
         <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
+        <PackageReference Include="Xceed.Words.NET" Version="3.0.24152.1219" />
     </ItemGroup>
 
     <ItemGroup>
