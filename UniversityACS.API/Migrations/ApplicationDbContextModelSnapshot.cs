@@ -283,13 +283,13 @@ namespace UniversityACS.API.Migrations
                         {
                             Id = new Guid("4d82beb4-5e7b-48e6-b084-5bdc485bc1e7"),
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "80300e2d-75bc-4c35-9b8c-1e7b4e36f20e",
+                            ConcurrencyStamp = "dc8991ab-d191-4224-9c16-a55b379efc3c",
                             Email = "admin@gmail.com",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
                             NormalizedEmail = "ADMIN@GMAIL.COM",
                             NormalizedUserName = "ADMIN",
-                            PasswordHash = "AQAAAAIAAYagAAAAEGMx1yce38O0fEYU4mxg8hwX0osSXLTAMGE/bHPXGVDOp0A8jqoCLf8WgX0XewVyxQ==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEK51q+WB93FLQiEpkBJhHpOQh1wtpqjYXnMBoDfS9++JyDlRyHTU8H9+FKuE+MpUmg==",
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "",
                             TwoFactorEnabled = false,
@@ -848,6 +848,9 @@ namespace UniversityACS.API.Migrations
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uuid");
+
+                    b.Property<string>("Status")
+                        .HasColumnType("text");
 
                     b.Property<Guid?>("TeacherId")
                         .HasColumnType("uuid");

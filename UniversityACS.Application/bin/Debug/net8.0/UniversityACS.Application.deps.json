@@ -12,7 +12,6 @@
           "EPPlus": "7.1.2",
           "UniversityACS.Core": "1.0.0",
           "UniversityACS.Data": "1.0.0",
-          "Xceed.Words.NET": "3.0.24152.1219",
           "Microsoft.AspNetCore.Http.Abstractions": "8.0.0.0"
         },
         "runtime": {
@@ -468,42 +467,6 @@
           "System.Text.Encodings.Web": "8.0.0"
         }
       },
-      "Xceed.Document.NET/3.0.24152.1219": {
-        "dependencies": {
-          "System.Drawing.Common": "7.0.0",
-          "System.IO.Packaging": "8.0.0",
-          "Xceed.Pdf": "3.0.24152.1219"
-        },
-        "runtime": {
-          "lib/net5.0/Xceed.Document.NET.dll": {
-            "assemblyVersion": "3.0.24152.12190",
-            "fileVersion": "3.0.24152.12190"
-          }
-        }
-      },
-      "Xceed.Pdf/3.0.24152.1219": {
-        "dependencies": {
-          "System.Drawing.Common": "7.0.0"
-        },
-        "runtime": {
-          "lib/net5.0/Xceed.PDF.NET.dll": {
-            "assemblyVersion": "3.0.24152.12170",
-            "fileVersion": "3.0.24152.12170"
-          }
-        }
-      },
-      "Xceed.Words.NET/3.0.24152.1219": {
-        "dependencies": {
-          "Xceed.Document.NET": "3.0.24152.1219",
-          "Xceed.Pdf": "3.0.24152.1219"
-        },
-        "runtime": {
-          "lib/net5.0/Xceed.Words.NET.dll": {
-            "assemblyVersion": "3.0.24152.12190",
-            "fileVersion": "3.0.24152.12190"
-          }
-        }
-      },
       "UniversityACS.Core/1.0.0": {
         "dependencies": {
           "Microsoft.AspNetCore.Http.Features": "5.0.17",
@@ -855,27 +818,6 @@
       "sha512": "sha512-OdrZO2WjkiEG6ajEFRABTRCi/wuXQPxeV6g8xvUJqdxMvvuCCEk86zPla8UiIQJz3durtUEbNyY/3lIhS0yZvQ==",
       "path": "system.text.json/8.0.0",
       "hashPath": "system.text.json.8.0.0.nupkg.sha512"
-    },
-    "Xceed.Document.NET/3.0.24152.1219": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-MKJT+KtVKKWWDe/m96Lo3PMbZsjy9WqDgvHP7fUUvSd46MlBibKKQL/VmG5eHvdwmPwruzb0cDuUZ9/WqWxoKQ==",
-      "path": "xceed.document.net/3.0.24152.1219",
-      "hashPath": "xceed.document.net.3.0.24152.1219.nupkg.sha512"
-    },
-    "Xceed.Pdf/3.0.24152.1219": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-EJDzXwsSR9gNm4+LWVMccBk1h6Nmhk5nGXFIi6GQoOroDD+OzBoYTQGo+qfP+mYPlVxtpIx9pCpHmmOHYDy/FQ==",
-      "path": "xceed.pdf/3.0.24152.1219",
-      "hashPath": "xceed.pdf.3.0.24152.1219.nupkg.sha512"
-    },
-    "Xceed.Words.NET/3.0.24152.1219": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-jqK21luO38gPHQssM4lyqa9muepAV+HnB4jEYTSvUnLRjuOdce+ZwbaEwDSLf3+/Y49BpAsWLlQHgAl6Z1Gl3w==",
-      "path": "xceed.words.net/3.0.24152.1219",
-      "hashPath": "xceed.words.net.3.0.24152.1219.nupkg.sha512"
     },
     "UniversityACS.Core/1.0.0": {
       "type": "project",

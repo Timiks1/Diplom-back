@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "pTsAQhmdBh4nGTXhxl8ucRvzrIy8Lo9LJWGszRTeGhAZ5FspMrF44eb3ZJWtZaqOeMyrUYEc+Llg6lnbHk6kqQ==",
+  "dgSpecHash": "+VuxGcR/NoF87koqsx6GT1TKMa33pHslXfdLbc0QFg23hpQip5fDtwpDiIxRPHaSPwr7bqyAvjvNcpqZJH5EZA==",
   "success": true,
   "projectFilePath": "C:\\Users\\Tim\\Desktop\\diplom-back3\\universityasu\\UniversityACS.Application\\UniversityACS.Application.csproj",
   "expectedPackageFiles": [
@@ -46,10 +46,7 @@
     "C:\\Users\\Tim\\.nuget\\packages\\system.security.cryptography.pkcs\\8.0.0\\system.security.cryptography.pkcs.8.0.0.nupkg.sha512",
     "C:\\Users\\Tim\\.nuget\\packages\\system.text.encoding.codepages\\8.0.0\\system.text.encoding.codepages.8.0.0.nupkg.sha512",
     "C:\\Users\\Tim\\.nuget\\packages\\system.text.encodings.web\\8.0.0\\system.text.encodings.web.8.0.0.nupkg.sha512",
-    "C:\\Users\\Tim\\.nuget\\packages\\system.text.json\\8.0.0\\system.text.json.8.0.0.nupkg.sha512",
-    "C:\\Users\\Tim\\.nuget\\packages\\xceed.document.net\\3.0.24152.1219\\xceed.document.net.3.0.24152.1219.nupkg.sha512",
-    "C:\\Users\\Tim\\.nuget\\packages\\xceed.pdf\\3.0.24152.1219\\xceed.pdf.3.0.24152.1219.nupkg.sha512",
-    "C:\\Users\\Tim\\.nuget\\packages\\xceed.words.net\\3.0.24152.1219\\xceed.words.net.3.0.24152.1219.nupkg.sha512"
+    "C:\\Users\\Tim\\.nuget\\packages\\system.text.json\\8.0.0\\system.text.json.8.0.0.nupkg.sha512"
   ],
   "logs": []
 }

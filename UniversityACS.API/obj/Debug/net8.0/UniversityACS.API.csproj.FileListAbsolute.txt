@@ -262,3 +262,5 @@ C:\Users\Tim\Desktop\diplom-back3\universityasu\UniversityACS.API\bin\Debug\net8
 C:\Users\Tim\Desktop\diplom-back3\universityasu\UniversityACS.API\bin\Debug\net8.0\Xceed.Document.NET.dll
 C:\Users\Tim\Desktop\diplom-back3\universityasu\UniversityACS.API\bin\Debug\net8.0\Xceed.PDF.NET.dll
 C:\Users\Tim\Desktop\diplom-back3\universityasu\UniversityACS.API\bin\Debug\net8.0\Xceed.Words.NET.dll
+C:\Users\Tim\Desktop\diplom-back3\universityasu\UniversityACS.API\bin\Debug\net8.0\DocumentFormat.OpenXml.dll
+C:\Users\Tim\Desktop\diplom-back3\universityasu\UniversityACS.API\bin\Debug\net8.0\DocumentFormat.OpenXml.Framework.dll

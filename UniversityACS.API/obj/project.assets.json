@@ -1579,8 +1579,7 @@
           "DocumentFormat.OpenXml": "3.0.2",
           "EPPlus": "7.1.2",
           "UniversityACS.Core": "1.0.0",
-          "UniversityACS.Data": "1.0.0",
-          "Xceed.Words.NET": "3.0.24152.1219"
+          "UniversityACS.Data": "1.0.0"
         },
         "compile": {
           "bin/placeholder/UniversityACS.Application.dll": {}

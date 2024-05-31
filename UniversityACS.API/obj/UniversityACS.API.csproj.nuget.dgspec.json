@@ -164,10 +164,6 @@
             "EPPlus": {
               "target": "Package",
               "version": "[7.1.2, )"
-            },
-            "Xceed.Words.NET": {
-              "target": "Package",
-              "version": "[3.0.24152.1219, )"
             }
           },
           "imports": [

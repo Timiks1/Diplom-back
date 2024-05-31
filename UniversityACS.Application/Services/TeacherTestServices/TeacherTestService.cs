@@ -19,6 +19,7 @@ public class TeacherTestService : ITeacherTestService
     {
         var entity = dto.ToEntity();
 
+
         await _context.TeacherTests.AddAsync(entity, cancellationToken);
         await _context.SaveChangesAsync(cancellationToken);
 
@@ -42,12 +43,19 @@ public class TeacherTestService : ITeacherTestService
                 ErrorMessage = "TeacherTest not found"
             };
         }
-        
+
+        // Обновляем значения полей сущности
+        existingEntity.TeacherId = dto.TeacherId;
+        existingEntity.Status = dto.Status;
+        existingEntity.TestTheme = dto.TestTheme;
+        existingEntity.TestUrl = dto.TestUrl;
+
         _context.TeacherTests.Update(existingEntity);
         await _context.SaveChangesAsync(cancellationToken);
 
-        return new UpdateResponseDto<TeacherTestDto>() { Success = true, Id = existingEntity.Id};
+        return new UpdateResponseDto<TeacherTestDto>() { Success = true, Id = existingEntity.Id };
     }
+
 
     public async Task<ResponseDto> DeleteAsync(Guid id, CancellationToken cancellationToken)
     {
@@ -62,7 +70,7 @@ public class TeacherTestService : ITeacherTestService
                 ErrorMessage = "TeacherTest not found"
             };
         }
-        
+
         _context.TeacherTests.Remove(existingEntity);
         await _context.SaveChangesAsync(cancellationToken);
 
@@ -106,7 +114,7 @@ public class TeacherTestService : ITeacherTestService
     public async Task<ListResponseDto<TeacherTestDto>> GetByUserIdAsync(Guid userId, CancellationToken cancellationToken)
     {
         var entities = await _context.TeacherTests
-            .Where(x=>x.TeacherId == userId)
+            .Where(x => x.TeacherId == userId)
             .ToListAsync(cancellationToken);
 
         return new ListResponseDto<TeacherTestDto>()

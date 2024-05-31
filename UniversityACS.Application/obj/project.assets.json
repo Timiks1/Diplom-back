@@ -773,53 +773,6 @@
           "buildTransitive/net6.0/System.Text.Json.targets": {}
         }
       },
-      "Xceed.Document.NET/3.0.24152.1219": {
-        "type": "package",
-        "dependencies": {
-          "System.Drawing.Common": "6.0.0",
-          "System.IO.Packaging": "4.5.0",
-          "Xceed.Pdf": "[3.0.24152.1219]"
-        },
-        "compile": {
-          "lib/net5.0/Xceed.Document.NET.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net5.0/Xceed.Document.NET.dll": {
-            "related": ".xml"
-          }
-        }
-      },
-      "Xceed.Pdf/3.0.24152.1219": {
-        "type": "package",
-        "dependencies": {
-          "System.Drawing.Common": "6.0.0"
-        },
-        "compile": {
-          "lib/net5.0/Xceed.PDF.NET.dll": {}
-        },
-        "runtime": {
-          "lib/net5.0/Xceed.PDF.NET.dll": {}
-        }
-      },
-      "Xceed.Words.NET/3.0.24152.1219": {
-        "type": "package",
-        "dependencies": {
-          "Xceed.Document.NET": "[3.0.24152.1219]",
-          "Xceed.Pdf": "[3.0.24152.1219]"
-        },
-        "compile": {
-          "lib/net5.0/Xceed.Words.NET.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net5.0/Xceed.Words.NET.dll": {
-            "related": ".xml"
-          }
-        }
-      },
       "UniversityACS.Core/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
@@ -2141,55 +2094,6 @@
         "useSharedDesignerContext.txt"
       ]
     },
-    "Xceed.Document.NET/3.0.24152.1219": {
-      "sha512": "MKJT+KtVKKWWDe/m96Lo3PMbZsjy9WqDgvHP7fUUvSd46MlBibKKQL/VmG5eHvdwmPwruzb0cDuUZ9/WqWxoKQ==",
-      "type": "package",
-      "path": "xceed.document.net/3.0.24152.1219",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "License Agreement.txt",
-        "images/Words.png",
-        "lib/net40/Xceed.Document.NET.dll",
-        "lib/net40/Xceed.Document.NET.xml",
-        "lib/net5.0/Xceed.Document.NET.dll",
-        "lib/net5.0/Xceed.Document.NET.xml",
-        "xceed.document.net.3.0.24152.1219.nupkg.sha512",
-        "xceed.document.net.nuspec"
-      ]
-    },
-    "Xceed.Pdf/3.0.24152.1219": {
-      "sha512": "EJDzXwsSR9gNm4+LWVMccBk1h6Nmhk5nGXFIi6GQoOroDD+OzBoYTQGo+qfP+mYPlVxtpIx9pCpHmmOHYDy/FQ==",
-      "type": "package",
-      "path": "xceed.pdf/3.0.24152.1219",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "License Agreement.txt",
-        "images/PDFCreator.png",
-        "lib/net40/Xceed.Pdf.dll",
-        "lib/net5.0/Xceed.PDF.NET.dll",
-        "xceed.pdf.3.0.24152.1219.nupkg.sha512",
-        "xceed.pdf.nuspec"
-      ]
-    },
-    "Xceed.Words.NET/3.0.24152.1219": {
-      "sha512": "jqK21luO38gPHQssM4lyqa9muepAV+HnB4jEYTSvUnLRjuOdce+ZwbaEwDSLf3+/Y49BpAsWLlQHgAl6Z1Gl3w==",
-      "type": "package",
-      "path": "xceed.words.net/3.0.24152.1219",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "License Agreement.txt",
-        "images/Words.png",
-        "lib/net40/Xceed.Words.NET.dll",
-        "lib/net40/Xceed.Words.NET.xml",
-        "lib/net5.0/Xceed.Words.NET.dll",
-        "lib/net5.0/Xceed.Words.NET.xml",
-        "xceed.words.net.3.0.24152.1219.nupkg.sha512",
-        "xceed.words.net.nuspec"
-      ]
-    },
     "UniversityACS.Core/1.0.0": {
       "type": "project",
       "path": "../UniversityACS.Core/UniversityACS.Core.csproj",
@@ -2206,8 +2110,7 @@
       "DocumentFormat.OpenXml >= 3.0.2",
       "EPPlus >= 7.1.2",
       "UniversityACS.Core >= 1.0.0",
-      "UniversityACS.Data >= 1.0.0",
-      "Xceed.Words.NET >= 3.0.24152.1219"
+      "UniversityACS.Data >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -2274,10 +2177,6 @@
           "EPPlus": {
             "target": "Package",
             "version": "[7.1.2, )"
-          },
-          "Xceed.Words.NET": {
-            "target": "Package",
-            "version": "[3.0.24152.1219, )"
           }
         },
         "imports": [
