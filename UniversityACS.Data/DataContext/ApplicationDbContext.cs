@@ -44,10 +44,10 @@ public class ApplicationDbContext : IdentityDbContext<ApplicationUser, Applicati
     public DbSet<TeachingLoad> TeachingLoads { get; set; }
     public DbSet<WorkingCurriculum> WorkingCurricula { get; set; }
     public DbSet<TeacherDiscipline> TeacherDisciplines { get; set; }
-    public DbSet<Lesson> Lessons { get; set; }
-    public DbSet<Student> Students { get; set; }
-    public DbSet<Homework> Homeworks { get; set; }
     public DbSet<Review> Reviews { get; set; }
-    public DbSet<Group> Groups { get; set; }
+    public DbSet<StudentsGroup> StudentsGroups { get; set; }
+    public DbSet<HomeWork> HomeWorks { get; set; }
+    public DbSet<StudentAttendance> StudentAttendances { get; set; }
+    public DbSet<Lesson> Lessons { get; set; }
 
 }

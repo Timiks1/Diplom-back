@@ -13,13 +13,7 @@ namespace UniversityACS.Data.DataContext.FluentConfigurations
     {
         public void Configure(EntityTypeBuilder<Student> builder)
         {
-            builder.HasMany(s => s.Homeworks)
-            .WithOne()
-            .HasForeignKey(h => h.Id);
-            builder
-            .HasMany(s => s.Reviews)
-            .WithOne()
-            .HasForeignKey(r => r.StudentId);
+
         }
     }
 }
