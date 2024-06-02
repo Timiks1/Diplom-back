@@ -29,7 +29,9 @@ public static class StudentsGroupMappings
             Id = entity.Id,
             Name = entity.Name,
             Description = entity.Description,
-            Students = entity.Students?.Select(s => s.ToDto()).ToList()
+            Students = entity.Students?.Select(s => s.ToDto()).ToList(),
+            Disciplines = entity.Disciplines?.Select(d => d.ToDto()).ToList()
+
         };
     }
 }
