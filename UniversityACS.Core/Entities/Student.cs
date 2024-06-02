@@ -17,7 +17,6 @@ namespace UniversityACS.Core.Entities
         public string Photo { get; set; }
         public Guid GroupId { get; set; }
         public Group Group { get; set; }
-        public List<Homework> Homeworks { get; set; } = new List<Homework>();
         public List<Review> Reviews { get; set; } = new List<Review>();
     }
 }
