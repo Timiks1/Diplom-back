@@ -10,4 +10,5 @@ public interface ILessonService
     Task<ResponseDto> DeleteAsync(Guid id, CancellationToken cancellationToken = default!);
     Task<DetailsResponseDto<LessonDto>> GetById(Guid id, CancellationToken cancellationToken = default!);
     Task<ListResponseDto<LessonDto>> GetAll(CancellationToken cancellationToken = default!);
+    Task<ListResponseDto<LessonDto>> GetBySubjectName(string subjectName, CancellationToken cancellationToken = default);
 }

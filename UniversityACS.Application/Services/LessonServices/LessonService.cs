@@ -93,4 +93,17 @@ public class LessonService : ILessonService
             TotalCount = entities.Count
         };
     }
+    public async Task<ListResponseDto<LessonDto>> GetBySubjectName(string subjectName, CancellationToken cancellationToken = default)
+    {
+        var entities = await _context.Lessons
+            .Where(x => x.SubjectName == subjectName)
+            .ToListAsync(cancellationToken);
+
+        return new ListResponseDto<LessonDto>()
+        {
+            Success = true,
+            Items = entities.Select(x => x.ToDto()).ToList(),
+            TotalCount = entities.Count
+        };
+    }
 }

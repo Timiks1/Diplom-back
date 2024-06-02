@@ -1,7 +1,9 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using DocumentFormat.OpenXml.Vml.Office;
+using Microsoft.EntityFrameworkCore;
 using UniversityACS.Application.Mappings;
 using UniversityACS.Core.DTOs;
 using UniversityACS.Core.DTOs.Requests;
+using UniversityACS.Core.Entities;
 using UniversityACS.Data.DataContext;
 
 namespace UniversityACS.Application.Services.DisciplineServices;
@@ -14,7 +16,7 @@ public class DisciplineService : IDisciplineService
     {
         _context = context;
     }
-    
+
     public async Task<CreateResponseDto<DisciplineDto>> CreateAsync(DisciplineDto dto, CancellationToken cancellationToken)
     {
         var existingDiscipline = await _context.Disciplines
@@ -24,11 +26,13 @@ public class DisciplineService : IDisciplineService
         {
             return new CreateResponseDto<DisciplineDto>()
             {
-                Success = false, ErrorMessage = "Discipline with the same name already exists."
+                Success = false,
+                ErrorMessage = "Discipline with the same name already exists."
             };
         }
 
         var discipline = dto.ToEntity();
+
         _context.Disciplines.Add(discipline);
         await _context.SaveChangesAsync(cancellationToken);
 
@@ -44,17 +48,20 @@ public class DisciplineService : IDisciplineService
         {
             return new UpdateResponseDto<DisciplineDto>()
             {
-                Success = false, ErrorMessage = "Discipline not found."
+                Success = false,
+                ErrorMessage = "Discipline not found."
             };
         }
-        
+
         existingDiscipline.UpdateEntity(dto);
         _context.Disciplines.Update(existingDiscipline);
         await _context.SaveChangesAsync(cancellationToken);
 
         return new UpdateResponseDto<DisciplineDto>()
         {
-            Success = true, Item = existingDiscipline.ToDto(), Id = existingDiscipline.Id
+            Success = true,
+            Item = existingDiscipline.ToDto(),
+            Id = existingDiscipline.Id
         };
     }
 
@@ -67,10 +74,11 @@ public class DisciplineService : IDisciplineService
         {
             return new ResponseDto()
             {
-                Success = false, ErrorMessage = "Discipline not found."
+                Success = false,
+                ErrorMessage = "Discipline not found."
             };
         }
-        
+
         _context.Disciplines.Remove(existingDiscipline);
         await _context.SaveChangesAsync(cancellationToken);
 
@@ -86,7 +94,8 @@ public class DisciplineService : IDisciplineService
         {
             return new DetailsResponseDto<DisciplineDto>()
             {
-                Success = false, ErrorMessage = "Discipline not found."
+                Success = false,
+                ErrorMessage = "Discipline not found."
             };
         }
 
@@ -100,7 +109,7 @@ public class DisciplineService : IDisciplineService
     public async Task<ListResponseDto<DisciplineDto>> GetAllAsync(CancellationToken cancellationToken)
     {
         var disciplines = await _context.Disciplines
-            .ToListAsync(cancellationToken);
+             .ToListAsync(cancellationToken);
 
         return new ListResponseDto<DisciplineDto>()
         {
@@ -116,9 +125,9 @@ public class DisciplineService : IDisciplineService
             .Where(x => x.TeacherId == userId)
             .Select(x => x.DisciplineId)
             .ToListAsync(cancellationToken);
-        
+
         var disciplines = await _context.Disciplines
-            .Where(x=>disciplinesIds.Contains(x.Id))
+            .Where(x => disciplinesIds.Contains(x.Id))
             .ToListAsync(cancellationToken);
 
         return new ListResponseDto<DisciplineDto>()

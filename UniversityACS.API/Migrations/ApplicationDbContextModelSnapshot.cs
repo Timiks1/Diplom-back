@@ -291,13 +291,13 @@ namespace UniversityACS.API.Migrations
                         {
                             Id = new Guid("4d82beb4-5e7b-48e6-b084-5bdc485bc1e7"),
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "f3b19c70-23a8-4e51-8da7-67a0302cdc03",
+                            ConcurrencyStamp = "45b68b43-57e7-4768-9a41-b85b35c75724",
                             Email = "admin@gmail.com",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
                             NormalizedEmail = "ADMIN@GMAIL.COM",
                             NormalizedUserName = "ADMIN",
-                            PasswordHash = "AQAAAAIAAYagAAAAEA6Koyjb1sPuBfrh5PhsdodxdQjcGoAP1sr9azy1RncBO7SjDyTtl3/gnRHT7+06Qg==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEM+Kl3uNsg5kvW2O3Ez8IsL8mAeswPbaUcimZVszfpX6FPoYyi7+c5qPK4JXXmM+wA==",
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "",
                             TwoFactorEnabled = false,
@@ -564,7 +564,7 @@ namespace UniversityACS.API.Migrations
                     b.Property<DateTime>("Date")
                         .HasColumnType("timestamp without time zone");
 
-                    b.Property<Guid>("HomeWorkId")
+                    b.Property<Guid?>("HomeWorkId")
                         .HasColumnType("uuid");
 
                     b.Property<string>("LessonName")
@@ -1102,9 +1102,7 @@ namespace UniversityACS.API.Migrations
                 {
                     b.HasOne("UniversityACS.Core.Entities.HomeWork", "HomeWork")
                         .WithMany()
-                        .HasForeignKey("HomeWorkId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("HomeWorkId");
 
                     b.HasOne("UniversityACS.Core.Entities.ApplicationUser", "Teacher")
                         .WithMany()

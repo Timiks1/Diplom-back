@@ -13,6 +13,8 @@ public class ApplicationUserConfiguration : IEntityTypeConfiguration<Application
             .WithMany(x => x.Teachers)
             .UsingEntity<TeacherDiscipline>();
 
+
+
         var hasher = new PasswordHasher<ApplicationUser>();
 
         var adminUser = new ApplicationUser()

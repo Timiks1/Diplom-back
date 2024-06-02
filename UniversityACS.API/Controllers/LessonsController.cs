@@ -59,4 +59,12 @@ public class LessonsController : ControllerBase
         if (response.Success) return Ok(response);
         return BadRequest(response);
     }
+
+    [HttpGet("GetBySubjectName")]
+    public async Task<ActionResult<ListResponseDto<LessonDto>>> GetBySubjectName(string subjectName, CancellationToken cancellationToken = default)
+    {
+        var response = await _lessonService.GetBySubjectName(subjectName, cancellationToken);
+        if (response.Success) return Ok(response);
+        return BadRequest(response);
+    }
 }
