@@ -11,5 +11,7 @@ public class ApplicationUserResponseDto
     public string? FirstName { get; set; }
     public string? LastName { get; set; }
     public string? DepartmentName { get; set; }
+    public string? GroupName { get; set; }
     public Guid? DepartmentId { get; set; }
+    public Guid? GroupId { get; set; }
 }

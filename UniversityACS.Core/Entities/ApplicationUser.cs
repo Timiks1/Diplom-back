@@ -11,9 +11,10 @@ public class ApplicationUser : IdentityUser<Guid>
 
     public Guid? DepartmentId { get; set; }
     public Department? Department { get; set; }
-    public ICollection<Group>? Groups { get; set; } = new List<Group>();
     public List<Discipline>? Disciplines { get; set; }
     public List<Syllabus>? Syllabi { get; set; }
     public Traineeship? Traineeship { get; set; }
     public ScientificAndPedagogicalActivity? ScientificAndPedagogicalActivity { get; set; }
+
+    public List<StudentsGroup>? StudentsGroups { get; set; }
 }

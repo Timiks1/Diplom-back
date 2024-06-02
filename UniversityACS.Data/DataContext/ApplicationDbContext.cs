@@ -1,7 +1,9 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using System.Reflection.Emit;
 using UniversityACS.Core.Entities;
+using UniversityACS.Data.DataContext.FluentConfigurations;
 
 namespace UniversityACS.Data.DataContext;
 
@@ -17,6 +19,7 @@ public class ApplicationDbContext : IdentityDbContext<ApplicationUser, Applicati
         base.OnModelCreating(builder);
 
         builder.ApplyConfigurationsFromAssembly(typeof(ApplicationDbContext).Assembly);
+
     }
 
     public DbSet<ApplicationUser> ApplicationUsers { get; set; }
