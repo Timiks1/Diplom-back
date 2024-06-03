@@ -180,4 +180,17 @@ public class HomeWorkService : IHomeWorkService
             Success = true
         };
     }
+    public async Task<ListResponseDto<HomeWorkResponseDto>> GetByStudentIdAsync(Guid studentId, CancellationToken cancellationToken)
+    {
+        var entities = await _context.HomeWorks
+            .Where(x => x.StudentId == studentId)
+            .ToListAsync(cancellationToken);
+
+        return new ListResponseDto<HomeWorkResponseDto>()
+        {
+            Items = entities.Select(x => x.ToDto()).ToList(),
+            TotalCount = entities.Count,
+            Success = true
+        };
+    }
 }

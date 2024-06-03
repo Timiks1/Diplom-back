@@ -97,6 +97,7 @@ public class LessonService : ILessonService
     {
         var entities = await _context.Lessons
             .Where(x => x.SubjectName == subjectName)
+            .Include(x => x.StudentAttendances)
             .ToListAsync(cancellationToken);
 
         return new ListResponseDto<LessonDto>()

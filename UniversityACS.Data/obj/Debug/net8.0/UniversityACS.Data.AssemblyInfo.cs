@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("UniversityACS.Data")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f186649511a3430c3654e4bd8db028d127ff4564")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6cc1e1c48a070052669c73033cd0bc5c4a44230d")]
 [assembly: System.Reflection.AssemblyProductAttribute("UniversityACS.Data")]
 [assembly: System.Reflection.AssemblyTitleAttribute("UniversityACS.Data")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

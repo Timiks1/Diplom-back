@@ -17,4 +17,5 @@ public interface IHomeWorkService
     Task<ResponseDto> GradeAsync(Guid id, int grade, CancellationToken cancellationToken = default!);
     Task<ListResponseDto<HomeWorkResponseDto>> GetByStudentIdDisciplineIdAsync(Guid studentId, Guid disciplineId,
         CancellationToken cancellationToken = default!);
+    Task<ListResponseDto<HomeWorkResponseDto>> GetByStudentIdAsync(Guid studentId, CancellationToken cancellationToken);
 }

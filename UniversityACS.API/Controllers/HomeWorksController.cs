@@ -78,4 +78,11 @@ public class HomeWorksController : ControllerBase
         if (response.Success) return Ok(response);
         return BadRequest(response);
     }
+    [HttpGet(ApiEndpoints.HomeWorks.GetByStudentId)]
+    public async Task<ActionResult<ListResponseDto<HomeWorkResponseDto>>> GetByStudentIdAsync(Guid studentId, CancellationToken cancellationToken)
+    {
+        var response = await _homeWorkService.GetByStudentIdAsync(studentId, cancellationToken);
+        if (response.Success) return Ok(response);
+        return BadRequest(response);
+    }
 }

@@ -172,8 +172,8 @@ public class ScheduleService : IScheduleService
                     Time = worksheet.Cells[row, 4].GetValue<TimeSpan>(),
                     Description = worksheet.Cells[row, 5].GetValue<string>(),
                     TeacherId = currentTeacherId,
-                    GroupName = worksheet.Cells[row, 7].GetValue<string>()  // Новое поле
-
+                    GroupName = worksheet.Cells[row, 7].GetValue<string>(),  // Новое поле
+                    LessonId = worksheet.Cells[row, 8].GetValue<Guid>()  // Новое поле
                 };
                 schedules.Add(dto);
             }
@@ -215,7 +215,8 @@ public class ScheduleService : IScheduleService
                     Time = worksheet.Cells[row, 4].GetValue<TimeSpan>(),
                     Description = worksheet.Cells[row, 5].GetValue<string>(),
                     TeacherId = currentTeacherId,
-                    GroupName = worksheet.Cells[row, 7].GetValue<string>()  // Новое поле
+                    GroupName = worksheet.Cells[row, 7].GetValue<string>(),  // Новое поле
+                    LessonId = worksheet.Cells[row, 8].GetValue<Guid>()  // Новое поле
                 };
                 schedules.Add(dto);
             }
