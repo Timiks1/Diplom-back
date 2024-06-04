@@ -173,7 +173,9 @@ public class ScheduleService : IScheduleService
                     Description = worksheet.Cells[row, 5].GetValue<string>(),
                     TeacherId = currentTeacherId,
                     GroupName = worksheet.Cells[row, 7].GetValue<string>(),  // Новое поле
-                    LessonId = worksheet.Cells[row, 8].GetValue<Guid>()  // Новое поле
+                    LessonId = Guid.TryParse(worksheet.Cells[row, 8].GetValue<string>(), out Guid lessonId) ? lessonId : Guid.Empty,
+                    StudentGroupId = Guid.TryParse(worksheet.Cells[row, 9].GetValue<string>(), out Guid StudentGroupId) ? StudentGroupId : Guid.Empty // Преобразование LessonId
+                                                                                                                                                      // Преобразование LessonId
                 };
                 schedules.Add(dto);
             }
@@ -216,7 +218,9 @@ public class ScheduleService : IScheduleService
                     Description = worksheet.Cells[row, 5].GetValue<string>(),
                     TeacherId = currentTeacherId,
                     GroupName = worksheet.Cells[row, 7].GetValue<string>(),  // Новое поле
-                    LessonId = worksheet.Cells[row, 8].GetValue<Guid>()  // Новое поле
+                    LessonId = Guid.TryParse(worksheet.Cells[row, 8].GetValue<string>(), out Guid lessonId) ? lessonId : Guid.Empty, // Преобразование LessonId
+                    StudentGroupId = Guid.TryParse(worksheet.Cells[row, 9].GetValue<string>(), out Guid StudentGroupId) ? StudentGroupId : Guid.Empty // Преобразование LessonId
+
                 };
                 schedules.Add(dto);
             }

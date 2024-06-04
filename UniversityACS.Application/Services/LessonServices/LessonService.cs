@@ -28,6 +28,7 @@ public class LessonService : ILessonService
     public async Task<UpdateResponseDto<LessonDto>> UpdateAsync(Guid id, LessonDto dto, CancellationToken cancellationToken = default)
     {
         var entity = await _context.Lessons
+            .Include(x => x.StudentAttendances) // Ensure related data is included
             .FirstOrDefaultAsync(x => x.Id == id, cancellationToken);
 
         if (entity == null)
@@ -39,12 +40,30 @@ public class LessonService : ILessonService
             };
         }
 
-        entity.UpdateEntity(dto);
+        entity.Date = dto.Date;
+        entity.SubjectName = dto.SubjectName;
+        entity.LessonName = dto.LessonName;
+        entity.TeacherId = dto.TeacherId;
+        entity.HomeWorkId = dto.HomeWorkId;
+
+        // Clear existing student attendances and add new ones
+        entity.StudentAttendances.Clear();
+        entity.StudentAttendances = dto.StudentAttendances.Select(a => new StudentAttendance
+        {
+            Id = a.Id,
+            StudentId = a.StudentId,
+            IsPresent = a.IsPresent,
+            IsLate = a.IsLate,
+            Grade = a.Grade,
+            LessonId = a.LessonId
+        }).ToList();
 
         _context.Lessons.Update(entity);
         await _context.SaveChangesAsync(cancellationToken);
+
         return new UpdateResponseDto<LessonDto> { Success = true, Item = entity.ToDto(), Id = entity.Id };
     }
+
 
     public async Task<ResponseDto> DeleteAsync(Guid id, CancellationToken cancellationToken = default)
     {

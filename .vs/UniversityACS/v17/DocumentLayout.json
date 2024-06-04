@@ -3,12 +3,28 @@
   "WorkspaceRootPath": "C:\\Users\\Tim\\Desktop\\diplom-back3\\universityasu\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{7B142796-0607-4B06-9229-DEDFEE9D4FDF}|UniversityACS.API\\UniversityACS.API.csproj|c:\\users\\tim\\desktop\\diplom-back3\\universityasu\\universityacs.api\\controllers\\schedulescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7B142796-0607-4B06-9229-DEDFEE9D4FDF}|UniversityACS.API\\UniversityACS.API.csproj|solutionrelative:universityacs.api\\controllers\\schedulescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{FF4A86AF-A689-439C-94F9-5B9186D8A7B3}|UniversityACS.Application\\UniversityACS.Application.csproj|c:\\users\\tim\\desktop\\diplom-back3\\universityasu\\universityacs.application\\services\\lessonservices\\lessonservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FF4A86AF-A689-439C-94F9-5B9186D8A7B3}|UniversityACS.Application\\UniversityACS.Application.csproj|solutionrelative:universityacs.application\\services\\lessonservices\\lessonservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FF4A86AF-A689-439C-94F9-5B9186D8A7B3}|UniversityACS.Application\\UniversityACS.Application.csproj|c:\\users\\tim\\desktop\\diplom-back3\\universityasu\\universityacs.application\\mappings\\lessonmappings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FF4A86AF-A689-439C-94F9-5B9186D8A7B3}|UniversityACS.Application\\UniversityACS.Application.csproj|solutionrelative:universityacs.application\\mappings\\lessonmappings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FF4A86AF-A689-439C-94F9-5B9186D8A7B3}|UniversityACS.Application\\UniversityACS.Application.csproj|c:\\users\\tim\\desktop\\diplom-back3\\universityasu\\universityacs.application\\mappings\\studentattendancemappings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FF4A86AF-A689-439C-94F9-5B9186D8A7B3}|UniversityACS.Application\\UniversityACS.Application.csproj|solutionrelative:universityacs.application\\mappings\\studentattendancemappings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7B142796-0607-4B06-9229-DEDFEE9D4FDF}|UniversityACS.API\\UniversityACS.API.csproj|c:\\users\\tim\\desktop\\diplom-back3\\universityasu\\universityacs.api\\controllers\\lessonscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7B142796-0607-4B06-9229-DEDFEE9D4FDF}|UniversityACS.API\\UniversityACS.API.csproj|solutionrelative:universityacs.api\\controllers\\lessonscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{FF4A86AF-A689-439C-94F9-5B9186D8A7B3}|UniversityACS.Application\\UniversityACS.Application.csproj|c:\\users\\tim\\desktop\\diplom-back3\\universityasu\\universityacs.application\\services\\scheduleservices\\scheduleservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{FF4A86AF-A689-439C-94F9-5B9186D8A7B3}|UniversityACS.Application\\UniversityACS.Application.csproj|solutionrelative:universityacs.application\\services\\scheduleservices\\scheduleservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7B142796-0607-4B06-9229-DEDFEE9D4FDF}|UniversityACS.API\\UniversityACS.API.csproj|c:\\users\\tim\\desktop\\diplom-back3\\universityasu\\universityacs.api\\controllers\\schedulescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7B142796-0607-4B06-9229-DEDFEE9D4FDF}|UniversityACS.API\\UniversityACS.API.csproj|solutionrelative:universityacs.api\\controllers\\schedulescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{9762A4E1-FF9E-4B1C-85BC-452707D58FF7}|UniversityACS.Core\\UniversityACS.Core.csproj|c:\\users\\tim\\desktop\\diplom-back3\\universityasu\\universityacs.core\\dtos\\requests\\scheduledto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -43,16 +59,8 @@
       "RelativeMoniker": "D:0:0:{9762A4E1-FF9E-4B1C-85BC-452707D58FF7}|UniversityACS.Core\\UniversityACS.Core.csproj|solutionrelative:universityacs.core\\entities\\lesson.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FF4A86AF-A689-439C-94F9-5B9186D8A7B3}|UniversityACS.Application\\UniversityACS.Application.csproj|c:\\users\\tim\\desktop\\diplom-back3\\universityasu\\universityacs.application\\mappings\\lessonmappings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FF4A86AF-A689-439C-94F9-5B9186D8A7B3}|UniversityACS.Application\\UniversityACS.Application.csproj|solutionrelative:universityacs.application\\mappings\\lessonmappings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{9762A4E1-FF9E-4B1C-85BC-452707D58FF7}|UniversityACS.Core\\UniversityACS.Core.csproj|c:\\users\\tim\\desktop\\diplom-back3\\universityasu\\universityacs.core\\entities\\homework.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9762A4E1-FF9E-4B1C-85BC-452707D58FF7}|UniversityACS.Core\\UniversityACS.Core.csproj|solutionrelative:universityacs.core\\entities\\homework.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FF4A86AF-A689-439C-94F9-5B9186D8A7B3}|UniversityACS.Application\\UniversityACS.Application.csproj|c:\\users\\tim\\desktop\\diplom-back3\\universityasu\\universityacs.application\\services\\lessonservices\\lessonservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FF4A86AF-A689-439C-94F9-5B9186D8A7B3}|UniversityACS.Application\\UniversityACS.Application.csproj|solutionrelative:universityacs.application\\services\\lessonservices\\lessonservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{FF4A86AF-A689-439C-94F9-5B9186D8A7B3}|UniversityACS.Application\\UniversityACS.Application.csproj|c:\\users\\tim\\desktop\\diplom-back3\\universityasu\\universityacs.application\\services\\disciplineservices\\disciplineservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -73,10 +81,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{7B142796-0607-4B06-9229-DEDFEE9D4FDF}|UniversityACS.API\\UniversityACS.API.csproj|c:\\users\\tim\\desktop\\diplom-back3\\universityasu\\universityacs.api\\endpoints\\lessons.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7B142796-0607-4B06-9229-DEDFEE9D4FDF}|UniversityACS.API\\UniversityACS.API.csproj|solutionrelative:universityacs.api\\endpoints\\lessons.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7B142796-0607-4B06-9229-DEDFEE9D4FDF}|UniversityACS.API\\UniversityACS.API.csproj|c:\\users\\tim\\desktop\\diplom-back3\\universityasu\\universityacs.api\\controllers\\lessonscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7B142796-0607-4B06-9229-DEDFEE9D4FDF}|UniversityACS.API\\UniversityACS.API.csproj|solutionrelative:universityacs.api\\controllers\\lessonscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{FF4A86AF-A689-439C-94F9-5B9186D8A7B3}|UniversityACS.Application\\UniversityACS.Application.csproj|c:\\users\\tim\\desktop\\diplom-back3\\universityasu\\universityacs.application\\services\\lessonservices\\ilessonservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -177,10 +181,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{FF4A86AF-A689-439C-94F9-5B9186D8A7B3}|UniversityACS.Application\\UniversityACS.Application.csproj|c:\\users\\tim\\desktop\\diplom-back3\\universityasu\\universityacs.application\\services\\disciplineservices\\idisciplineservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{FF4A86AF-A689-439C-94F9-5B9186D8A7B3}|UniversityACS.Application\\UniversityACS.Application.csproj|solutionrelative:universityacs.application\\services\\disciplineservices\\idisciplineservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FF4A86AF-A689-439C-94F9-5B9186D8A7B3}|UniversityACS.Application\\UniversityACS.Application.csproj|c:\\users\\tim\\desktop\\diplom-back3\\universityasu\\universityacs.application\\mappings\\studentattendancemappings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FF4A86AF-A689-439C-94F9-5B9186D8A7B3}|UniversityACS.Application\\UniversityACS.Application.csproj|solutionrelative:universityacs.application\\mappings\\studentattendancemappings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{FF4A86AF-A689-439C-94F9-5B9186D8A7B3}|UniversityACS.Application\\UniversityACS.Application.csproj|c:\\users\\tim\\desktop\\diplom-back3\\universityasu\\universityacs.application\\mappings\\teachertestmappings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -481,63 +481,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 8,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Schedule.cs",
-              "DocumentMoniker": "C:\\Users\\Tim\\Desktop\\diplom-back3\\universityasu\\UniversityACS.Core\\Entities\\Schedule.cs",
-              "RelativeDocumentMoniker": "UniversityACS.Core\\Entities\\Schedule.cs",
-              "ToolTip": "C:\\Users\\Tim\\Desktop\\diplom-back3\\universityasu\\UniversityACS.Core\\Entities\\Schedule.cs",
-              "RelativeToolTip": "UniversityACS.Core\\Entities\\Schedule.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-03T18:51:38.629Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "Homework.cs",
-              "DocumentMoniker": "C:\\Users\\Tim\\Desktop\\diplom-back3\\universityasu\\UniversityACS.Core\\Entities\\Homework.cs",
-              "RelativeDocumentMoniker": "UniversityACS.Core\\Entities\\Homework.cs",
-              "ToolTip": "C:\\Users\\Tim\\Desktop\\diplom-back3\\universityasu\\UniversityACS.Core\\Entities\\Homework.cs",
-              "RelativeToolTip": "UniversityACS.Core\\Entities\\Homework.cs",
-              "ViewState": "AQIAAAIAAAAAAAAAAAAxwBUAAAABAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-26T13:56:38.218Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "HomeWorksController.cs",
-              "DocumentMoniker": "C:\\Users\\Tim\\Desktop\\diplom-back3\\universityasu\\UniversityACS.API\\Controllers\\HomeWorksController.cs",
-              "RelativeDocumentMoniker": "UniversityACS.API\\Controllers\\HomeWorksController.cs",
-              "ToolTip": "C:\\Users\\Tim\\Desktop\\diplom-back3\\universityasu\\UniversityACS.API\\Controllers\\HomeWorksController.cs",
-              "RelativeToolTip": "UniversityACS.API\\Controllers\\HomeWorksController.cs",
-              "ViewState": "AQIAADgAAAAAAAAAAADwv1YAAAAFAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-01T14:52:15.475Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "IHomeWorkService.cs",
-              "DocumentMoniker": "C:\\Users\\Tim\\Desktop\\diplom-back3\\universityasu\\UniversityACS.Application\\Services\\HomeWorkServices\\IHomeWorkService.cs",
-              "RelativeDocumentMoniker": "UniversityACS.Application\\Services\\HomeWorkServices\\IHomeWorkService.cs",
-              "ToolTip": "C:\\Users\\Tim\\Desktop\\diplom-back3\\universityasu\\UniversityACS.Application\\Services\\HomeWorkServices\\IHomeWorkService.cs",
-              "RelativeToolTip": "UniversityACS.Application\\Services\\HomeWorkServices\\IHomeWorkService.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABMAAAB4AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-01T15:02:07.946Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 10,
               "Title": "HomeWorkService.cs",
               "DocumentMoniker": "C:\\Users\\Tim\\Desktop\\diplom-back3\\universityasu\\UniversityACS.Application\\Services\\HomeWorkServices\\HomeWorkService.cs",
               "RelativeDocumentMoniker": "UniversityACS.Application\\Services\\HomeWorkServices\\HomeWorkService.cs",
@@ -545,12 +493,11 @@
               "RelativeToolTip": "UniversityACS.Application\\Services\\HomeWorkServices\\HomeWorkService.cs",
               "ViewState": "AQIAAKIAAAAAAAAAAADwv7YAAAARAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-01T15:02:01.78Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-01T15:02:01.78Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 9,
               "Title": "HomeWorks.cs",
               "DocumentMoniker": "C:\\Users\\Tim\\Desktop\\diplom-back3\\universityasu\\UniversityACS.API\\Endpoints\\HomeWorks.cs",
               "RelativeDocumentMoniker": "UniversityACS.API\\Endpoints\\HomeWorks.cs",
@@ -558,51 +505,150 @@
               "RelativeToolTip": "UniversityACS.API\\Endpoints\\HomeWorks.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-01T14:53:41.869Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-01T14:53:41.869Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 6,
               "Title": "ScheduleDto.cs",
               "DocumentMoniker": "C:\\Users\\Tim\\Desktop\\diplom-back3\\universityasu\\UniversityACS.Core\\DTOs\\Requests\\ScheduleDto.cs",
               "RelativeDocumentMoniker": "UniversityACS.Core\\DTOs\\Requests\\ScheduleDto.cs",
               "ToolTip": "C:\\Users\\Tim\\Desktop\\diplom-back3\\universityasu\\UniversityACS.Core\\DTOs\\Requests\\ScheduleDto.cs",
               "RelativeToolTip": "UniversityACS.Core\\DTOs\\Requests\\ScheduleDto.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABMAAAAAAAAA",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAABMAAAAgAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-25T14:23:14.107Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 4,
               "Title": "ScheduleService.cs",
               "DocumentMoniker": "C:\\Users\\Tim\\Desktop\\diplom-back3\\universityasu\\UniversityACS.Application\\Services\\ScheduleServices\\ScheduleService.cs",
               "RelativeDocumentMoniker": "UniversityACS.Application\\Services\\ScheduleServices\\ScheduleService.cs",
               "ToolTip": "C:\\Users\\Tim\\Desktop\\diplom-back3\\universityasu\\UniversityACS.Application\\Services\\ScheduleServices\\ScheduleService.cs",
               "RelativeToolTip": "UniversityACS.Application\\Services\\ScheduleServices\\ScheduleService.cs",
-              "ViewState": "AQIAALYAAAAAAAAAAADwv+IAAAABAAAA",
+              "ViewState": "AQIAAMYAAAAAAAAAAAAkwLAAAACIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-25T14:23:44.24Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 5,
               "Title": "SchedulesController.cs",
               "DocumentMoniker": "C:\\Users\\Tim\\Desktop\\diplom-back3\\universityasu\\UniversityACS.API\\Controllers\\SchedulesController.cs",
               "RelativeDocumentMoniker": "UniversityACS.API\\Controllers\\SchedulesController.cs",
               "ToolTip": "C:\\Users\\Tim\\Desktop\\diplom-back3\\universityasu\\UniversityACS.API\\Controllers\\SchedulesController.cs",
               "RelativeToolTip": "UniversityACS.API\\Controllers\\SchedulesController.cs",
-              "ViewState": "AQIAAIIAAAAAAAAAAAAtwJsAAAAAAAAA",
+              "ViewState": "AQIAAKMAAAAAAAAAAAAAAJ0AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-25T14:22:46.132Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 3,
+              "Title": "LessonsController.cs",
+              "DocumentMoniker": "C:\\Users\\Tim\\Desktop\\diplom-back3\\universityasu\\UniversityACS.API\\Controllers\\LessonsController.cs",
+              "RelativeDocumentMoniker": "UniversityACS.API\\Controllers\\LessonsController.cs",
+              "ToolTip": "C:\\Users\\Tim\\Desktop\\diplom-back3\\universityasu\\UniversityACS.API\\Controllers\\LessonsController.cs",
+              "RelativeToolTip": "UniversityACS.API\\Controllers\\LessonsController.cs",
+              "ViewState": "AQIAABMAAAAAAAAAAAAswEQAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-01T14:51:50.88Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "LessonService.cs",
+              "DocumentMoniker": "C:\\Users\\Tim\\Desktop\\diplom-back3\\universityasu\\UniversityACS.Application\\Services\\LessonServices\\LessonService.cs",
+              "RelativeDocumentMoniker": "UniversityACS.Application\\Services\\LessonServices\\LessonService.cs",
+              "ToolTip": "C:\\Users\\Tim\\Desktop\\diplom-back3\\universityasu\\UniversityACS.Application\\Services\\LessonServices\\LessonService.cs",
+              "RelativeToolTip": "UniversityACS.Application\\Services\\LessonServices\\LessonService.cs",
+              "ViewState": "AQIAAGEAAAAAAAAAAAAQwCwAAAArAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-01T15:00:58.177Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "LessonMappings.cs",
+              "DocumentMoniker": "C:\\Users\\Tim\\Desktop\\diplom-back3\\universityasu\\UniversityACS.Application\\Mappings\\LessonMappings.cs",
+              "RelativeDocumentMoniker": "UniversityACS.Application\\Mappings\\LessonMappings.cs",
+              "ToolTip": "C:\\Users\\Tim\\Desktop\\diplom-back3\\universityasu\\UniversityACS.Application\\Mappings\\LessonMappings.cs",
+              "RelativeToolTip": "UniversityACS.Application\\Mappings\\LessonMappings.cs",
+              "ViewState": "AQIAAAcAAAAAAAAAAAA1wCEAAAAcAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-01T15:03:15.826Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "StudentAttendanceMappings.cs",
+              "DocumentMoniker": "C:\\Users\\Tim\\Desktop\\diplom-back3\\universityasu\\UniversityACS.Application\\Mappings\\StudentAttendanceMappings.cs",
+              "RelativeDocumentMoniker": "UniversityACS.Application\\Mappings\\StudentAttendanceMappings.cs",
+              "ToolTip": "C:\\Users\\Tim\\Desktop\\diplom-back3\\universityasu\\UniversityACS.Application\\Mappings\\StudentAttendanceMappings.cs",
+              "RelativeToolTip": "UniversityACS.Application\\Mappings\\StudentAttendanceMappings.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAUwCgAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-01T15:02:57.58Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "IHomeWorkService.cs",
+              "DocumentMoniker": "C:\\Users\\Tim\\Desktop\\diplom-back3\\universityasu\\UniversityACS.Application\\Services\\HomeWorkServices\\IHomeWorkService.cs",
+              "RelativeDocumentMoniker": "UniversityACS.Application\\Services\\HomeWorkServices\\IHomeWorkService.cs",
+              "ToolTip": "C:\\Users\\Tim\\Desktop\\diplom-back3\\universityasu\\UniversityACS.Application\\Services\\HomeWorkServices\\IHomeWorkService.cs",
+              "RelativeToolTip": "UniversityACS.Application\\Services\\HomeWorkServices\\IHomeWorkService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABMAAAB4AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-01T15:02:07.946Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "HomeWorksController.cs",
+              "DocumentMoniker": "C:\\Users\\Tim\\Desktop\\diplom-back3\\universityasu\\UniversityACS.API\\Controllers\\HomeWorksController.cs",
+              "RelativeDocumentMoniker": "UniversityACS.API\\Controllers\\HomeWorksController.cs",
+              "ToolTip": "C:\\Users\\Tim\\Desktop\\diplom-back3\\universityasu\\UniversityACS.API\\Controllers\\HomeWorksController.cs",
+              "RelativeToolTip": "UniversityACS.API\\Controllers\\HomeWorksController.cs",
+              "ViewState": "AQIAADgAAAAAAAAAAADwv1YAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-01T14:52:15.475Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "Homework.cs",
+              "DocumentMoniker": "C:\\Users\\Tim\\Desktop\\diplom-back3\\universityasu\\UniversityACS.Core\\Entities\\Homework.cs",
+              "RelativeDocumentMoniker": "UniversityACS.Core\\Entities\\Homework.cs",
+              "ToolTip": "C:\\Users\\Tim\\Desktop\\diplom-back3\\universityasu\\UniversityACS.Core\\Entities\\Homework.cs",
+              "RelativeToolTip": "UniversityACS.Core\\Entities\\Homework.cs",
+              "ViewState": "AQIAAAIAAAAAAAAAAAAxwBUAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-26T13:56:38.218Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Schedule.cs",
+              "DocumentMoniker": "C:\\Users\\Tim\\Desktop\\diplom-back3\\universityasu\\UniversityACS.Core\\Entities\\Schedule.cs",
+              "RelativeDocumentMoniker": "UniversityACS.Core\\Entities\\Schedule.cs",
+              "ToolTip": "C:\\Users\\Tim\\Desktop\\diplom-back3\\universityasu\\UniversityACS.Core\\Entities\\Schedule.cs",
+              "RelativeToolTip": "UniversityACS.Core\\Entities\\Schedule.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-03T18:51:38.629Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
               "Title": "DisciplineService.cs",
               "DocumentMoniker": "C:\\Users\\Tim\\Desktop\\diplom-back3\\universityasu\\UniversityACS.Application\\Services\\DisciplineServices\\DisciplineService.cs",
               "RelativeDocumentMoniker": "UniversityACS.Application\\Services\\DisciplineServices\\DisciplineService.cs",
@@ -610,12 +656,11 @@
               "RelativeToolTip": "UniversityACS.Application\\Services\\DisciplineServices\\DisciplineService.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAqwBMAAAAwAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-30T09:57:44.367Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-30T09:57:44.367Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 16,
               "Title": "LessonDto.cs",
               "DocumentMoniker": "C:\\Users\\Tim\\Desktop\\diplom-back3\\universityasu\\UniversityACS.Core\\DTOs\\Requests\\LessonDto.cs",
               "RelativeDocumentMoniker": "UniversityACS.Core\\DTOs\\Requests\\LessonDto.cs",
@@ -627,20 +672,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "LessonMappings.cs",
-              "DocumentMoniker": "C:\\Users\\Tim\\Desktop\\diplom-back3\\universityasu\\UniversityACS.Application\\Mappings\\LessonMappings.cs",
-              "RelativeDocumentMoniker": "UniversityACS.Application\\Mappings\\LessonMappings.cs",
-              "ToolTip": "C:\\Users\\Tim\\Desktop\\diplom-back3\\universityasu\\UniversityACS.Application\\Mappings\\LessonMappings.cs",
-              "RelativeToolTip": "UniversityACS.Application\\Mappings\\LessonMappings.cs",
-              "ViewState": "AQIAAA8AAAAAAAAAAAASwCwAAAABAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-01T15:03:15.826Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 13,
               "Title": "Lesson.cs",
               "DocumentMoniker": "C:\\Users\\Tim\\Desktop\\diplom-back3\\universityasu\\UniversityACS.Core\\Entities\\Lesson.cs",
               "RelativeDocumentMoniker": "UniversityACS.Core\\Entities\\Lesson.cs",
@@ -648,12 +680,11 @@
               "RelativeToolTip": "UniversityACS.Core\\Entities\\Lesson.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAApAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-25T14:34:09.042Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-25T14:34:09.042Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 8,
               "Title": "Schedules.cs",
               "DocumentMoniker": "C:\\Users\\Tim\\Desktop\\diplom-back3\\universityasu\\UniversityACS.API\\Endpoints\\Schedules.cs",
               "RelativeDocumentMoniker": "UniversityACS.API\\Endpoints\\Schedules.cs",
@@ -661,12 +692,11 @@
               "RelativeToolTip": "UniversityACS.API\\Endpoints\\Schedules.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-25T14:41:17.75Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-25T14:41:17.75Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 17,
               "Title": "HomeWorkResponseDto.cs",
               "DocumentMoniker": "C:\\Users\\Tim\\Desktop\\diplom-back3\\universityasu\\UniversityACS.Core\\DTOs\\Responses\\HomeWorkResponseDto.cs",
               "RelativeDocumentMoniker": "UniversityACS.Core\\DTOs\\Responses\\HomeWorkResponseDto.cs",
@@ -678,7 +708,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 18,
               "Title": "HomeWorkDto.cs",
               "DocumentMoniker": "C:\\Users\\Tim\\Desktop\\diplom-back3\\universityasu\\UniversityACS.Core\\DTOs\\Requests\\HomeWorkDto.cs",
               "RelativeDocumentMoniker": "UniversityACS.Core\\DTOs\\Requests\\HomeWorkDto.cs",
@@ -690,7 +720,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 20,
               "Title": "ILessonService.cs",
               "DocumentMoniker": "C:\\Users\\Tim\\Desktop\\diplom-back3\\universityasu\\UniversityACS.Application\\Services\\LessonServices\\ILessonService.cs",
               "RelativeDocumentMoniker": "UniversityACS.Application\\Services\\LessonServices\\ILessonService.cs",
@@ -702,7 +732,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 19,
               "Title": "Lessons.cs",
               "DocumentMoniker": "C:\\Users\\Tim\\Desktop\\diplom-back3\\universityasu\\UniversityACS.API\\Endpoints\\Lessons.cs",
               "RelativeDocumentMoniker": "UniversityACS.API\\Endpoints\\Lessons.cs",
@@ -714,32 +744,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "LessonService.cs",
-              "DocumentMoniker": "C:\\Users\\Tim\\Desktop\\diplom-back3\\universityasu\\UniversityACS.Application\\Services\\LessonServices\\LessonService.cs",
-              "RelativeDocumentMoniker": "UniversityACS.Application\\Services\\LessonServices\\LessonService.cs",
-              "ToolTip": "C:\\Users\\Tim\\Desktop\\diplom-back3\\universityasu\\UniversityACS.Application\\Services\\LessonServices\\LessonService.cs",
-              "RelativeToolTip": "UniversityACS.Application\\Services\\LessonServices\\LessonService.cs",
-              "ViewState": "AQIAAFAAAAAAAAAAAAAqwG0AAAABAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-01T15:00:58.177Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "LessonsController.cs",
-              "DocumentMoniker": "C:\\Users\\Tim\\Desktop\\diplom-back3\\universityasu\\UniversityACS.API\\Controllers\\LessonsController.cs",
-              "RelativeDocumentMoniker": "UniversityACS.API\\Controllers\\LessonsController.cs",
-              "ToolTip": "C:\\Users\\Tim\\Desktop\\diplom-back3\\universityasu\\UniversityACS.API\\Controllers\\LessonsController.cs",
-              "RelativeToolTip": "UniversityACS.API\\Controllers\\LessonsController.cs",
-              "ViewState": "AQIAACwAAAAAAAAAAAAiwEQAAAAFAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-01T14:51:50.88Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 28,
               "Title": "IdentityUserRoleConfiguration.cs",
               "DocumentMoniker": "C:\\Users\\Tim\\Desktop\\diplom-back3\\universityasu\\UniversityACS.Data\\DataContext\\FluentConfigurations\\IdentityUserRoleConfiguration.cs",
               "RelativeDocumentMoniker": "UniversityACS.Data\\DataContext\\FluentConfigurations\\IdentityUserRoleConfiguration.cs",
@@ -751,7 +756,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 21,
               "Title": "StudentsGroupDto.cs",
               "DocumentMoniker": "C:\\Users\\Tim\\Desktop\\diplom-back3\\universityasu\\UniversityACS.Core\\DTOs\\Requests\\StudentsGroupDto.cs",
               "RelativeDocumentMoniker": "UniversityACS.Core\\DTOs\\Requests\\StudentsGroupDto.cs",
@@ -763,7 +768,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 25,
               "Title": "ApplicationUserConfiguration.cs",
               "DocumentMoniker": "C:\\Users\\Tim\\Desktop\\diplom-back3\\universityasu\\UniversityACS.Data\\DataContext\\FluentConfigurations\\ApplicationUserConfiguration.cs",
               "RelativeDocumentMoniker": "UniversityACS.Data\\DataContext\\FluentConfigurations\\ApplicationUserConfiguration.cs",
@@ -775,7 +780,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 23,
               "Title": "ServiceCollectionExtension.cs",
               "DocumentMoniker": "C:\\Users\\Tim\\Desktop\\diplom-back3\\universityasu\\UniversityACS.API\\Extensions\\ServiceCollectionExtension.cs",
               "RelativeDocumentMoniker": "UniversityACS.API\\Extensions\\ServiceCollectionExtension.cs",
@@ -787,7 +792,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 24,
               "Title": "StudentsGroup.cs",
               "DocumentMoniker": "C:\\Users\\Tim\\Desktop\\diplom-back3\\universityasu\\UniversityACS.Core\\Entities\\StudentsGroup.cs",
               "RelativeDocumentMoniker": "UniversityACS.Core\\Entities\\StudentsGroup.cs",
@@ -799,7 +804,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 27,
               "Title": "ApplicationUserDto.cs",
               "DocumentMoniker": "C:\\Users\\Tim\\Desktop\\diplom-back3\\universityasu\\UniversityACS.Core\\DTOs\\Requests\\ApplicationUserDto.cs",
               "RelativeDocumentMoniker": "UniversityACS.Core\\DTOs\\Requests\\ApplicationUserDto.cs",
@@ -811,7 +816,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 26,
               "Title": "ApplicationUser.cs",
               "DocumentMoniker": "C:\\Users\\Tim\\Desktop\\diplom-back3\\universityasu\\UniversityACS.Core\\Entities\\ApplicationUser.cs",
               "RelativeDocumentMoniker": "UniversityACS.Core\\Entities\\ApplicationUser.cs",
@@ -823,7 +828,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 22,
               "Title": "ApplicationDbContext.cs",
               "DocumentMoniker": "C:\\Users\\Tim\\Desktop\\diplom-back3\\universityasu\\UniversityACS.Data\\DataContext\\ApplicationDbContext.cs",
               "RelativeDocumentMoniker": "UniversityACS.Data\\DataContext\\ApplicationDbContext.cs",
@@ -835,7 +840,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 29,
               "Title": "TeacherDisciplineService.cs",
               "DocumentMoniker": "C:\\Users\\Tim\\Desktop\\diplom-back3\\universityasu\\UniversityACS.Application\\Services\\TeacherDisciplineServices\\TeacherDisciplineService.cs",
               "RelativeDocumentMoniker": "UniversityACS.Application\\Services\\TeacherDisciplineServices\\TeacherDisciplineService.cs",
@@ -847,7 +852,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 30,
               "Title": "TeacherTestService.cs",
               "DocumentMoniker": "C:\\Users\\Tim\\Desktop\\diplom-back3\\universityasu\\UniversityACS.Application\\Services\\TeacherTestServices\\TeacherTestService.cs",
               "RelativeDocumentMoniker": "UniversityACS.Application\\Services\\TeacherTestServices\\TeacherTestService.cs",
@@ -859,7 +864,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 30,
+              "DocumentIndex": 31,
               "Title": "ITeacherDisciplineService.cs",
               "DocumentMoniker": "C:\\Users\\Tim\\Desktop\\diplom-back3\\universityasu\\UniversityACS.Application\\Services\\TeacherDisciplineServices\\ITeacherDisciplineService.cs",
               "RelativeDocumentMoniker": "UniversityACS.Application\\Services\\TeacherDisciplineServices\\ITeacherDisciplineService.cs",
@@ -871,7 +876,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 31,
+              "DocumentIndex": 32,
               "Title": "Discipline.cs",
               "DocumentMoniker": "C:\\Users\\Tim\\Desktop\\diplom-back3\\universityasu\\UniversityACS.Core\\Entities\\Discipline.cs",
               "RelativeDocumentMoniker": "UniversityACS.Core\\Entities\\Discipline.cs",
@@ -883,7 +888,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 32,
+              "DocumentIndex": 33,
               "Title": "TeacherDiscipline.cs",
               "DocumentMoniker": "C:\\Users\\Tim\\Desktop\\diplom-back3\\universityasu\\UniversityACS.Core\\Entities\\TeacherDiscipline.cs",
               "RelativeDocumentMoniker": "UniversityACS.Core\\Entities\\TeacherDiscipline.cs",
@@ -895,7 +900,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 33,
+              "DocumentIndex": 34,
               "Title": "ApplicationRoleConfiguration.cs",
               "DocumentMoniker": "C:\\Users\\Tim\\Desktop\\diplom-back3\\universityasu\\UniversityACS.Data\\DataContext\\FluentConfigurations\\ApplicationRoleConfiguration.cs",
               "RelativeDocumentMoniker": "UniversityACS.Data\\DataContext\\FluentConfigurations\\ApplicationRoleConfiguration.cs",
@@ -907,7 +912,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 34,
+              "DocumentIndex": 35,
               "Title": "DepartmentConfiguration.cs",
               "DocumentMoniker": "C:\\Users\\Tim\\Desktop\\diplom-back3\\universityasu\\UniversityACS.Data\\DataContext\\FluentConfigurations\\DepartmentConfiguration.cs",
               "RelativeDocumentMoniker": "UniversityACS.Data\\DataContext\\FluentConfigurations\\DepartmentConfiguration.cs",
@@ -919,7 +924,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 35,
+              "DocumentIndex": 36,
               "Title": "ISyllabusService.cs",
               "DocumentMoniker": "C:\\Users\\Tim\\Desktop\\diplom-back3\\universityasu\\UniversityACS.Application\\Services\\SyllabusServices\\ISyllabusService.cs",
               "RelativeDocumentMoniker": "UniversityACS.Application\\Services\\SyllabusServices\\ISyllabusService.cs",
@@ -931,7 +936,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 36,
+              "DocumentIndex": 37,
               "Title": "TeacherTestsController.cs",
               "DocumentMoniker": "C:\\Users\\Tim\\Desktop\\diplom-back3\\universityasu\\UniversityACS.API\\Controllers\\TeacherTestsController.cs",
               "RelativeDocumentMoniker": "UniversityACS.API\\Controllers\\TeacherTestsController.cs",
@@ -943,7 +948,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 37,
+              "DocumentIndex": 38,
               "Title": "TeacherGroup.cs",
               "DocumentMoniker": "C:\\Users\\Tim\\Desktop\\diplom-back3\\universityasu\\UniversityACS.API\\Endpoints\\TeacherGroup.cs",
               "RelativeDocumentMoniker": "UniversityACS.API\\Endpoints\\TeacherGroup.cs",
@@ -955,7 +960,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 38,
+              "DocumentIndex": 39,
               "Title": "DisciplineMappings.cs",
               "DocumentMoniker": "C:\\Users\\Tim\\Desktop\\diplom-back3\\universityasu\\UniversityACS.Application\\Mappings\\DisciplineMappings.cs",
               "RelativeDocumentMoniker": "UniversityACS.Application\\Mappings\\DisciplineMappings.cs",
@@ -967,7 +972,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 39,
+              "DocumentIndex": 40,
               "Title": "DisciplineDto.cs",
               "DocumentMoniker": "C:\\Users\\Tim\\Desktop\\diplom-back3\\universityasu\\UniversityACS.Core\\DTOs\\Requests\\DisciplineDto.cs",
               "RelativeDocumentMoniker": "UniversityACS.Core\\DTOs\\Requests\\DisciplineDto.cs",
@@ -979,7 +984,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 40,
+              "DocumentIndex": 41,
               "Title": "TeacherTests.cs",
               "DocumentMoniker": "C:\\Users\\Tim\\Desktop\\diplom-back3\\universityasu\\UniversityACS.API\\Endpoints\\TeacherTests.cs",
               "RelativeDocumentMoniker": "UniversityACS.API\\Endpoints\\TeacherTests.cs",
@@ -991,7 +996,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 41,
+              "DocumentIndex": 42,
               "Title": "TeacherDisciplinesController.cs",
               "DocumentMoniker": "C:\\Users\\Tim\\Desktop\\diplom-back3\\universityasu\\UniversityACS.API\\Controllers\\TeacherDisciplinesController.cs",
               "RelativeDocumentMoniker": "UniversityACS.API\\Controllers\\TeacherDisciplinesController.cs",
@@ -1003,7 +1008,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 42,
+              "DocumentIndex": 43,
               "Title": "StudentsGroupMappings.cs",
               "DocumentMoniker": "C:\\Users\\Tim\\Desktop\\diplom-back3\\universityasu\\UniversityACS.Application\\Mappings\\StudentsGroupMappings.cs",
               "RelativeDocumentMoniker": "UniversityACS.Application\\Mappings\\StudentsGroupMappings.cs",
@@ -1027,7 +1032,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 43,
+              "DocumentIndex": 44,
               "Title": "IDisciplineService.cs",
               "DocumentMoniker": "C:\\Users\\Tim\\Desktop\\diplom-back3\\universityasu\\UniversityACS.Application\\Services\\DisciplineServices\\IDisciplineService.cs",
               "RelativeDocumentMoniker": "UniversityACS.Application\\Services\\DisciplineServices\\IDisciplineService.cs",
@@ -1036,18 +1041,6 @@
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-02T14:00:18.256Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 44,
-              "Title": "StudentAttendanceMappings.cs",
-              "DocumentMoniker": "C:\\Users\\Tim\\Desktop\\diplom-back3\\universityasu\\UniversityACS.Application\\Mappings\\StudentAttendanceMappings.cs",
-              "RelativeDocumentMoniker": "UniversityACS.Application\\Mappings\\StudentAttendanceMappings.cs",
-              "ToolTip": "C:\\Users\\Tim\\Desktop\\diplom-back3\\universityasu\\UniversityACS.Application\\Mappings\\StudentAttendanceMappings.cs",
-              "RelativeToolTip": "UniversityACS.Application\\Mappings\\StudentAttendanceMappings.cs",
-              "ViewState": "AQIAAAgAAAAAAAAAAAAiwCgAAAABAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-01T15:02:57.58Z"
             },
             {
               "$type": "Document",

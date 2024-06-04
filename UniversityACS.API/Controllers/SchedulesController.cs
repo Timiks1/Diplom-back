@@ -140,6 +140,7 @@ public class SchedulesController : ControllerBase
             worksheet.Cells[1, 6].Value = "TeacherId"; // Новый заголовок
             worksheet.Cells[1, 6].Value = "GroupName";
             worksheet.Cells[1, 8].Value = "LessonId"; // Новый заголовок
+            worksheet.Cells[1, 9].Value = "StudentGroupId"; // Новый заголовок
 
             // Заполнение данных
             for (int i = 0; i < scheduleDtos.Count; i++)
@@ -153,6 +154,7 @@ public class SchedulesController : ControllerBase
                 worksheet.Cells[i + 2, 6].Value = dto.TeacherId; // Заполнение TeacherId
                 worksheet.Cells[i + 2, 7].Value = dto.GroupName; // Заполнение TeacherId
                 worksheet.Cells[i + 2, 8].Value = dto.LessonId; // Заполнение LessonId
+                worksheet.Cells[i + 2, 9].Value = dto.StudentGroupId; // Заполнение LessonId
 
             }
 
