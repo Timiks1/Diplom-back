@@ -53,5 +53,5 @@ public class ApplicationDbContext : IdentityDbContext<ApplicationUser, Applicati
     public DbSet<StudentAttendance> StudentAttendances { get; set; }
     public DbSet<Lesson> Lessons { get; set; }
 
-
+    public DbSet<StudentExam> StudentExams { get; set; }
 }
