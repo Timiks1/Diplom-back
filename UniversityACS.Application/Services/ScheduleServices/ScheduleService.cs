@@ -174,8 +174,9 @@ public class ScheduleService : IScheduleService
                     TeacherId = currentTeacherId,
                     GroupName = worksheet.Cells[row, 7].GetValue<string>(),  // Новое поле
                     LessonId = Guid.TryParse(worksheet.Cells[row, 8].GetValue<string>(), out Guid lessonId) ? lessonId : Guid.Empty,
-                    StudentGroupId = Guid.TryParse(worksheet.Cells[row, 9].GetValue<string>(), out Guid StudentGroupId) ? StudentGroupId : Guid.Empty // Преобразование LessonId
-                                                                                                                                                      // Преобразование LessonId
+                    StudentGroupId = Guid.TryParse(worksheet.Cells[row, 9].GetValue<string>(), out Guid StudentGroupId) ? StudentGroupId : Guid.Empty, // Преобразование LessonId
+                    DisciplineId = Guid.TryParse(worksheet.Cells[row, 10].GetValue<string>(), out Guid DisciplineId) ? DisciplineId : Guid.Empty // Преобразование LessonId
+                                                                                                                                                 // Преобразование LessonId
                 };
                 schedules.Add(dto);
             }
@@ -219,7 +220,8 @@ public class ScheduleService : IScheduleService
                     TeacherId = currentTeacherId,
                     GroupName = worksheet.Cells[row, 7].GetValue<string>(),  // Новое поле
                     LessonId = Guid.TryParse(worksheet.Cells[row, 8].GetValue<string>(), out Guid lessonId) ? lessonId : Guid.Empty, // Преобразование LessonId
-                    StudentGroupId = Guid.TryParse(worksheet.Cells[row, 9].GetValue<string>(), out Guid StudentGroupId) ? StudentGroupId : Guid.Empty // Преобразование LessonId
+                    StudentGroupId = Guid.TryParse(worksheet.Cells[row, 9].GetValue<string>(), out Guid StudentGroupId) ? StudentGroupId : Guid.Empty, // Преобразование LessonId
+                    DisciplineId = Guid.TryParse(worksheet.Cells[row, 10].GetValue<string>(), out Guid DisciplineId) ? DisciplineId : Guid.Empty // Преобразование LessonId
 
                 };
                 schedules.Add(dto);

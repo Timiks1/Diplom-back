@@ -18,6 +18,7 @@ namespace UniversityACS.Core.DTOs.Requests
         public string GroupName { get; set; }  // Новое свойство
         public Guid LessonId { get; set; } // Новое свойство
         public Guid StudentGroupId { get; set; } // Новое свойство
+        public Guid DisciplineId { get; set; } // Новое свойство
 
     }
 }
