@@ -13,6 +13,7 @@ using UniversityACS.Application.Services.DepartmentServices;
 using UniversityACS.Application.Services.DevelopmentPlanServices;
 using UniversityACS.Application.Services.DisciplineServices;
 using UniversityACS.Application.Services.ExchangeVisitPlanServices;
+using UniversityACS.Application.Services.ExchangeVisitsPlanReviewServices;
 using UniversityACS.Application.Services.HomeWorkServices;
 using UniversityACS.Application.Services.IndividualPlanServices;
 using UniversityACS.Application.Services.LessonServices;
@@ -71,6 +72,7 @@ public static class ServiceCollectionExtension
         services.AddScoped<ILessonService, LessonService>();
         services.AddScoped<IReviewService, ReviewService>();
         services.AddScoped<IStudentExamService, StudentExamService>();
+        services.AddScoped<IExchangeVisitsPlanReviewService, ExchangeVisitsPlanReviewService>();
 
         return services;
     }

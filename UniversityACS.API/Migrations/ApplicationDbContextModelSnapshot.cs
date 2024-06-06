@@ -291,13 +291,13 @@ namespace UniversityACS.API.Migrations
                         {
                             Id = new Guid("4d82beb4-5e7b-48e6-b084-5bdc485bc1e7"),
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "adbf45ab-29bf-4001-8cc3-8d382b123768",
+                            ConcurrencyStamp = "67fd7772-c94d-4cb2-a977-992c096a6548",
                             Email = "admin@gmail.com",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
                             NormalizedEmail = "ADMIN@GMAIL.COM",
                             NormalizedUserName = "ADMIN",
-                            PasswordHash = "AQAAAAIAAYagAAAAEGwo0DkLTcq1Gwyip7y68dkXSHD5JStqYYqBN/tJ+6TD6mMonSDutckHfdvIbh2oHQ==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEFWAQYzY2ng0FiqK+J0zgoabPBmKan36EgcdPDijOh8ovIMpdQYElOufv58PS3Vt7w==",
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "",
                             TwoFactorEnabled = false,
@@ -483,6 +483,31 @@ namespace UniversityACS.API.Migrations
                     b.HasIndex("TeacherId");
 
                     b.ToTable("ExchangeVisitsPlans");
+                });
+
+            modelBuilder.Entity("UniversityACS.Core.Entities.ExchangeVisitsPlanReviews", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid");
+
+                    b.Property<Guid>("ExchangeVisitsPlan")
+                        .HasColumnType("uuid");
+
+                    b.Property<byte[]>("File")
+                        .HasColumnType("bytea");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("text");
+
+                    b.Property<Guid?>("TeacherId")
+                        .HasColumnType("uuid");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("TeacherId");
+
+                    b.ToTable("ExchangeVisitsPlanReviews");
                 });
 
             modelBuilder.Entity("UniversityACS.Core.Entities.HomeWork", b =>
@@ -1087,6 +1112,15 @@ namespace UniversityACS.API.Migrations
                 });
 
             modelBuilder.Entity("UniversityACS.Core.Entities.ExchangeVisitsPlan", b =>
+                {
+                    b.HasOne("UniversityACS.Core.Entities.ApplicationUser", "Teacher")
+                        .WithMany()
+                        .HasForeignKey("TeacherId");
+
+                    b.Navigation("Teacher");
+                });
+
+            modelBuilder.Entity("UniversityACS.Core.Entities.ExchangeVisitsPlanReviews", b =>
                 {
                     b.HasOne("UniversityACS.Core.Entities.ApplicationUser", "Teacher")
                         .WithMany()
