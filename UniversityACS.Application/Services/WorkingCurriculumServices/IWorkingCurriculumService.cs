@@ -14,4 +14,5 @@ public interface IWorkingCurriculumService
     Task<DetailsResponseDto<WorkingCurriculumResponseDto>> GetByIdAsync(Guid id, CancellationToken cancellationToken = default!);
     Task<ListResponseDto<WorkingCurriculumResponseDto>> GetAllAsync(CancellationToken cancellationToken = default!);
     Task<ListResponseDto<WorkingCurriculumResponseDto>> GetByUserIdAsync(Guid userId, CancellationToken cancellationToken = default!);
+    Task<ListResponseDto<WorkingCurriculumResponseDto>> GetByLessonIdAsync(Guid lessonId, CancellationToken cancellationToken);
 }

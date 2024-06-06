@@ -1,4 +1,5 @@
-﻿using UniversityACS.Core.DTOs;
+﻿using Microsoft.AspNetCore.Http;
+using UniversityACS.Core.DTOs;
 using UniversityACS.Core.DTOs.Requests;
 using UniversityACS.Core.DTOs.Responses;
 
@@ -18,4 +19,6 @@ public interface IHomeWorkService
     Task<ListResponseDto<HomeWorkResponseDto>> GetByStudentIdDisciplineIdAsync(Guid studentId, Guid disciplineId,
         CancellationToken cancellationToken = default!);
     Task<ListResponseDto<HomeWorkResponseDto>> GetByStudentIdAsync(Guid studentId, CancellationToken cancellationToken);
+    Task<ResponseDto> UpdateByLessonNameAsync(string lessonName, string description, IFormFile file, CancellationToken cancellationToken);
+    Task<ResponseDto> AddCommentAsync(Guid id, string comment, CancellationToken cancellationToken);
 }

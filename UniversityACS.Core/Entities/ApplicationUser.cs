@@ -19,5 +19,6 @@ public class ApplicationUser : IdentityUser<Guid>
     public Guid? GroupId { get; set; }
     public StudentsGroup? StudentsGroup { get; set; }
 
+    public byte[]? Photo { get; set; }
 
 }

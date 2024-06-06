@@ -11,4 +11,6 @@ public class ApplicationUserDto
     public string? FirstName { get; set; }
     public string? LastName { get; set; }
     public Guid? DepartmentId { get; set; }
+    public byte[]? Photo { get; set; }
+
 }

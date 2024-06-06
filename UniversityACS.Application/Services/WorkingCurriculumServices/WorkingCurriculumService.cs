@@ -50,7 +50,7 @@ public class WorkingCurriculumService : IWorkingCurriculumService
                 ErrorMessage = "WorkingCurriculum not found"
             };
         }
-        
+
         existingEntity.UpdateEntity(dto);
         if (dto.File != null)
         {
@@ -58,11 +58,11 @@ public class WorkingCurriculumService : IWorkingCurriculumService
             await dto.File.CopyToAsync(memoryStream, cancellationToken);
             existingEntity.File = memoryStream.ToArray();
         }
-        
+
         _context.WorkingCurricula.Update(existingEntity);
         await _context.SaveChangesAsync(cancellationToken);
 
-        return new UpdateResponseDto<WorkingCurriculumDto>() { Success = true, Id = existingEntity.Id};
+        return new UpdateResponseDto<WorkingCurriculumDto>() { Success = true, Id = existingEntity.Id };
     }
 
     public async Task<ResponseDto> DeleteAsync(Guid id, CancellationToken cancellationToken)
@@ -78,7 +78,7 @@ public class WorkingCurriculumService : IWorkingCurriculumService
                 ErrorMessage = "WorkingCurriculum not found"
             };
         }
-        
+
         _context.WorkingCurricula.Remove(existingEntity);
         await _context.SaveChangesAsync(cancellationToken);
 
@@ -122,7 +122,20 @@ public class WorkingCurriculumService : IWorkingCurriculumService
     public async Task<ListResponseDto<WorkingCurriculumResponseDto>> GetByUserIdAsync(Guid userId, CancellationToken cancellationToken)
     {
         var entities = await _context.WorkingCurricula
-            .Where(x=>x.TeacherId == userId)
+            .Where(x => x.TeacherId == userId)
+            .ToListAsync(cancellationToken);
+
+        return new ListResponseDto<WorkingCurriculumResponseDto>()
+        {
+            Success = true,
+            Items = entities.Select(x => x.ToDto()).ToList(),
+            TotalCount = entities.Count
+        };
+    }
+    public async Task<ListResponseDto<WorkingCurriculumResponseDto>> GetByLessonIdAsync(Guid lessonId, CancellationToken cancellationToken)
+    {
+        var entities = await _context.WorkingCurricula
+            .Where(x => x.LessonId == lessonId)
             .ToListAsync(cancellationToken);
 
         return new ListResponseDto<WorkingCurriculumResponseDto>()

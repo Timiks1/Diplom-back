@@ -258,6 +258,9 @@ namespace UniversityACS.API.Migrations
                     b.Property<bool>("PhoneNumberConfirmed")
                         .HasColumnType("boolean");
 
+                    b.Property<byte[]>("Photo")
+                        .HasColumnType("bytea");
+
                     b.Property<string>("SecurityStamp")
                         .HasColumnType("text");
 
@@ -291,13 +294,13 @@ namespace UniversityACS.API.Migrations
                         {
                             Id = new Guid("4d82beb4-5e7b-48e6-b084-5bdc485bc1e7"),
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "67fd7772-c94d-4cb2-a977-992c096a6548",
+                            ConcurrencyStamp = "038086f0-c44c-4741-9d5a-16f71627c673",
                             Email = "admin@gmail.com",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
                             NormalizedEmail = "ADMIN@GMAIL.COM",
                             NormalizedUserName = "ADMIN",
-                            PasswordHash = "AQAAAAIAAYagAAAAEFWAQYzY2ng0FiqK+J0zgoabPBmKan36EgcdPDijOh8ovIMpdQYElOufv58PS3Vt7w==",
+                            PasswordHash = "AQAAAAIAAYagAAAAECF7/aAfj1hxFQjGYl5NXm2fsA5RJrM2302CZyoqbX7Mbcvcmj/nMKzMweJvHohfdA==",
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "",
                             TwoFactorEnabled = false,
@@ -971,6 +974,13 @@ namespace UniversityACS.API.Migrations
 
                     b.Property<byte[]>("File")
                         .HasColumnType("bytea");
+
+                    b.Property<string>("FileFormat")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<Guid>("LessonId")
+                        .HasColumnType("uuid");
 
                     b.Property<string>("Name")
                         .HasColumnType("text");

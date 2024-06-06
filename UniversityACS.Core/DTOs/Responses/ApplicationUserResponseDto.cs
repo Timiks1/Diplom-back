@@ -14,4 +14,6 @@ public class ApplicationUserResponseDto
     public string? GroupName { get; set; }
     public Guid? DepartmentId { get; set; }
     public Guid? GroupId { get; set; }
+    public byte[]? Photo { get; set; }
+
 }

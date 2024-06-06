@@ -1,4 +1,5 @@
-﻿using UniversityACS.Core.DTOs.Requests;
+﻿using DocumentFormat.OpenXml.Vml.Office;
+using UniversityACS.Core.DTOs.Requests;
 using UniversityACS.Core.DTOs.Responses;
 using UniversityACS.Core.Entities;
 
@@ -18,7 +19,9 @@ public static class ApplicationUserMappings
             DepartmentId = dto.DepartmentId,
             PhoneNumber = dto.PhoneNumber,
             ConcurrencyStamp = Guid.NewGuid().ToString(),
-            SecurityStamp = Guid.NewGuid().ToString()
+            SecurityStamp = Guid.NewGuid().ToString(),
+            Photo = dto.Photo
+
         };
     }
 
@@ -31,6 +34,7 @@ public static class ApplicationUserMappings
         user.LastName = dto.LastName;
         user.DepartmentId = dto.DepartmentId;
         user.PhoneNumber = dto.PhoneNumber;
+        user.Photo = dto.Photo;
     }
 
     public static ApplicationUserResponseDto ToDto(this ApplicationUser user)
@@ -46,6 +50,7 @@ public static class ApplicationUserMappings
             DepartmentId = user.DepartmentId,
             PhoneNumber = user.PhoneNumber,
             DepartmentName = user.Department?.Name,
+            Photo = user.Photo
 
         };
     }
