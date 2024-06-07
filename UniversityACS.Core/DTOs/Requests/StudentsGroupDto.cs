@@ -6,4 +6,6 @@ public class StudentsGroupDto
     public string Name { get; set; } = string.Empty;
     public string? Description { get; set; }
     public List<Guid>? StudentsIds { get; set; }
+
+    public List<Guid>? DisciplinesIds { get; set; }
 }

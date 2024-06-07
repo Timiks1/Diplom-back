@@ -172,8 +172,11 @@ public class ScheduleService : IScheduleService
                     Time = worksheet.Cells[row, 4].GetValue<TimeSpan>(),
                     Description = worksheet.Cells[row, 5].GetValue<string>(),
                     TeacherId = currentTeacherId,
-                    GroupName = worksheet.Cells[row, 7].GetValue<string>()  // Новое поле
-
+                    GroupName = worksheet.Cells[row, 7].GetValue<string>(),  // Новое поле
+                    LessonId = Guid.TryParse(worksheet.Cells[row, 8].GetValue<string>(), out Guid lessonId) ? lessonId : Guid.Empty,
+                    StudentGroupId = Guid.TryParse(worksheet.Cells[row, 9].GetValue<string>(), out Guid StudentGroupId) ? StudentGroupId : Guid.Empty, // Преобразование LessonId
+                    DisciplineId = Guid.TryParse(worksheet.Cells[row, 10].GetValue<string>(), out Guid DisciplineId) ? DisciplineId : Guid.Empty // Преобразование LessonId
+                                                                                                                                                 // Преобразование LessonId
                 };
                 schedules.Add(dto);
             }
@@ -215,7 +218,11 @@ public class ScheduleService : IScheduleService
                     Time = worksheet.Cells[row, 4].GetValue<TimeSpan>(),
                     Description = worksheet.Cells[row, 5].GetValue<string>(),
                     TeacherId = currentTeacherId,
-                    GroupName = worksheet.Cells[row, 7].GetValue<string>()  // Новое поле
+                    GroupName = worksheet.Cells[row, 7].GetValue<string>(),  // Новое поле
+                    LessonId = Guid.TryParse(worksheet.Cells[row, 8].GetValue<string>(), out Guid lessonId) ? lessonId : Guid.Empty, // Преобразование LessonId
+                    StudentGroupId = Guid.TryParse(worksheet.Cells[row, 9].GetValue<string>(), out Guid StudentGroupId) ? StudentGroupId : Guid.Empty, // Преобразование LessonId
+                    DisciplineId = Guid.TryParse(worksheet.Cells[row, 10].GetValue<string>(), out Guid DisciplineId) ? DisciplineId : Guid.Empty // Преобразование LessonId
+
                 };
                 schedules.Add(dto);
             }
@@ -223,5 +230,27 @@ public class ScheduleService : IScheduleService
 
         return schedules;
     }
+    public async Task<ResponseDto> UpdateScheduleFileAsync(string fileName, byte[] updatedFile, CancellationToken cancellationToken)
+    {
+        var schedule = await _context.Schedules
+            .FirstOrDefaultAsync(x => x.Name == fileName, cancellationToken);
+
+        if (schedule == null)
+        {
+            return new ResponseDto()
+            {
+                Success = false,
+                ErrorMessage = "Schedule not found"
+            };
+        }
+
+        schedule.File = updatedFile;
+
+        _context.Schedules.Update(schedule);
+        await _context.SaveChangesAsync(cancellationToken);
+
+        return new ResponseDto() { Success = true };
+    }
+
 }
 

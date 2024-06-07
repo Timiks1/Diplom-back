@@ -18,4 +18,10 @@ public class ApplicationUser : IdentityUser<Guid>
 
     public Guid? GroupId { get; set; }
     public StudentsGroup? StudentsGroup { get; set; }
+
+    public byte[]? Photo { get; set; }
+    public string? UnHiddenPassword { get; set; }
+    public int? Age { get; set; }
+    public string? Course { get; set; }
+    public string? EducationTime { get; set; }
 }

@@ -78,4 +78,26 @@ public class HomeWorksController : ControllerBase
         if (response.Success) return Ok(response);
         return BadRequest(response);
     }
+    [HttpGet(ApiEndpoints.HomeWorks.GetByStudentId)]
+    public async Task<ActionResult<ListResponseDto<HomeWorkResponseDto>>> GetByStudentIdAsync(Guid studentId, CancellationToken cancellationToken)
+    {
+        var response = await _homeWorkService.GetByStudentIdAsync(studentId, cancellationToken);
+        if (response.Success) return Ok(response);
+        return BadRequest(response);
+    }
+    [HttpPut("update-by-lesson-name")]
+    public async Task<ActionResult<ResponseDto>> UpdateByLessonNameAsync([FromQuery] string lessonName, [FromForm] string description, [FromForm] IFormFile file, CancellationToken cancellationToken)
+    {
+        var response = await _homeWorkService.UpdateByLessonNameAsync(lessonName, description, file, cancellationToken);
+        if (response.Success) return Ok(response);
+        return BadRequest(response);
+    }
+    [HttpPut(ApiEndpoints.HomeWorks.AddComment)]
+    public async Task<ActionResult<ResponseDto>> AddCommentAsync(Guid id, string comment, CancellationToken cancellationToken)
+    {
+        var response = await _homeWorkService.AddCommentAsync(id, comment, cancellationToken);
+        if (response.Success) return Ok(response);
+        return BadRequest(response);
+    }
+
 }

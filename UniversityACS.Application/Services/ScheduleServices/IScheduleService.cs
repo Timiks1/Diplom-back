@@ -17,5 +17,5 @@ public interface IScheduleService
     Task<byte[]> GetFileByNameAsync(string fileName, CancellationToken cancellationToken);
     Task<List<ScheduleDto>> GetSchedulesByTeacherAsync(string fileName, Guid teacherId, CancellationToken cancellationToken);
     Task<List<ScheduleDto>> GetSchedulesByTeacherAndDayAsync(string fileName, Guid teacherId, DateTime day, CancellationToken cancellationToken);
-
+    Task<ResponseDto> UpdateScheduleFileAsync(string fileName, byte[] updatedFile, CancellationToken cancellationToken);
 }

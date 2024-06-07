@@ -1,4 +1,5 @@
 ﻿using UniversityACS.Core.DTOs.Requests;
+using UniversityACS.Core.DTOs.Responses;
 using UniversityACS.Core.Entities;
 
 namespace UniversityACS.Application.Mappings;
@@ -36,4 +37,5 @@ public static class DisciplineMappings
             FieldOfStudy = discipline.FieldOfStudy
         };
     }
+
 }

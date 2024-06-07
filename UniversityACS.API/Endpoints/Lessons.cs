@@ -11,5 +11,7 @@ public static partial class ApiEndpoints
         public const string Update = $"{Base}/{{id:guid}}";
         public const string GetById = $"{Base}/{{id:guid}}";
         public const string GetAll = Base;
+        public const string GetBySubjectName = "get-by-subject-name";
+
     }
 }

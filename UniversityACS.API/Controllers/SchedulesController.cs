@@ -139,6 +139,10 @@ public class SchedulesController : ControllerBase
             worksheet.Cells[1, 5].Value = "Описание";
             worksheet.Cells[1, 6].Value = "TeacherId"; // Новый заголовок
             worksheet.Cells[1, 6].Value = "GroupName";
+            worksheet.Cells[1, 8].Value = "LessonId"; // Новый заголовок
+            worksheet.Cells[1, 9].Value = "StudentGroupId"; // Новый заголовок
+            worksheet.Cells[1, 10].Value = "DiciplineId"; // Новый заголовок
+
             // Заполнение данных
             for (int i = 0; i < scheduleDtos.Count; i++)
             {
@@ -150,6 +154,9 @@ public class SchedulesController : ControllerBase
                 worksheet.Cells[i + 2, 5].Value = dto.Description;
                 worksheet.Cells[i + 2, 6].Value = dto.TeacherId; // Заполнение TeacherId
                 worksheet.Cells[i + 2, 7].Value = dto.GroupName; // Заполнение TeacherId
+                worksheet.Cells[i + 2, 8].Value = dto.LessonId; // Заполнение LessonId
+                worksheet.Cells[i + 2, 9].Value = dto.StudentGroupId; // Заполнение LessonId
+                worksheet.Cells[i + 2, 10].Value = dto.DisciplineId; // Заполнение LessonId
 
             }
 
@@ -196,6 +203,47 @@ public class SchedulesController : ControllerBase
         }
 
         return Ok(schedules);
+    }
+    [HttpPost("add-lesson")]
+    public async Task<IActionResult> AddLessonToScheduleAsync([FromQuery] string fileName, [FromBody] ScheduleDto lessonDto, CancellationToken cancellationToken)
+    {
+        var file = await _scheduleService.GetFileByNameAsync(fileName, cancellationToken);
+        if (file == null)
+        {
+            return NotFound("Schedule file not found.");
+        }
+
+        // Установка контекста лицензии
+        ExcelPackage.LicenseContext = OfficeOpenXml.LicenseContext.NonCommercial;
+
+        using (var memoryStream = new MemoryStream(file))
+        using (var package = new ExcelPackage(memoryStream))
+        {
+            var worksheet = package.Workbook.Worksheets[0]; // Предполагается, что данные на первом листе
+            var newRow = worksheet.Dimension.End.Row + 1;
+
+            worksheet.Cells[newRow, 1].Value = lessonDto.Date;
+            worksheet.Cells[newRow, 2].Value = lessonDto.Lesson;
+            worksheet.Cells[newRow, 3].Value = lessonDto.Teacher;
+            worksheet.Cells[newRow, 4].Value = lessonDto.Time;
+            worksheet.Cells[newRow, 5].Value = lessonDto.Description;
+            worksheet.Cells[newRow, 6].Value = lessonDto.TeacherId.ToString(); // Заполнение TeacherId
+            worksheet.Cells[newRow, 7].Value = lessonDto.GroupName; // Заполнение GroupName
+            worksheet.Cells[newRow, 8].Value = lessonDto.LessonId.ToString(); // Заполнение LessonId
+            worksheet.Cells[newRow, 9].Value = lessonDto.StudentGroupId.ToString(); // Заполнение StudentGroupId
+            worksheet.Cells[newRow, 10].Value = lessonDto.DisciplineId.ToString(); // Заполнение DisciplineId
+
+            var updatedFile = package.GetAsByteArray();
+
+            // Обновление файла в базе данных
+            var response = await _scheduleService.UpdateScheduleFileAsync(fileName, updatedFile, cancellationToken);
+            if (!response.Success)
+            {
+                return BadRequest(response.ErrorMessage);
+            }
+
+            return Ok("Lesson added successfully.");
+        }
     }
 
 }

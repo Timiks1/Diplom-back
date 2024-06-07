@@ -12,14 +12,25 @@ public static class WorkingCurriculumMappings
         {
             Id = dto.Id,
             TeacherId = dto.TeacherId,
-            Name = dto.Name
+            Name = dto.Name,
+            LessonId = dto.LessonId, // новое поле
+            FileFormat = dto.FileFormat // новое поле
         };
     }
 
     public static void UpdateEntity(this WorkingCurriculum entity, WorkingCurriculumDto dto)
     {
-        entity.TeacherId = dto.TeacherId;
-        entity.Name = dto.Name;
+        entity.LessonId = dto.LessonId; // обновление нового поля
+        entity.FileFormat = dto.FileFormat; // обновление нового поля
+        if (dto.File != null)
+        {
+            using (var memoryStream = new MemoryStream())
+            {
+                dto.File.CopyTo(memoryStream);
+                entity.File = memoryStream.ToArray();
+            }
+        }
+
     }
 
     public static WorkingCurriculumResponseDto ToDto(this WorkingCurriculum entity)
@@ -30,7 +41,10 @@ public static class WorkingCurriculumMappings
             TeacherId = entity.TeacherId,
             TeacherUserName = entity.Teacher?.UserName,
             Name = entity.Name,
-            File = entity.File
+            File = entity.File,
+            LessonId = entity.LessonId, // новое поле
+            FileFormat = entity.FileFormat // новое поле
+
         };
     }
 }

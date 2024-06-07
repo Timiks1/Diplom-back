@@ -16,5 +16,9 @@ namespace UniversityACS.Core.DTOs.Requests
         public TimeSpan Time { get; set; }
         public string Description { get; set; }
         public string GroupName { get; set; }  // Новое свойство
+        public Guid LessonId { get; set; } // Новое свойство
+        public Guid StudentGroupId { get; set; } // Новое свойство
+        public Guid DisciplineId { get; set; } // Новое свойство
+
     }
 }

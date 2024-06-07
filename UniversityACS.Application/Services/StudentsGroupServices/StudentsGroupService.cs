@@ -36,6 +36,20 @@ public class StudentsGroupService : IStudentsGroupService
             }
         }
 
+        if (dto.DisciplinesIds != null)
+        {
+            entity.Disciplines = new List<Discipline>();
+            foreach (var disciplineId in dto.DisciplinesIds)
+            {
+                var discipline = await _context.Disciplines
+                    .FirstOrDefaultAsync(x => x.Id == disciplineId, cancellationToken);
+                if (discipline != null)
+                {
+                    entity.Disciplines.Add(discipline);
+                }
+            }
+        }
+
         await _context.StudentsGroups.AddAsync(entity, cancellationToken);
         await _context.SaveChangesAsync(cancellationToken);
 
@@ -132,10 +146,12 @@ public class StudentsGroupService : IStudentsGroupService
             Success = true
         };
     }
-
     public async Task<ListResponseDto<StudentsGroupResponseDto>> GetAllAsync(CancellationToken cancellationToken)
     {
-        var entities = await _context.StudentsGroups.ToListAsync(cancellationToken);
+        var entities = await _context.StudentsGroups
+           .Include(g => g.Students)
+           .Include(g => g.Disciplines)
+           .ToListAsync(cancellationToken);
 
         return new ListResponseDto<StudentsGroupResponseDto>()
         {

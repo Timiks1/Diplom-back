@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.EntityFrameworkCore;
 using UniversityACS.Application.Mappings;
 using UniversityACS.Core.DTOs;
 using UniversityACS.Core.DTOs.Requests;
@@ -166,6 +167,27 @@ public class HomeWorkService : IHomeWorkService
 
         return new ResponseDto() { Success = true };
     }
+    public async Task<ResponseDto> AddCommentAsync(Guid id, string comment, CancellationToken cancellationToken)
+    {
+        var entity = await _context.HomeWorks
+            .FirstOrDefaultAsync(x => x.Id == id, cancellationToken);
+
+        if (entity == null)
+        {
+            return new ResponseDto()
+            {
+                Success = false,
+                ErrorMessage = $"{nameof(HomeWork)} not found"
+            };
+        }
+
+        entity.Comment = comment; // Assuming there is a Comment property in HomeWork entity
+
+        _context.HomeWorks.Update(entity);
+        await _context.SaveChangesAsync(cancellationToken);
+
+        return new ResponseDto() { Success = true };
+    }
 
     public async Task<ListResponseDto<HomeWorkResponseDto>> GetByStudentIdDisciplineIdAsync(Guid studentId, Guid disciplineId, CancellationToken cancellationToken)
     {
@@ -179,5 +201,41 @@ public class HomeWorkService : IHomeWorkService
             TotalCount = entities.Count,
             Success = true
         };
+    }
+    public async Task<ListResponseDto<HomeWorkResponseDto>> GetByStudentIdAsync(Guid studentId, CancellationToken cancellationToken)
+    {
+        var entities = await _context.HomeWorks
+            .Where(x => x.StudentId == studentId)
+            .ToListAsync(cancellationToken);
+
+        return new ListResponseDto<HomeWorkResponseDto>()
+        {
+            Items = entities.Select(x => x.ToDto()).ToList(),
+            TotalCount = entities.Count,
+            Success = true
+        };
+    }
+    public async Task<ResponseDto> UpdateByLessonNameAsync(string lessonName, string description, IFormFile file, CancellationToken cancellationToken)
+    {
+        var entities = await _context.HomeWorks
+            .Where(x => x.Name == lessonName)
+            .ToListAsync(cancellationToken);
+
+        foreach (var entity in entities)
+        {
+            entity.Description = description;
+
+            if (file != null)
+            {
+                using var memoryStream = new MemoryStream();
+                await file.CopyToAsync(memoryStream, cancellationToken);
+                entity.File = memoryStream.ToArray();
+            }
+        }
+
+        _context.HomeWorks.UpdateRange(entities);
+        await _context.SaveChangesAsync(cancellationToken);
+
+        return new ResponseDto() { Success = true };
     }
 }
