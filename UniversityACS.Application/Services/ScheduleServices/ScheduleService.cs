@@ -230,5 +230,27 @@ public class ScheduleService : IScheduleService
 
         return schedules;
     }
+    public async Task<ResponseDto> UpdateScheduleFileAsync(string fileName, byte[] updatedFile, CancellationToken cancellationToken)
+    {
+        var schedule = await _context.Schedules
+            .FirstOrDefaultAsync(x => x.Name == fileName, cancellationToken);
+
+        if (schedule == null)
+        {
+            return new ResponseDto()
+            {
+                Success = false,
+                ErrorMessage = "Schedule not found"
+            };
+        }
+
+        schedule.File = updatedFile;
+
+        _context.Schedules.Update(schedule);
+        await _context.SaveChangesAsync(cancellationToken);
+
+        return new ResponseDto() { Success = true };
+    }
+
 }
 

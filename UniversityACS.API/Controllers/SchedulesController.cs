@@ -204,5 +204,46 @@ public class SchedulesController : ControllerBase
 
         return Ok(schedules);
     }
+    [HttpPost("add-lesson")]
+    public async Task<IActionResult> AddLessonToScheduleAsync([FromQuery] string fileName, [FromBody] ScheduleDto lessonDto, CancellationToken cancellationToken)
+    {
+        var file = await _scheduleService.GetFileByNameAsync(fileName, cancellationToken);
+        if (file == null)
+        {
+            return NotFound("Schedule file not found.");
+        }
+
+        // Установка контекста лицензии
+        ExcelPackage.LicenseContext = OfficeOpenXml.LicenseContext.NonCommercial;
+
+        using (var memoryStream = new MemoryStream(file))
+        using (var package = new ExcelPackage(memoryStream))
+        {
+            var worksheet = package.Workbook.Worksheets[0]; // Предполагается, что данные на первом листе
+            var newRow = worksheet.Dimension.End.Row + 1;
+
+            worksheet.Cells[newRow, 1].Value = lessonDto.Date;
+            worksheet.Cells[newRow, 2].Value = lessonDto.Lesson;
+            worksheet.Cells[newRow, 3].Value = lessonDto.Teacher;
+            worksheet.Cells[newRow, 4].Value = lessonDto.Time;
+            worksheet.Cells[newRow, 5].Value = lessonDto.Description;
+            worksheet.Cells[newRow, 6].Value = lessonDto.TeacherId.ToString(); // Заполнение TeacherId
+            worksheet.Cells[newRow, 7].Value = lessonDto.GroupName; // Заполнение GroupName
+            worksheet.Cells[newRow, 8].Value = lessonDto.LessonId.ToString(); // Заполнение LessonId
+            worksheet.Cells[newRow, 9].Value = lessonDto.StudentGroupId.ToString(); // Заполнение StudentGroupId
+            worksheet.Cells[newRow, 10].Value = lessonDto.DisciplineId.ToString(); // Заполнение DisciplineId
+
+            var updatedFile = package.GetAsByteArray();
+
+            // Обновление файла в базе данных
+            var response = await _scheduleService.UpdateScheduleFileAsync(fileName, updatedFile, cancellationToken);
+            if (!response.Success)
+            {
+                return BadRequest(response.ErrorMessage);
+            }
+
+            return Ok("Lesson added successfully.");
+        }
+    }
 
 }
