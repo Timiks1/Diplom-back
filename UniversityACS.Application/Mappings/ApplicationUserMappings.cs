@@ -20,7 +20,11 @@ public static class ApplicationUserMappings
             PhoneNumber = dto.PhoneNumber,
             ConcurrencyStamp = Guid.NewGuid().ToString(),
             SecurityStamp = Guid.NewGuid().ToString(),
-            Photo = dto.Photo
+            Photo = dto.Photo,
+            UnHiddenPassword = dto.UnHiddenPassword,
+            Age = dto.Age,
+            Course = dto.Course,
+            EducationTime = dto.EducationTime
 
         };
     }
@@ -35,6 +39,10 @@ public static class ApplicationUserMappings
         user.DepartmentId = dto.DepartmentId;
         user.PhoneNumber = dto.PhoneNumber;
         user.Photo = dto.Photo;
+        user.UnHiddenPassword = dto.UnHiddenPassword;
+        user.Age = dto.Age;
+        user.Course = dto.Course;
+        user.EducationTime = dto.EducationTime;
     }
 
     public static ApplicationUserResponseDto ToDto(this ApplicationUser user)
@@ -50,7 +58,12 @@ public static class ApplicationUserMappings
             DepartmentId = user.DepartmentId,
             PhoneNumber = user.PhoneNumber,
             DepartmentName = user.Department?.Name,
-            Photo = user.Photo
+            PhotoBase64 = user.Photo != null ? Convert.ToBase64String(user.Photo) : null,
+
+            UnHiddenPassword = user.UnHiddenPassword,
+            Age = user.Age,
+            Course = user.Course,
+            EducationTime = user.EducationTime
 
         };
     }

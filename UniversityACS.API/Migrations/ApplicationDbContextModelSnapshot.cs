@@ -209,8 +209,14 @@ namespace UniversityACS.API.Migrations
                     b.Property<string>("Address")
                         .HasColumnType("text");
 
+                    b.Property<int?>("Age")
+                        .HasColumnType("integer");
+
                     b.Property<string>("ConcurrencyStamp")
                         .IsConcurrencyToken()
+                        .HasColumnType("text");
+
+                    b.Property<string>("Course")
                         .HasColumnType("text");
 
                     b.Property<string>("DepartmentEmail")
@@ -218,6 +224,9 @@ namespace UniversityACS.API.Migrations
 
                     b.Property<Guid?>("DepartmentId")
                         .HasColumnType("uuid");
+
+                    b.Property<string>("EducationTime")
+                        .HasColumnType("text");
 
                     b.Property<string>("Email")
                         .HasMaxLength(256)
@@ -270,6 +279,9 @@ namespace UniversityACS.API.Migrations
                     b.Property<bool>("TwoFactorEnabled")
                         .HasColumnType("boolean");
 
+                    b.Property<string>("UnHiddenPassword")
+                        .HasColumnType("text");
+
                     b.Property<string>("UserName")
                         .HasMaxLength(256)
                         .HasColumnType("character varying(256)");
@@ -294,13 +306,13 @@ namespace UniversityACS.API.Migrations
                         {
                             Id = new Guid("4d82beb4-5e7b-48e6-b084-5bdc485bc1e7"),
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "038086f0-c44c-4741-9d5a-16f71627c673",
+                            ConcurrencyStamp = "87ce9dce-2ac6-4280-ba02-2c03eec6ca4c",
                             Email = "admin@gmail.com",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
                             NormalizedEmail = "ADMIN@GMAIL.COM",
                             NormalizedUserName = "ADMIN",
-                            PasswordHash = "AQAAAAIAAYagAAAAECF7/aAfj1hxFQjGYl5NXm2fsA5RJrM2302CZyoqbX7Mbcvcmj/nMKzMweJvHohfdA==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEFCol7O914L3MTHZaku5HlSBiPX+HxDwWFDLO0lhuDxAFIMZVO0eZ59oySZNf4HNsg==",
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "",
                             TwoFactorEnabled = false,
