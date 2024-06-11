@@ -13,6 +13,8 @@ public static partial class ApiEndpoints
         public const string GetByUserId = $"{Base}/{nameof(GetByUserId)}/{{userId:guid}}";
         public const string GetAll = Base;
         public const string CreateFromJson = $"{Base}/create-from-json";
+        public const string Generate = $"{Base}/generate";
+
 
     }
 }
