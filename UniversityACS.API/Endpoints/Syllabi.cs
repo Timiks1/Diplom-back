@@ -14,6 +14,7 @@ public static partial class ApiEndpoints
         public const string GetAll = Base;
         public const string CreateFromJson = $"{Base}/create-from-json";
         public const string Generate = $"{Base}/generate";
+        public const string UpdateWithData = $"{Base}/update-with-data/{{syllabusId:guid}}"; // Добавленный эндпоинт
 
 
     }

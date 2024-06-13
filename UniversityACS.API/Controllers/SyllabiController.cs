@@ -15,6 +15,7 @@ using System.Reflection.Metadata;
 using Aspose.Pdf.Operators;
 using iText.IO.Source;
 using DocumentFormat.OpenXml.Bibliography;
+using DocumentFormat.OpenXml.Packaging;
 
 namespace UniversityACS.API.Controllers;
 
@@ -208,6 +209,8 @@ public class SyllabiController : ControllerBase
                     SyllabusDto syllabusDto = new SyllabusDto();
                     syllabusDto.Name = discipline.Name.ToUpper();
                     syllabusDto.TeacherId = teacherId;
+                    syllabusDto.Id = Guid.NewGuid();
+
                     using (var memoryStream = new MemoryStream())
                     {
                         document.SaveAs(memoryStream);
@@ -225,7 +228,12 @@ public class SyllabiController : ControllerBase
                             return BadRequest(response);
                         }
                         memoryStream.Position = 0;
-                        return File(memoryStream.ToArray(), "application/vnd.openxmlformats-officedocument.wordprocessingml.document", $"{discipline.Name} (Силабус скорочений).docx");
+                        return Ok(new
+                        {
+                            file = memoryStream.ToArray(),
+                            fileName = $"{discipline.Name} - {syllabusDto.Id} (Силабус скорочений).docx",
+                            syllabusId = syllabusDto.Id
+                        });
                     }
 
                 }
@@ -238,4 +246,60 @@ public class SyllabiController : ControllerBase
         }
 
     }
+    [HttpPost(ApiEndpoints.Syllabi.UpdateWithData)]
+    public async Task<IActionResult> UpdateSyllabusWithData(Guid syllabusId, [FromBody] SyllabusDataDto syllabusDataDto, CancellationToken cancellationToken)
+    {
+        var syllabus = await _syllabusService.GetByIdAsync(syllabusId, cancellationToken);
+
+        if (syllabus == null)
+        {
+            return NotFound(new { ErrorMessage = "Syllabus not found.", StatusCode = 404 });
+        }
+
+        var filePath = Path.Combine(Directory.GetCurrentDirectory(), "Syllabi", $"{syllabusId}.docx");
+        if (!System.IO.File.Exists(filePath))
+        {
+            return NotFound(new { ErrorMessage = "Syllabus file not found.", StatusCode = 404 });
+        }
+
+        using (var document = WordprocessingDocument.Open(filePath, true))
+        {
+            var body = document.MainDocumentPart.Document.Body;
+            UpdateDocument(body, syllabusDataDto);
+            document.Save();
+        }
+
+        var updatedFileBytes = await System.IO.File.ReadAllBytesAsync(filePath, cancellationToken);
+        return Ok(new
+        {
+            file = updatedFileBytes,
+            syllabusId = syllabusId
+        });
+    }
+
+    private void UpdateDocument(Body body, SyllabusDataDto data)
+    {
+        ReplaceText(body, "{literature}", data.Literature);
+        ReplaceText(body, "{additionalInfo}", data.AdditionalInfo);
+        ReplaceText(body, "{teacherInfo}", data.TeacherInfo);
+        ReplaceText(body, "{prerequisites}", data.Prerequisites);
+        ReplaceText(body, "{corequisites}", data.Corequisites);
+        ReplaceText(body, "{disciplineGoal}", data.DisciplineGoal);
+        ReplaceText(body, "{disciplineContent}", data.DisciplineContent);
+        ReplaceText(body, "{individualTasks}", data.IndividualTasks);
+        ReplaceText(body, "{software}", data.Software);
+        ReplaceText(body, "{studyResults}", data.StudyResults);
+    }
+
+    private void ReplaceText(Body body, string placeholder, string text)
+    {
+        foreach (var textElement in body.Descendants<Text>())
+        {
+            if (textElement.Text.Contains(placeholder))
+            {
+                textElement.Text = textElement.Text.Replace(placeholder, text);
+            }
+        }
+    }
 }
+
