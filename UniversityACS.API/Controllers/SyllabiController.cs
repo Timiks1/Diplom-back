@@ -16,6 +16,7 @@ using Aspose.Pdf.Operators;
 using iText.IO.Source;
 using DocumentFormat.OpenXml.Bibliography;
 using DocumentFormat.OpenXml.Packaging;
+using Run = DocumentFormat.OpenXml.Wordprocessing.Run;
 
 namespace UniversityACS.API.Controllers;
 
@@ -249,34 +250,63 @@ public class SyllabiController : ControllerBase
     [HttpPost(ApiEndpoints.Syllabi.UpdateWithData)]
     public async Task<IActionResult> UpdateSyllabusWithData(Guid syllabusId, [FromBody] SyllabusDataDto syllabusDataDto, CancellationToken cancellationToken)
     {
-        var syllabus = await _syllabusService.GetByIdAsync(syllabusId, cancellationToken);
+        var syllabusResponse = await _syllabusService.GetByIdAsync(syllabusId, cancellationToken);
 
-        if (syllabus == null)
+        if (syllabusResponse == null || !syllabusResponse.Success)
         {
             return NotFound(new { ErrorMessage = "Syllabus not found.", StatusCode = 404 });
         }
 
-        var filePath = Path.Combine(Directory.GetCurrentDirectory(), "Syllabi", $"{syllabusId}.docx");
-        if (!System.IO.File.Exists(filePath))
+        var syllabus = syllabusResponse.Item;
+
+        if (syllabus.File == null || syllabus.File.Length == 0)
         {
             return NotFound(new { ErrorMessage = "Syllabus file not found.", StatusCode = 404 });
         }
 
-        using (var document = WordprocessingDocument.Open(filePath, true))
+        try
         {
-            var body = document.MainDocumentPart.Document.Body;
-            UpdateDocument(body, syllabusDataDto);
-            document.Save();
+            using (var memoryStream = new MemoryStream())
+            {
+                memoryStream.Write(syllabus.File, 0, syllabus.File.Length);
+                memoryStream.Position = 0;
+
+                using (var document = WordprocessingDocument.Open(memoryStream, true))
+                {
+                    var body = document.MainDocumentPart.Document.Body;
+                    UpdateDocument(body, syllabusDataDto);
+                    document.MainDocumentPart.Document.Save();
+                }
+
+                var updatedFileBytes = memoryStream.ToArray();
+
+                var updatedSyllabusDto = new SyllabusDto
+                {
+                    Id = syllabusId,
+                    Name = syllabus.Name,
+                    TeacherId = syllabus.TeacherId,
+                    File = new FormFile(new MemoryStream(updatedFileBytes), 0, updatedFileBytes.Length, "file", $"{syllabusId}.docx")
+                };
+
+                var updateResponse = await _syllabusService.UpdateAsync(syllabusId, updatedSyllabusDto, cancellationToken);
+
+                if (!updateResponse.Success)
+                {
+                    return BadRequest(updateResponse);
+                }
+
+                return Ok(new
+                {
+                    file = updatedFileBytes,
+                    syllabusId = syllabusId
+                });
+            }
         }
-
-        var updatedFileBytes = await System.IO.File.ReadAllBytesAsync(filePath, cancellationToken);
-        return Ok(new
+        catch (Exception ex)
         {
-            file = updatedFileBytes,
-            syllabusId = syllabusId
-        });
+            return StatusCode(500, new { ErrorMessage = "An unexpected error occurred.", StatusCode = 500, Element = ex.Message });
+        }
     }
-
     private void UpdateDocument(Body body, SyllabusDataDto data)
     {
         ReplaceText(body, "{literature}", data.Literature);
@@ -293,13 +323,48 @@ public class SyllabiController : ControllerBase
 
     private void ReplaceText(Body body, string placeholder, string text)
     {
-        foreach (var textElement in body.Descendants<Text>())
+        var paragraphs = body.Descendants<DocumentFormat.OpenXml.Wordprocessing.Paragraph>().ToList();
+
+        foreach (var paragraph in paragraphs)
         {
-            if (textElement.Text.Contains(placeholder))
+            var runs = paragraph.Descendants<Run>().ToList();
+            string paragraphText = string.Join("", runs.SelectMany(run => run.Elements<Text>()).Select(t => t.Text));
+
+            if (paragraphText.Contains(placeholder))
             {
-                textElement.Text = textElement.Text.Replace(placeholder, text);
+                paragraphText = paragraphText.Replace(placeholder, text);
+
+                // Удаление всех Run элементов и создание нового с обновленным текстом
+                paragraph.RemoveAllChildren<Run>();
+
+                var newRun = new Run();
+                newRun.AppendChild(new Text(paragraphText));
+                paragraph.AppendChild(newRun);
             }
         }
     }
+
+
+
+    [HttpGet("download/{syllabusId}")]
+    public async Task<IActionResult> DownloadSyllabusFile(Guid syllabusId, CancellationToken cancellationToken)
+    {
+        var syllabusResponse = await _syllabusService.GetByIdAsync(syllabusId, cancellationToken);
+
+        if (syllabusResponse == null || !syllabusResponse.Success)
+        {
+            return NotFound(new { ErrorMessage = "Syllabus not found.", StatusCode = 404 });
+        }
+
+        var syllabus = syllabusResponse.Item;
+
+        if (syllabus.File == null || syllabus.File.Length == 0)
+        {
+            return NotFound(new { ErrorMessage = "Syllabus file not found.", StatusCode = 404 });
+        }
+
+        return File(syllabus.File, "application/vnd.openxmlformats-officedocument.wordprocessingml.document", $"{syllabus.Name}.docx");
+    }
+
 }
 

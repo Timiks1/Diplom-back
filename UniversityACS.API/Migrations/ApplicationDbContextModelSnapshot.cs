@@ -23,6 +23,21 @@ namespace UniversityACS.API.Migrations
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
 
+            modelBuilder.Entity("DisciplineStudentsGroup", b =>
+                {
+                    b.Property<Guid>("DisciplinesId")
+                        .HasColumnType("uuid");
+
+                    b.Property<Guid>("StudentsGroupId")
+                        .HasColumnType("uuid");
+
+                    b.HasKey("DisciplinesId", "StudentsGroupId");
+
+                    b.HasIndex("StudentsGroupId");
+
+                    b.ToTable("DisciplineStudentsGroup");
+                });
+
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<System.Guid>", b =>
                 {
                     b.Property<int>("Id")
@@ -291,13 +306,13 @@ namespace UniversityACS.API.Migrations
                         {
                             Id = new Guid("4d82beb4-5e7b-48e6-b084-5bdc485bc1e7"),
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "2c32fbf4-f4f6-4c1e-8b0c-df5b76fb5792",
+                            ConcurrencyStamp = "44c64478-0005-4325-ae41-dda2e0755d63",
                             Email = "admin@gmail.com",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
                             NormalizedEmail = "ADMIN@GMAIL.COM",
                             NormalizedUserName = "ADMIN",
-                            PasswordHash = "AQAAAAIAAYagAAAAEOeuBVVLtIZHT1yHBA4T3x4QyGi2O8jfwicK/HX+GOm2pRrDgaXMytCgyX39OShSLA==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEPhXLHjpX+VoFJ9NkUVEt9fO+lSj4Hx6XVIbXpg4ss9dm0h/J8PkEftpxZ2mHdh/yQ==",
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "",
                             TwoFactorEnabled = false,
@@ -479,15 +494,10 @@ namespace UniversityACS.API.Migrations
                     b.Property<int?>("PracticHours")
                         .HasColumnType("integer");
 
-                    b.Property<Guid?>("StudentsGroupId")
-                        .HasColumnType("uuid");
-
                     b.Property<string>("Tests")
                         .HasColumnType("text");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("StudentsGroupId");
 
                     b.ToTable("Disciplines");
                 });
@@ -1021,6 +1031,21 @@ namespace UniversityACS.API.Migrations
                     b.ToTable("WorkingCurricula");
                 });
 
+            modelBuilder.Entity("DisciplineStudentsGroup", b =>
+                {
+                    b.HasOne("UniversityACS.Core.Entities.Discipline", null)
+                        .WithMany()
+                        .HasForeignKey("DisciplinesId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("UniversityACS.Core.Entities.StudentsGroup", null)
+                        .WithMany()
+                        .HasForeignKey("StudentsGroupId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<System.Guid>", b =>
                 {
                     b.HasOne("UniversityACS.Core.Entities.ApplicationRole", null)
@@ -1130,13 +1155,6 @@ namespace UniversityACS.API.Migrations
                         .HasForeignKey("TeacherId");
 
                     b.Navigation("Teacher");
-                });
-
-            modelBuilder.Entity("UniversityACS.Core.Entities.Discipline", b =>
-                {
-                    b.HasOne("UniversityACS.Core.Entities.StudentsGroup", null)
-                        .WithMany("Disciplines")
-                        .HasForeignKey("StudentsGroupId");
                 });
 
             modelBuilder.Entity("UniversityACS.Core.Entities.ExchangeVisitsPlan", b =>
@@ -1335,8 +1353,6 @@ namespace UniversityACS.API.Migrations
 
             modelBuilder.Entity("UniversityACS.Core.Entities.StudentsGroup", b =>
                 {
-                    b.Navigation("Disciplines");
-
                     b.Navigation("Students");
                 });
 #pragma warning restore 612, 618

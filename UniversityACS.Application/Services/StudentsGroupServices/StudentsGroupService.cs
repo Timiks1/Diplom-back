@@ -63,15 +63,16 @@ public class StudentsGroupService : IStudentsGroupService
         return responseDto;
     }
 
-    public async Task<UpdateResponseDto<StudentsGroupResponseDto>> UpdateAsync(Guid id, StudentsGroupDto dto,
-        CancellationToken cancellationToken)
+    public async Task<UpdateResponseDto<StudentsGroupResponseDto>> UpdateAsync(Guid id, StudentsGroupDto dto, CancellationToken cancellationToken)
     {
         var entity = await _context.StudentsGroups
+            .Include(x => x.Students)
+            .Include(x => x.Disciplines)
             .FirstOrDefaultAsync(x => x.Id == id, cancellationToken);
 
         if (entity == null)
         {
-            return new UpdateResponseDto<StudentsGroupResponseDto>()
+            return new UpdateResponseDto<StudentsGroupResponseDto>
             {
                 Success = false,
                 ErrorMessage = $"{nameof(StudentsGroup)} not found"
@@ -82,14 +83,40 @@ public class StudentsGroupService : IStudentsGroupService
 
         if (dto.StudentsIds != null)
         {
-            entity.Students = new List<ApplicationUser>();
+            // Удаление студентов, которых больше нет в новом списке
+            entity.Students.RemoveAll(student => !dto.StudentsIds.Contains(student.Id));
+
+            // Добавление новых студентов
             foreach (var studentId in dto.StudentsIds)
             {
-                var student = await _context.ApplicationUsers
-                    .FirstOrDefaultAsync(x => x.Id == studentId, cancellationToken);
-                if (student != null)
+                if (entity.Students.All(s => s.Id != studentId))
                 {
-                    entity.Students.Add(student);
+                    var student = await _context.ApplicationUsers
+                        .FirstOrDefaultAsync(x => x.Id == studentId, cancellationToken);
+                    if (student != null)
+                    {
+                        entity.Students.Add(student);
+                    }
+                }
+            }
+        }
+
+        if (dto.DisciplinesIds != null)
+        {
+            // Удаление дисциплин, которых больше нет в новом списке
+            entity.Disciplines.RemoveAll(discipline => !dto.DisciplinesIds.Contains(discipline.Id));
+
+            // Добавление новых дисциплин
+            foreach (var disciplineId in dto.DisciplinesIds)
+            {
+                if (entity.Disciplines.All(d => d.Id != disciplineId))
+                {
+                    var discipline = await _context.Disciplines
+                        .FirstOrDefaultAsync(x => x.Id == disciplineId, cancellationToken);
+                    if (discipline != null)
+                    {
+                        entity.Disciplines.Add(discipline);
+                    }
                 }
             }
         }
@@ -97,13 +124,14 @@ public class StudentsGroupService : IStudentsGroupService
         _context.StudentsGroups.Update(entity);
         await _context.SaveChangesAsync(cancellationToken);
 
-        return new UpdateResponseDto<StudentsGroupResponseDto>()
+        return new UpdateResponseDto<StudentsGroupResponseDto>
         {
             Success = true,
             Item = entity.ToDto(),
             Id = entity.Id
         };
     }
+
 
     public async Task<ResponseDto> DeleteAsync(Guid id, CancellationToken cancellationToken)
     {

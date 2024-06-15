@@ -19,5 +19,6 @@ public class Discipline
     public string? Exams { get; set; }
     public string? AuditoryTasks { get; set; }
     public List<string>? Courses { get; set; }
+    public List<StudentsGroup>? StudentsGroup { get; set; }
 
 }
