@@ -286,6 +286,129 @@ namespace UniversityACS.API.Migrations
                         .HasMaxLength(256)
                         .HasColumnType("character varying(256)");
 
+                    b.Property<string>("academic_certificate")
+                        .HasColumnType("text");
+
+                    b.Property<string>("academic_leave_reasons")
+                        .HasColumnType("text");
+
+                    b.Property<string>("birth_date")
+                        .HasColumnType("text");
+
+                    b.Property<string>("category_code")
+                        .HasColumnType("text");
+
+                    b.Property<string>("citizenship")
+                        .HasColumnType("text");
+
+                    b.Property<string>("document_number")
+                        .HasColumnType("text");
+
+                    b.Property<string>("document_series")
+                        .HasColumnType("text");
+
+                    b.Property<string>("dpo_type")
+                        .HasColumnType("text");
+
+                    b.Property<string>("education_document")
+                        .HasColumnType("text");
+
+                    b.Property<string>("education_level")
+                        .HasColumnType("text");
+
+                    b.Property<string>("educational_program")
+                        .HasColumnType("text");
+
+                    b.Property<string>("enrollment_info")
+                        .HasColumnType("text");
+
+                    b.Property<string>("enrollment_order")
+                        .HasColumnType("text");
+
+                    b.Property<string>("entry_basis")
+                        .HasColumnType("text");
+
+                    b.Property<string>("entry_score")
+                        .HasColumnType("text");
+
+                    b.Property<string>("expulsion_reason")
+                        .HasColumnType("text");
+
+                    b.Property<string>("fo_id")
+                        .HasColumnType("text");
+
+                    b.Property<string>("funding_source")
+                        .HasColumnType("text");
+
+                    b.Property<string>("gender")
+                        .HasColumnType("text");
+
+                    b.Property<string>("group")
+                        .HasColumnType("text");
+
+                    b.Property<string>("id_card")
+                        .HasColumnType("text");
+
+                    b.Property<string>("issue_date")
+                        .HasColumnType("text");
+
+                    b.Property<string>("issued_diploma")
+                        .HasColumnType("text");
+
+                    b.Property<string>("last_modified_time")
+                        .HasColumnType("text");
+
+                    b.Property<string>("name_in_english")
+                        .HasColumnType("text");
+
+                    b.Property<string>("op_id")
+                        .HasColumnType("text");
+
+                    b.Property<string>("previous_education_info")
+                        .HasColumnType("text");
+
+                    b.Property<string>("previous_specialty")
+                        .HasColumnType("text");
+
+                    b.Property<string>("shortened_study_period")
+                        .HasColumnType("text");
+
+                    b.Property<string>("specialization")
+                        .HasColumnType("text");
+
+                    b.Property<string>("specialty")
+                        .HasColumnType("text");
+
+                    b.Property<string>("status_since")
+                        .HasColumnType("text");
+
+                    b.Property<string>("student")
+                        .HasColumnType("text");
+
+                    b.Property<string>("student_card")
+                        .HasColumnType("text");
+
+                    b.Property<string>("study_end")
+                        .HasColumnType("text");
+
+                    b.Property<string>("study_form")
+                        .HasColumnType("text");
+
+                    b.Property<string>("study_start")
+                        .HasColumnType("text");
+
+                    b.Property<string>("study_status")
+                        .HasColumnType("text");
+
+                    b.Property<string>("tax_number")
+                        .HasColumnType("text");
+
+                    b.Property<string>("valid_until")
+                        .HasColumnType("text");
+
+                    b.Property<string>("withdrawal_certificate")
+                        .HasColumnType("text");
+
                     b.HasKey("Id");
 
                     b.HasIndex("DepartmentId");
@@ -306,13 +429,13 @@ namespace UniversityACS.API.Migrations
                         {
                             Id = new Guid("4d82beb4-5e7b-48e6-b084-5bdc485bc1e7"),
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "44c64478-0005-4325-ae41-dda2e0755d63",
+                            ConcurrencyStamp = "162adc90-7d81-4038-bc4a-6d39cad11dda",
                             Email = "admin@gmail.com",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
                             NormalizedEmail = "ADMIN@GMAIL.COM",
                             NormalizedUserName = "ADMIN",
-                            PasswordHash = "AQAAAAIAAYagAAAAEPhXLHjpX+VoFJ9NkUVEt9fO+lSj4Hx6XVIbXpg4ss9dm0h/J8PkEftpxZ2mHdh/yQ==",
+                            PasswordHash = "AQAAAAIAAYagAAAAECxiPQYtQMetXmfJ6CTmzKNzwohiPXp1ClpLv/4uil39+tsiUits4KmRDHHJW4zDtA==",
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "",
                             TwoFactorEnabled = false,
