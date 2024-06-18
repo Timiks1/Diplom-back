@@ -54,6 +54,7 @@ public class ApplicationDbContext : IdentityDbContext<ApplicationUser, Applicati
     public DbSet<Lesson> Lessons { get; set; }
 
     public DbSet<StudentExam> StudentExams { get; set; }
+    public DbSet<ChatMessage> Chat { get; set; }
 
     public DbSet<ExchangeVisitsPlanReviews> ExchangeVisitsPlanReviews { get; set; }
 }

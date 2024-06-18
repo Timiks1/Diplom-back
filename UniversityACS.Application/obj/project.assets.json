@@ -2120,11 +2120,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Tim\\Desktop\\diplom-back3\\universityasu\\UniversityACS.Application\\UniversityACS.Application.csproj",
+      "projectUniqueName": "C:\\Users\\Tim\\Desktop\\diplom-back3 — копия (2)\\universityasu\\UniversityACS.Application\\UniversityACS.Application.csproj",
       "projectName": "UniversityACS.Application",
-      "projectPath": "C:\\Users\\Tim\\Desktop\\diplom-back3\\universityasu\\UniversityACS.Application\\UniversityACS.Application.csproj",
+      "projectPath": "C:\\Users\\Tim\\Desktop\\diplom-back3 — копия (2)\\universityasu\\UniversityACS.Application\\UniversityACS.Application.csproj",
       "packagesPath": "C:\\Users\\Tim\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Tim\\Desktop\\diplom-back3\\universityasu\\UniversityACS.Application\\obj\\",
+      "outputPath": "C:\\Users\\Tim\\Desktop\\diplom-back3 — копия (2)\\universityasu\\UniversityACS.Application\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -2146,11 +2146,11 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\Tim\\Desktop\\diplom-back3\\universityasu\\UniversityACS.Core\\UniversityACS.Core.csproj": {
-              "projectPath": "C:\\Users\\Tim\\Desktop\\diplom-back3\\universityasu\\UniversityACS.Core\\UniversityACS.Core.csproj"
+            "C:\\Users\\Tim\\Desktop\\diplom-back3 — копия (2)\\universityasu\\UniversityACS.Core\\UniversityACS.Core.csproj": {
+              "projectPath": "C:\\Users\\Tim\\Desktop\\diplom-back3 — копия (2)\\universityasu\\UniversityACS.Core\\UniversityACS.Core.csproj"
             },
-            "C:\\Users\\Tim\\Desktop\\diplom-back3\\universityasu\\UniversityACS.Data\\UniversityACS.Data.csproj": {
-              "projectPath": "C:\\Users\\Tim\\Desktop\\diplom-back3\\universityasu\\UniversityACS.Data\\UniversityACS.Data.csproj"
+            "C:\\Users\\Tim\\Desktop\\diplom-back3 — копия (2)\\universityasu\\UniversityACS.Data\\UniversityACS.Data.csproj": {
+              "projectPath": "C:\\Users\\Tim\\Desktop\\diplom-back3 — копия (2)\\universityasu\\UniversityACS.Data\\UniversityACS.Data.csproj"
             }
           }
         }

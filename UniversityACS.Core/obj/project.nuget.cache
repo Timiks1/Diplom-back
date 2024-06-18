@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "jKr65GOFHucTNs9Qnk+ae3UqrI2KeqhKIyc/DOWy02p3g4gU2JvSHXCdP2lU40414TuqWeZWsvVTur7pl5qQHQ==",
+  "dgSpecHash": "wFD60TpB9GJxqPnOoquqiSYEIVF2ohd86YGfhjDbzOP1bQRzKgKxowwPTKBZzl2gkBEjzn+9Ub1nYo2omGODQQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Tim\\Desktop\\diplom-back3\\universityasu\\UniversityACS.Core\\UniversityACS.Core.csproj",
+  "projectFilePath": "C:\\Users\\Tim\\Desktop\\diplom-back3 — копия (2)\\universityasu\\UniversityACS.Core\\UniversityACS.Core.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Tim\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\8.0.4\\microsoft.aspnetcore.cryptography.internal.8.0.4.nupkg.sha512",
     "C:\\Users\\Tim\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\8.0.4\\microsoft.aspnetcore.cryptography.keyderivation.8.0.4.nupkg.sha512",

@@ -9,4 +9,6 @@ public class TeacherTest
     public string Status { get; set; }
     public string? TestTheme { get; set; }
     public string? TestUrl { get; set; }
+    public Guid? DisciplineId { get; set; }
+    public Discipline? Discipline { get; set; }
 }

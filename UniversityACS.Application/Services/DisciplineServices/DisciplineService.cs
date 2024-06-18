@@ -84,6 +84,23 @@ public class DisciplineService : IDisciplineService
 
         return new ResponseDto() { Success = true };
     }
+    public async Task<ResponseDto> ClearAsync(CancellationToken cancellationToken)
+    {
+        var teacherDisciplines = _context.TeacherDisciplines.ToList();
+        _context.TeacherDisciplines.RemoveRange(teacherDisciplines);
+
+        var syllabi = _context.Syllabi.ToList();
+        _context.Syllabi.RemoveRange(syllabi);
+
+        var teacherTest = _context.TeacherTests.ToList();
+        _context.TeacherTests.RemoveRange(teacherTest);
+
+        var disciplines = _context.Disciplines.ToList();
+        _context.Disciplines.RemoveRange(disciplines);
+        await _context.SaveChangesAsync(cancellationToken);
+
+        return new ResponseDto() { Success = true };
+    }
 
     public async Task<DetailsResponseDto<DisciplineDto>> GetByIdAsync(Guid id, CancellationToken cancellationToken)
     {

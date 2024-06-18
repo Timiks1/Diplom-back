@@ -1,6 +1,8 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using UniversityACS.Application.Services.ApplicationUserServices;
 using UniversityACS.Application.Services.ExchangeVisitsPlanReviewServices;
+using UniversityACS.Core.DTOs;
 using UniversityACS.Core.DTOs.Requests;
 
 namespace UniversityACS.API.Controllers
@@ -10,17 +12,32 @@ namespace UniversityACS.API.Controllers
     public class ExchangeVisitsPlanReviewController : ControllerBase
     {
         private readonly IExchangeVisitsPlanReviewService _service;
+        private readonly IApplicationUserService _applicationUserService;
+        private readonly string templatePath = Path.Combine(Directory.GetCurrentDirectory(), "Templates", "ExchangeVisitPlansReview.docx");
 
-        public ExchangeVisitsPlanReviewController(IExchangeVisitsPlanReviewService service)
+        public ExchangeVisitsPlanReviewController(IExchangeVisitsPlanReviewService service, IApplicationUserService applicationUserService)
         {
             _service = service;
+            _applicationUserService = applicationUserService;
         }
 
+
+
         [HttpPost]
-        public async Task<IActionResult> Create([FromForm] ExchangeVisitsPlanReviewDto dto, CancellationToken cancellationToken)
+        public async Task<ActionResult<CreateResponseDto<ExchangeVisitsPlanDto>>> CreateAsync(Guid teacherId, CancellationToken cancellationToken)
         {
-            var result = await _service.CreateAsync(dto, cancellationToken);
-            return CreatedAtAction(nameof(GetById), new { id = result.Id }, result);
+
+            ExchangeVisitsPlanReviewDto dto = new ExchangeVisitsPlanReviewDto();
+            var user = await _applicationUserService.GetByIdAsync(teacherId, cancellationToken);
+            dto.TeacherId = teacherId;
+            dto.Name = $"Відгук {user.Item.LastName}.docx";
+            byte[] fileBytes = System.IO.File.ReadAllBytes(templatePath);
+            MemoryStream memoryStream = new MemoryStream(fileBytes);
+            dto.File = new FormFile(memoryStream, 0, memoryStream.Length, Path.GetFileName(templatePath), Path.GetFileName(templatePath));
+            await _service.CreateAsync(dto, cancellationToken);
+
+            memoryStream.Position = 0;
+            return File(memoryStream.ToArray(), "application/vnd.openxmlformats-officedocument.wordprocessingml.document", $"Відгук {user.Item.LastName}.docx");
         }
 
         [HttpPut("{id}")]

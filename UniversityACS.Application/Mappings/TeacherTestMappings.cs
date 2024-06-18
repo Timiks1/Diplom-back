@@ -13,7 +13,9 @@ public static class TeacherTestMappings
             TeacherId = dto.TeacherId,
             Status = dto.Status, // Добавляем маппинг статуса
             TestTheme = dto.TestTheme,
-            TestUrl = dto.TestUrl
+            TestUrl = dto.TestUrl,
+            DisciplineId = dto.DisciplineId
+
         };
     }
 
@@ -23,6 +25,8 @@ public static class TeacherTestMappings
         entity.Status = dto.Status; // Обновляем статус
         entity.TestTheme = dto.TestTheme;
         entity.TestUrl = dto.TestUrl;
+        entity.DisciplineId = dto.DisciplineId;
+
     }
 
     public static TeacherTestDto ToDto(this TeacherTest entity)
@@ -33,7 +37,9 @@ public static class TeacherTestMappings
             TeacherId = entity.TeacherId,
             Status = entity.Status, // Добавляем маппинг статуса
             TestTheme = entity.TestTheme,
-            TestUrl = entity.TestUrl
+            TestUrl = entity.TestUrl,
+            DisciplineId = entity.DisciplineId,
+
         };
     }
 }

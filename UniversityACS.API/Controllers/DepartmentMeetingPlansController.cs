@@ -12,21 +12,28 @@ namespace UniversityACS.API.Controllers;
 public class DepartmentMeetingPlansController : ControllerBase
 {
     private readonly IDepartmentMeetingPlanService _meetingPlanService;
-
+    private readonly string templatePath = Path.Combine(Directory.GetCurrentDirectory(), "Templates", "ScheduleMeetings.docx");
     public DepartmentMeetingPlansController(IDepartmentMeetingPlanService meetingPlanService)
     {
         _meetingPlanService = meetingPlanService;
     }
-    
+
     [HttpPost(ApiEndpoints.DepartmentMeetingPlans.Create)]
-    public async Task<ActionResult<CreateResponseDto<DepartmentMeetingPlanDto>>> CreateAsync(
-        DepartmentMeetingPlanDto dto, CancellationToken cancellationToken = default)
+    public async Task<ActionResult<CreateResponseDto<DepartmentMeetingProtocolDto>>> CreateAsync(Guid departmentId, CancellationToken cancellationToken)
     {
-        var response = await _meetingPlanService.CreateAsync(dto, cancellationToken);
-        if (response.Success) return Ok(response);
-        return BadRequest(response);
+
+        DepartmentMeetingPlanDto dto = new DepartmentMeetingPlanDto();
+        dto.DepartmentId = departmentId;
+        dto.Name = $"Графік проведення засідань.docx";
+        byte[] fileBytes = System.IO.File.ReadAllBytes(templatePath);
+        MemoryStream memoryStream = new MemoryStream(fileBytes);
+        dto.File = new FormFile(memoryStream, 0, memoryStream.Length, Path.GetFileName(templatePath), Path.GetFileName(templatePath));
+        await _meetingPlanService.CreateAsync(dto, cancellationToken);
+
+        memoryStream.Position = 0;
+        return File(memoryStream.ToArray(), "application/vnd.openxmlformats-officedocument.wordprocessingml.document", $"Графік проведення засідань.docx");
     }
-    
+
     [HttpPut(ApiEndpoints.DepartmentMeetingPlans.Update)]
     public async Task<ActionResult<UpdateResponseDto<DepartmentMeetingPlanDto>>> UpdateAsync(Guid id,
         DepartmentMeetingPlanDto dto, CancellationToken cancellationToken = default)
@@ -35,7 +42,7 @@ public class DepartmentMeetingPlansController : ControllerBase
         if (response.Success) return Ok(response);
         return BadRequest(response);
     }
-    
+
     [HttpDelete(ApiEndpoints.DepartmentMeetingPlans.Delete)]
     public async Task<ActionResult<ResponseDto>> DeleteAsync(Guid id, CancellationToken cancellationToken = default)
     {
@@ -43,7 +50,7 @@ public class DepartmentMeetingPlansController : ControllerBase
         if (response.Success) return Ok(response);
         return BadRequest(response);
     }
-    
+
     [HttpGet(ApiEndpoints.DepartmentMeetingPlans.GetById)]
     public async Task<ActionResult<DetailsResponseDto<DepartmentMeetingPlanResponseDto>>> GetByIdAsync(Guid id,
         CancellationToken cancellationToken = default)
@@ -52,7 +59,7 @@ public class DepartmentMeetingPlansController : ControllerBase
         if (response.Success) return Ok(response);
         return BadRequest(response);
     }
-    
+
     [HttpGet(ApiEndpoints.DepartmentMeetingPlans.GetByDepartmentId)]
     public async Task<ActionResult<ListResponseDto<DepartmentMeetingPlanResponseDto>>> GetByDepartmentIdAsync(
         Guid departmentId, CancellationToken cancellationToken = default)
@@ -61,7 +68,7 @@ public class DepartmentMeetingPlansController : ControllerBase
         if (response.Success) return Ok(response);
         return BadRequest(response);
     }
-    
+
     [HttpGet(ApiEndpoints.DepartmentMeetingPlans.GetAll)]
     public async Task<ActionResult<ListResponseDto<DepartmentMeetingPlanResponseDto>>> GetAllAsync(
         CancellationToken cancellationToken = default)

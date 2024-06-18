@@ -6,6 +6,7 @@ using UniversityACS.API.Services.Identity;
 using UniversityACS.Application.Services.ApplicationUserServices;
 using UniversityACS.Application.Services.AttendanceServices;
 using UniversityACS.Application.Services.CertificationReportServices;
+using UniversityACS.Application.Services.ChatServices;
 using UniversityACS.Application.Services.CurriculumServices;
 using UniversityACS.Application.Services.DepartmentMeetingPlanServices;
 using UniversityACS.Application.Services.DepartmentMeetingProtocolServices;
@@ -73,6 +74,7 @@ public static class ServiceCollectionExtension
         services.AddScoped<IReviewService, ReviewService>();
         services.AddScoped<IStudentExamService, StudentExamService>();
         services.AddScoped<IExchangeVisitsPlanReviewService, ExchangeVisitsPlanReviewService>();
+        services.AddScoped<IChatService, ChatService>();
 
         return services;
     }

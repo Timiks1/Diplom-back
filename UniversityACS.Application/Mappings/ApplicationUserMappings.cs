@@ -14,6 +14,7 @@ public static class ApplicationUserMappings
             UserName = dto.UserName,
             Email = dto.Email,
             DepartmentEmail = dto.DepartmentEmail,
+            Patronymic = dto.Patronymic,
             FirstName = dto.FirstName,
             LastName = dto.LastName,
             DepartmentId = dto.DepartmentId,
@@ -75,6 +76,7 @@ public static class ApplicationUserMappings
         user.UserName = dto.UserName;
         user.Email = dto.Email;
         user.DepartmentEmail = dto.DepartmentEmail;
+        user.Patronymic = dto.Patronymic;
         user.FirstName = dto.FirstName;
         user.LastName = dto.LastName;
         user.DepartmentId = dto.DepartmentId;
@@ -135,6 +137,8 @@ public static class ApplicationUserMappings
             UserName = user.UserName,
             Email = user.Email,
             DepartmentEmail = user.DepartmentEmail,
+            Patronymic = user.Patronymic,
+
             FirstName = user.FirstName,
             LastName = user.LastName,
             DepartmentId = user.DepartmentId,

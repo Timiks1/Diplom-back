@@ -10,4 +10,6 @@ public interface ITeacherDisciplineService
 
     Task<ResponseDto> DeleteDisciplinesFromTeacherAsync(TeacherDisciplinesDto dto,
         CancellationToken cancellationToken = default!);
+    Task<TeacherDisciplinesDto> GetTeacherDisciplinesDto(Guid id);
+
 }

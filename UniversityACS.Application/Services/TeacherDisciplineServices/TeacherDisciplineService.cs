@@ -74,4 +74,17 @@ public class TeacherDisciplineService : ITeacherDisciplineService
             Success = true
         };
     }
+    public async Task<TeacherDisciplinesDto> GetTeacherDisciplinesDto(Guid id)
+    {
+        var items = await this._context.TeacherDisciplines.Where(x => x.TeacherId == id).ToListAsync();
+
+        TeacherDisciplinesDto dto = new TeacherDisciplinesDto();
+        dto.TeacherId = id;
+        dto.DisciplineIds = new List<Guid>();
+        foreach (var item in items)
+        {
+            dto.DisciplineIds.Add(item.DisciplineId);
+        }
+        return dto;
+    }
 }

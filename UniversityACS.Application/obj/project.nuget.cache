@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "+VuxGcR/NoF87koqsx6GT1TKMa33pHslXfdLbc0QFg23hpQip5fDtwpDiIxRPHaSPwr7bqyAvjvNcpqZJH5EZA==",
+  "dgSpecHash": "aeAEepYcK4xXutwWV9H1R0+Tr40OslH4jjzFSWvzEHsWc/Ys2Aeo3VlYBukKi+P1Gy4rZSMOpOAxpR39VUgDFw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Tim\\Desktop\\diplom-back3\\universityasu\\UniversityACS.Application\\UniversityACS.Application.csproj",
+  "projectFilePath": "C:\\Users\\Tim\\Desktop\\diplom-back3 — копия (2)\\universityasu\\UniversityACS.Application\\UniversityACS.Application.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Tim\\.nuget\\packages\\documentformat.openxml\\3.0.2\\documentformat.openxml.3.0.2.nupkg.sha512",
     "C:\\Users\\Tim\\.nuget\\packages\\documentformat.openxml.framework\\3.0.2\\documentformat.openxml.framework.3.0.2.nupkg.sha512",

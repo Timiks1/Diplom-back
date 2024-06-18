@@ -40,3 +40,24 @@ C:\Users\Tim\Desktop\diplom-back3\universityasu\UniversityACS.Application\bin\De
 C:\Users\Tim\Desktop\diplom-back3\universityasu\UniversityACS.Application\bin\Debug\net8.0\UniversityACS.Data.pdb
 C:\Users\Tim\Desktop\diplom-back3\universityasu\UniversityACS.Application\obj\Debug\net8.0\Universi.B2F985D5.Up2Date
 C:\Users\Tim\Desktop\diplom-back3\universityasu\UniversityACS.Application\obj\Debug\net8.0\ref\UniversityACS.Application.dll
+C:\Users\Tim\Desktop\diplom-back3 — копия (2)\universityasu\UniversityACS.Application\bin\Debug\net8.0\UniversityACS.Application.deps.json
+C:\Users\Tim\Desktop\diplom-back3 — копия (2)\universityasu\UniversityACS.Application\bin\Debug\net8.0\UniversityACS.Application.dll
+C:\Users\Tim\Desktop\diplom-back3 — копия (2)\universityasu\UniversityACS.Application\bin\Debug\net8.0\UniversityACS.Application.pdb
+C:\Users\Tim\Desktop\diplom-back3 — копия (2)\universityasu\UniversityACS.Application\bin\Debug\net8.0\Microsoft.AspNetCore.Http.Abstractions.dll
+C:\Users\Tim\Desktop\diplom-back3 — копия (2)\universityasu\UniversityACS.Application\bin\Debug\net8.0\UniversityACS.Core.dll
+C:\Users\Tim\Desktop\diplom-back3 — копия (2)\universityasu\UniversityACS.Application\bin\Debug\net8.0\UniversityACS.Data.dll
+C:\Users\Tim\Desktop\diplom-back3 — копия (2)\universityasu\UniversityACS.Application\bin\Debug\net8.0\Microsoft.Extensions.Features.dll
+C:\Users\Tim\Desktop\diplom-back3 — копия (2)\universityasu\UniversityACS.Application\bin\Debug\net8.0\Microsoft.Net.Http.Headers.dll
+C:\Users\Tim\Desktop\diplom-back3 — копия (2)\universityasu\UniversityACS.Application\bin\Debug\net8.0\UniversityACS.Core.pdb
+C:\Users\Tim\Desktop\diplom-back3 — копия (2)\universityasu\UniversityACS.Application\bin\Debug\net8.0\UniversityACS.Data.pdb
+C:\Users\Tim\Desktop\diplom-back3 — копия (2)\universityasu\UniversityACS.Application\obj\Debug\net8.0\UniversityACS.Application.csproj.AssemblyReference.cache
+C:\Users\Tim\Desktop\diplom-back3 — копия (2)\universityasu\UniversityACS.Application\obj\Debug\net8.0\UniversityACS.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Tim\Desktop\diplom-back3 — копия (2)\universityasu\UniversityACS.Application\obj\Debug\net8.0\UniversityACS.Application.AssemblyInfoInputs.cache
+C:\Users\Tim\Desktop\diplom-back3 — копия (2)\universityasu\UniversityACS.Application\obj\Debug\net8.0\UniversityACS.Application.AssemblyInfo.cs
+C:\Users\Tim\Desktop\diplom-back3 — копия (2)\universityasu\UniversityACS.Application\obj\Debug\net8.0\UniversityACS.Application.csproj.CoreCompileInputs.cache
+C:\Users\Tim\Desktop\diplom-back3 — копия (2)\universityasu\UniversityACS.Application\obj\Debug\net8.0\UniversityACS.Application.sourcelink.json
+C:\Users\Tim\Desktop\diplom-back3 — копия (2)\universityasu\UniversityACS.Application\obj\Debug\net8.0\Universi.B2F985D5.Up2Date
+C:\Users\Tim\Desktop\diplom-back3 — копия (2)\universityasu\UniversityACS.Application\obj\Debug\net8.0\UniversityACS.Application.dll
+C:\Users\Tim\Desktop\diplom-back3 — копия (2)\universityasu\UniversityACS.Application\obj\Debug\net8.0\refint\UniversityACS.Application.dll
+C:\Users\Tim\Desktop\diplom-back3 — копия (2)\universityasu\UniversityACS.Application\obj\Debug\net8.0\UniversityACS.Application.pdb
+C:\Users\Tim\Desktop\diplom-back3 — копия (2)\universityasu\UniversityACS.Application\obj\Debug\net8.0\ref\UniversityACS.Application.dll

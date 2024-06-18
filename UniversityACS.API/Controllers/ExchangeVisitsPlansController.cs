@@ -12,6 +12,7 @@ namespace UniversityACS.API.Controllers;
 public class ExchangeVisitsPlansController : ControllerBase
 {
     private readonly IExchangeVisitPlanService _exchangeVisitPlanService;
+    private readonly string templatePath = Path.Combine(Directory.GetCurrentDirectory(), "Templates", "ExchangeVisitPlans.docx");
 
     public ExchangeVisitsPlansController(IExchangeVisitPlanService exchangeVisitPlanService)
     {
@@ -19,13 +20,19 @@ public class ExchangeVisitsPlansController : ControllerBase
     }
 
     [HttpPost(ApiEndpoints.ExchangeVisitsPlans.Create)]
-    public async Task<ActionResult<CreateResponseDto<ExchangeVisitsPlanResponseDto>>> CreateAsync(
-        ExchangeVisitsPlanDto dto,
-        CancellationToken cancellationToken)
+    public async Task<ActionResult<CreateResponseDto<ExchangeVisitsPlanDto>>> CreateAsync(Guid teacherId, CancellationToken cancellationToken)
     {
-        var response = await _exchangeVisitPlanService.CreateAsync(dto, cancellationToken);
-        if (response.Success) return Ok(response);
-        return BadRequest(response);
+
+        ExchangeVisitsPlanDto dto = new ExchangeVisitsPlanDto();
+        dto.TeacherId = teacherId;
+        dto.Name = $"Графік взаємовідвідування 1 сем. 2023-2024.docx";
+        byte[] fileBytes = System.IO.File.ReadAllBytes(templatePath);
+        MemoryStream memoryStream = new MemoryStream(fileBytes);
+        dto.File = new FormFile(memoryStream, 0, memoryStream.Length, Path.GetFileName(templatePath), Path.GetFileName(templatePath));
+        await _exchangeVisitPlanService.CreateAsync(dto, cancellationToken);
+
+        memoryStream.Position = 0;
+        return File(memoryStream.ToArray(), "application/vnd.openxmlformats-officedocument.wordprocessingml.document", $"Графік взаємовідвідування 1 сем. 2023-2024.docx");
     }
 
     [HttpPut(ApiEndpoints.ExchangeVisitsPlans.Update)]
