@@ -47,7 +47,19 @@ namespace UniversityACS.API.Controllers
             var reviews = await _chatService.GetAllAsync();
             return Ok(reviews);
         }
-
-
+        [HttpGet]
+        [Route("history")]
+        public async Task<IActionResult> GetChatHistory([FromQuery] Guid currentUserId, [FromQuery] Guid otherUserId)
+        {
+            var messages = await _chatService.GetChatHistoryAsync(currentUserId, otherUserId);
+            return Ok(messages);
+        }
+        [HttpGet]
+        [Route("userChats")]
+        public async Task<IActionResult> GetUserChats([FromQuery] Guid userId)
+        {
+            var chats = await _chatService.GetUserChatsAsync(userId);
+            return Ok(chats);
+        }
     }
 }

@@ -11,7 +11,7 @@ public static class TeacherTestMappings
         {
             Id = dto.Id,
             TeacherId = dto.TeacherId,
-            Status = dto.Status, // Добавляем маппинг статуса
+            Status = dto.Status,
             TestTheme = dto.TestTheme,
             TestUrl = dto.TestUrl,
             DisciplineId = dto.DisciplineId
@@ -22,7 +22,7 @@ public static class TeacherTestMappings
     public static void UpdateEntity(this TeacherTest entity, TeacherTestDto dto)
     {
         entity.TeacherId = dto.TeacherId;
-        entity.Status = dto.Status; // Обновляем статус
+        entity.Status = dto.Status;
         entity.TestTheme = dto.TestTheme;
         entity.TestUrl = dto.TestUrl;
         entity.DisciplineId = dto.DisciplineId;
@@ -35,7 +35,7 @@ public static class TeacherTestMappings
         {
             Id = entity.Id,
             TeacherId = entity.TeacherId,
-            Status = entity.Status, // Добавляем маппинг статуса
+            Status = entity.Status,
             TestTheme = entity.TestTheme,
             TestUrl = entity.TestUrl,
             DisciplineId = entity.DisciplineId,

@@ -37,3 +37,16 @@ C:\Users\Tim\Desktop\diplom-back3 — копия (2)\universityasu\UniversityACS
 C:\Users\Tim\Desktop\diplom-back3 — копия (2)\universityasu\UniversityACS.Core\obj\Debug\net8.0\refint\UniversityACS.Core.dll
 C:\Users\Tim\Desktop\diplom-back3 — копия (2)\universityasu\UniversityACS.Core\obj\Debug\net8.0\UniversityACS.Core.pdb
 C:\Users\Tim\Desktop\diplom-back3 — копия (2)\universityasu\UniversityACS.Core\obj\Debug\net8.0\ref\UniversityACS.Core.dll
+C:\Users\Tim\Desktop\diplom-back3-merged\universityasu\UniversityACS.Core\bin\Debug\net8.0\UniversityACS.Core.deps.json
+C:\Users\Tim\Desktop\diplom-back3-merged\universityasu\UniversityACS.Core\bin\Debug\net8.0\UniversityACS.Core.dll
+C:\Users\Tim\Desktop\diplom-back3-merged\universityasu\UniversityACS.Core\bin\Debug\net8.0\UniversityACS.Core.pdb
+C:\Users\Tim\Desktop\diplom-back3-merged\universityasu\UniversityACS.Core\obj\Debug\net8.0\UniversityACS.Core.csproj.AssemblyReference.cache
+C:\Users\Tim\Desktop\diplom-back3-merged\universityasu\UniversityACS.Core\obj\Debug\net8.0\UniversityACS.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Tim\Desktop\diplom-back3-merged\universityasu\UniversityACS.Core\obj\Debug\net8.0\UniversityACS.Core.AssemblyInfoInputs.cache
+C:\Users\Tim\Desktop\diplom-back3-merged\universityasu\UniversityACS.Core\obj\Debug\net8.0\UniversityACS.Core.AssemblyInfo.cs
+C:\Users\Tim\Desktop\diplom-back3-merged\universityasu\UniversityACS.Core\obj\Debug\net8.0\UniversityACS.Core.csproj.CoreCompileInputs.cache
+C:\Users\Tim\Desktop\diplom-back3-merged\universityasu\UniversityACS.Core\obj\Debug\net8.0\UniversityACS.Core.sourcelink.json
+C:\Users\Tim\Desktop\diplom-back3-merged\universityasu\UniversityACS.Core\obj\Debug\net8.0\UniversityACS.Core.dll
+C:\Users\Tim\Desktop\diplom-back3-merged\universityasu\UniversityACS.Core\obj\Debug\net8.0\refint\UniversityACS.Core.dll
+C:\Users\Tim\Desktop\diplom-back3-merged\universityasu\UniversityACS.Core\obj\Debug\net8.0\UniversityACS.Core.pdb
+C:\Users\Tim\Desktop\diplom-back3-merged\universityasu\UniversityACS.Core\obj\Debug\net8.0\ref\UniversityACS.Core.dll

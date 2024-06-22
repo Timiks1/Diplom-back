@@ -11,8 +11,9 @@ namespace UniversityACS.Core.DTOs.Responses
     {
         public Guid Id { get; set; }
         public string Message { get; set; } = string.Empty;
-        public Guid? TeacherId { get; set; }
-        public DateTime? TimeCreation { get; set; }
-        public ApplicationUser? Teacher { get; set; }
+        public Guid SenderId { get; set; }
+        public Guid ReceiverId { get; set; }
+        public DateTime TimeCreation { get; set; }
+
     }
 }

@@ -34,7 +34,15 @@ public class ExchangeVisitsPlansController : ControllerBase
         memoryStream.Position = 0;
         return File(memoryStream.ToArray(), "application/vnd.openxmlformats-officedocument.wordprocessingml.document", $"Графік взаємовідвідування 1 сем. 2023-2024.docx");
     }
-
+    [HttpPost(ApiEndpoints.ExchangeVisitsPlans.CreateFile)]
+    public async Task<ActionResult<CreateResponseDto<ExchangeVisitsPlanResponseDto>>> CreateFileAsync(
+      ExchangeVisitsPlanDto dto,
+      CancellationToken cancellationToken)
+    {
+        var response = await _exchangeVisitPlanService.CreateAsync(dto, cancellationToken);
+        if (response.Success) return Ok(response);
+        return BadRequest(response);
+    }
     [HttpPut(ApiEndpoints.ExchangeVisitsPlans.Update)]
     public async Task<ActionResult<UpdateResponseDto<ExchangeVisitsPlanResponseDto>>> UpdateAsync(Guid id,
         ExchangeVisitsPlanDto dto, CancellationToken cancellationToken)

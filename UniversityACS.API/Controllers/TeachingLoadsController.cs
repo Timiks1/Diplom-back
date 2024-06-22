@@ -1,4 +1,5 @@
-﻿using DocumentFormat.OpenXml.Spreadsheet;
+﻿using ClosedXML.Excel;
+using DocumentFormat.OpenXml.Spreadsheet;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Routing.Template;
 using UniversityACS.API.Endpoints;
@@ -9,7 +10,7 @@ using UniversityACS.Application.Services.TeachingLoadServices;
 using UniversityACS.Core.DTOs;
 using UniversityACS.Core.DTOs.Requests;
 using UniversityACS.Core.DTOs.Responses;
-using ClosedXML.Excel;
+using UniversityACS.Core.Entities;
 
 namespace UniversityACS.API.Controllers;
 

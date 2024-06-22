@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Tim\\Desktop\\diplom-back3 — копия (2)\\universityasu\\UniversityACS.API\\UniversityACS.API.csproj": {}
+    "C:\\Users\\Tim\\Desktop\\diplom-back3-merged\\universityasu\\UniversityACS.API\\UniversityACS.API.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Tim\\Desktop\\diplom-back3 — копия (2)\\universityasu\\UniversityACS.API\\UniversityACS.API.csproj": {
+    "C:\\Users\\Tim\\Desktop\\diplom-back3-merged\\universityasu\\UniversityACS.API\\UniversityACS.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Tim\\Desktop\\diplom-back3 — копия (2)\\universityasu\\UniversityACS.API\\UniversityACS.API.csproj",
+        "projectUniqueName": "C:\\Users\\Tim\\Desktop\\diplom-back3-merged\\universityasu\\UniversityACS.API\\UniversityACS.API.csproj",
         "projectName": "UniversityACS.API",
-        "projectPath": "C:\\Users\\Tim\\Desktop\\diplom-back3 — копия (2)\\universityasu\\UniversityACS.API\\UniversityACS.API.csproj",
+        "projectPath": "C:\\Users\\Tim\\Desktop\\diplom-back3-merged\\universityasu\\UniversityACS.API\\UniversityACS.API.csproj",
         "packagesPath": "C:\\Users\\Tim\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Tim\\Desktop\\diplom-back3 — копия (2)\\universityasu\\UniversityACS.API\\obj\\",
+        "outputPath": "C:\\Users\\Tim\\Desktop\\diplom-back3-merged\\universityasu\\UniversityACS.API\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -33,8 +33,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\Tim\\Desktop\\diplom-back3 — копия (2)\\universityasu\\UniversityACS.Application\\UniversityACS.Application.csproj": {
-                "projectPath": "C:\\Users\\Tim\\Desktop\\diplom-back3 — копия (2)\\universityasu\\UniversityACS.Application\\UniversityACS.Application.csproj"
+              "C:\\Users\\Tim\\Desktop\\diplom-back3-merged\\universityasu\\UniversityACS.Application\\UniversityACS.Application.csproj": {
+                "projectPath": "C:\\Users\\Tim\\Desktop\\diplom-back3-merged\\universityasu\\UniversityACS.Application\\UniversityACS.Application.csproj"
               }
             }
           }
@@ -68,7 +68,7 @@
             },
             "DocumentFormat.OpenXml": {
               "target": "Package",
-              "version": "[3.0.2, )"
+              "version": "[2.20.0, )"
             },
             "EPPlus": {
               "target": "Package",
@@ -120,14 +120,14 @@
         }
       }
     },
-    "C:\\Users\\Tim\\Desktop\\diplom-back3 — копия (2)\\universityasu\\UniversityACS.Application\\UniversityACS.Application.csproj": {
+    "C:\\Users\\Tim\\Desktop\\diplom-back3-merged\\universityasu\\UniversityACS.Application\\UniversityACS.Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Tim\\Desktop\\diplom-back3 — копия (2)\\universityasu\\UniversityACS.Application\\UniversityACS.Application.csproj",
+        "projectUniqueName": "C:\\Users\\Tim\\Desktop\\diplom-back3-merged\\universityasu\\UniversityACS.Application\\UniversityACS.Application.csproj",
         "projectName": "UniversityACS.Application",
-        "projectPath": "C:\\Users\\Tim\\Desktop\\diplom-back3 — копия (2)\\universityasu\\UniversityACS.Application\\UniversityACS.Application.csproj",
+        "projectPath": "C:\\Users\\Tim\\Desktop\\diplom-back3-merged\\universityasu\\UniversityACS.Application\\UniversityACS.Application.csproj",
         "packagesPath": "C:\\Users\\Tim\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Tim\\Desktop\\diplom-back3 — копия (2)\\universityasu\\UniversityACS.Application\\obj\\",
+        "outputPath": "C:\\Users\\Tim\\Desktop\\diplom-back3-merged\\universityasu\\UniversityACS.Application\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -149,11 +149,11 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\Tim\\Desktop\\diplom-back3 — копия (2)\\universityasu\\UniversityACS.Core\\UniversityACS.Core.csproj": {
-                "projectPath": "C:\\Users\\Tim\\Desktop\\diplom-back3 — копия (2)\\universityasu\\UniversityACS.Core\\UniversityACS.Core.csproj"
+              "C:\\Users\\Tim\\Desktop\\diplom-back3-merged\\universityasu\\UniversityACS.Core\\UniversityACS.Core.csproj": {
+                "projectPath": "C:\\Users\\Tim\\Desktop\\diplom-back3-merged\\universityasu\\UniversityACS.Core\\UniversityACS.Core.csproj"
               },
-              "C:\\Users\\Tim\\Desktop\\diplom-back3 — копия (2)\\universityasu\\UniversityACS.Data\\UniversityACS.Data.csproj": {
-                "projectPath": "C:\\Users\\Tim\\Desktop\\diplom-back3 — копия (2)\\universityasu\\UniversityACS.Data\\UniversityACS.Data.csproj"
+              "C:\\Users\\Tim\\Desktop\\diplom-back3-merged\\universityasu\\UniversityACS.Data\\UniversityACS.Data.csproj": {
+                "projectPath": "C:\\Users\\Tim\\Desktop\\diplom-back3-merged\\universityasu\\UniversityACS.Data\\UniversityACS.Data.csproj"
               }
             }
           }
@@ -173,13 +173,21 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "ClosedXML": {
+              "target": "Package",
+              "version": "[0.102.2, )"
+            },
             "DocumentFormat.OpenXml": {
               "target": "Package",
-              "version": "[3.0.2, )"
+              "version": "[2.20.0, )"
             },
             "EPPlus": {
               "target": "Package",
               "version": "[7.1.2, )"
+            },
+            "Microsoft.AspNetCore.Http": {
+              "target": "Package",
+              "version": "[2.1.34, )"
             }
           },
           "imports": [
@@ -202,14 +210,14 @@
         }
       }
     },
-    "C:\\Users\\Tim\\Desktop\\diplom-back3 — копия (2)\\universityasu\\UniversityACS.Core\\UniversityACS.Core.csproj": {
+    "C:\\Users\\Tim\\Desktop\\diplom-back3-merged\\universityasu\\UniversityACS.Core\\UniversityACS.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Tim\\Desktop\\diplom-back3 — копия (2)\\universityasu\\UniversityACS.Core\\UniversityACS.Core.csproj",
+        "projectUniqueName": "C:\\Users\\Tim\\Desktop\\diplom-back3-merged\\universityasu\\UniversityACS.Core\\UniversityACS.Core.csproj",
         "projectName": "UniversityACS.Core",
-        "projectPath": "C:\\Users\\Tim\\Desktop\\diplom-back3 — копия (2)\\universityasu\\UniversityACS.Core\\UniversityACS.Core.csproj",
+        "projectPath": "C:\\Users\\Tim\\Desktop\\diplom-back3-merged\\universityasu\\UniversityACS.Core\\UniversityACS.Core.csproj",
         "packagesPath": "C:\\Users\\Tim\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Tim\\Desktop\\diplom-back3 — копия (2)\\universityasu\\UniversityACS.Core\\obj\\",
+        "outputPath": "C:\\Users\\Tim\\Desktop\\diplom-back3-merged\\universityasu\\UniversityACS.Core\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -277,14 +285,14 @@
         }
       }
     },
-    "C:\\Users\\Tim\\Desktop\\diplom-back3 — копия (2)\\universityasu\\UniversityACS.Data\\UniversityACS.Data.csproj": {
+    "C:\\Users\\Tim\\Desktop\\diplom-back3-merged\\universityasu\\UniversityACS.Data\\UniversityACS.Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Tim\\Desktop\\diplom-back3 — копия (2)\\universityasu\\UniversityACS.Data\\UniversityACS.Data.csproj",
+        "projectUniqueName": "C:\\Users\\Tim\\Desktop\\diplom-back3-merged\\universityasu\\UniversityACS.Data\\UniversityACS.Data.csproj",
         "projectName": "UniversityACS.Data",
-        "projectPath": "C:\\Users\\Tim\\Desktop\\diplom-back3 — копия (2)\\universityasu\\UniversityACS.Data\\UniversityACS.Data.csproj",
+        "projectPath": "C:\\Users\\Tim\\Desktop\\diplom-back3-merged\\universityasu\\UniversityACS.Data\\UniversityACS.Data.csproj",
         "packagesPath": "C:\\Users\\Tim\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Tim\\Desktop\\diplom-back3 — копия (2)\\universityasu\\UniversityACS.Data\\obj\\",
+        "outputPath": "C:\\Users\\Tim\\Desktop\\diplom-back3-merged\\universityasu\\UniversityACS.Data\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -306,8 +314,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\Tim\\Desktop\\diplom-back3 — копия (2)\\universityasu\\UniversityACS.Core\\UniversityACS.Core.csproj": {
-                "projectPath": "C:\\Users\\Tim\\Desktop\\diplom-back3 — копия (2)\\universityasu\\UniversityACS.Core\\UniversityACS.Core.csproj"
+              "C:\\Users\\Tim\\Desktop\\diplom-back3-merged\\universityasu\\UniversityACS.Core\\UniversityACS.Core.csproj": {
+                "projectPath": "C:\\Users\\Tim\\Desktop\\diplom-back3-merged\\universityasu\\UniversityACS.Core\\UniversityACS.Core.csproj"
               }
             }
           }

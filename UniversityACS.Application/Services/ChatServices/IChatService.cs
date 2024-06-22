@@ -15,6 +15,7 @@ namespace UniversityACS.Application.Services.ChatServices
        CancellationToken cancellationToken = default!);
 
         Task<ListResponseDto<ChatResponseDto>> GetAllAsync(CancellationToken cancellationToken = default!);
-
+        Task<ListResponseDto<ChatResponseDto>> GetChatHistoryAsync(Guid currentUserId, Guid otherUserId, CancellationToken cancellationToken = default);
+        Task<ListResponseDto<ChatResponseDto>> GetUserChatsAsync(Guid userId, CancellationToken cancellationToken = default);
     }
 }

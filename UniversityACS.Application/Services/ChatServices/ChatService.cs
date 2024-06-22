@@ -20,12 +20,10 @@ namespace UniversityACS.Application.Services.ChatServices
         {
             _context = context;
         }
+
         public async Task<CreateResponseDto<ChatMessageDto>> CreateAsync(ChatMessageDto dto, CancellationToken cancellationToken = default)
         {
             var entity = dto.ToEntity();
-
-
-
             await _context.Chat.AddAsync(entity, cancellationToken);
             await _context.SaveChangesAsync(cancellationToken);
 
@@ -36,13 +34,14 @@ namespace UniversityACS.Application.Services.ChatServices
             };
         }
 
-
-
         public async Task<ListResponseDto<ChatResponseDto>> GetAllAsync(CancellationToken cancellationToken = default)
         {
-            var entities = await _context.Chat
-           .ToListAsync(cancellationToken);
-            entities.ForEach(entities => { entities.Teacher = _context.ApplicationUsers.Where(x => x.Id == entities.TeacherId).ToList()[0]; });
+            var entities = await _context.Chat.ToListAsync(cancellationToken);
+            entities.ForEach(entity =>
+            {
+                entity.Sender = _context.ApplicationUsers.FirstOrDefault(x => x.Id == entity.SenderId);
+                entity.Receiver = _context.ApplicationUsers.FirstOrDefault(x => x.Id == entity.ReceiverId);
+            });
 
             return new ListResponseDto<ChatResponseDto>()
             {
@@ -52,5 +51,44 @@ namespace UniversityACS.Application.Services.ChatServices
             };
         }
 
+        public async Task<ListResponseDto<ChatResponseDto>> GetChatHistoryAsync(Guid currentUserId, Guid otherUserId, CancellationToken cancellationToken = default)
+        {
+            var entities = await _context.Chat
+                .Where(x => (x.SenderId == currentUserId && x.ReceiverId == otherUserId) || (x.SenderId == otherUserId && x.ReceiverId == currentUserId))
+                .ToListAsync(cancellationToken);
+
+            entities.ForEach(entity =>
+            {
+                entity.Sender = _context.ApplicationUsers.FirstOrDefault(x => x.Id == entity.SenderId);
+                entity.Receiver = _context.ApplicationUsers.FirstOrDefault(x => x.Id == entity.ReceiverId);
+            });
+
+            return new ListResponseDto<ChatResponseDto>()
+            {
+                Success = true,
+                Items = entities.Select(x => x.ToDto()).ToList(),
+                TotalCount = entities.Count
+            };
+        }
+        public async Task<ListResponseDto<ChatResponseDto>> GetUserChatsAsync(Guid userId, CancellationToken cancellationToken = default)
+        {
+            var entities = await _context.Chat
+                .Where(x => x.SenderId == userId || x.ReceiverId == userId)
+                .GroupBy(x => x.SenderId == userId ? x.ReceiverId : x.SenderId)
+                .Select(g => g.First())
+                .ToListAsync(cancellationToken);
+
+            return new ListResponseDto<ChatResponseDto>()
+            {
+                Success = true,
+                Items = entities.Select(x => new ChatResponseDto
+                {
+                    ReceiverId = x.SenderId == userId ? x.ReceiverId : x.SenderId,
+                    Message = x.Message,
+                    TimeCreation = x.TimeCreation
+                }).ToList(),
+                TotalCount = entities.Count
+            };
+        }
     }
 }

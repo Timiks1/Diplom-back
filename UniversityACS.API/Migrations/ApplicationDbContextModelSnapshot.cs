@@ -261,6 +261,9 @@ namespace UniversityACS.API.Migrations
                     b.Property<string>("PasswordHash")
                         .HasColumnType("text");
 
+                    b.Property<string>("Patronymic")
+                        .HasColumnType("text");
+
                     b.Property<string>("PhoneNumber")
                         .HasColumnType("text");
 
@@ -429,13 +432,13 @@ namespace UniversityACS.API.Migrations
                         {
                             Id = new Guid("4d82beb4-5e7b-48e6-b084-5bdc485bc1e7"),
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "162adc90-7d81-4038-bc4a-6d39cad11dda",
+                            ConcurrencyStamp = "3ffb0f7d-f0e8-42a6-addf-16e03b1d342e",
                             Email = "admin@gmail.com",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
                             NormalizedEmail = "ADMIN@GMAIL.COM",
                             NormalizedUserName = "ADMIN",
-                            PasswordHash = "AQAAAAIAAYagAAAAECxiPQYtQMetXmfJ6CTmzKNzwohiPXp1ClpLv/4uil39+tsiUits4KmRDHHJW4zDtA==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEN2huz7rj6ms1etoHeJQL+0ON46HeoLtYMhXKC70j8GmiwtzURHB58OowkyIyO/TKQ==",
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "",
                             TwoFactorEnabled = false,
@@ -458,6 +461,34 @@ namespace UniversityACS.API.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("CertificationReports");
+                });
+
+            modelBuilder.Entity("UniversityACS.Core.Entities.ChatMessage", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid");
+
+                    b.Property<string>("Message")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<Guid>("ReceiverId")
+                        .HasColumnType("uuid");
+
+                    b.Property<Guid>("SenderId")
+                        .HasColumnType("uuid");
+
+                    b.Property<DateTime>("TimeCreation")
+                        .HasColumnType("timestamp without time zone");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ReceiverId");
+
+                    b.HasIndex("SenderId");
+
+                    b.ToTable("Chat");
                 });
 
             modelBuilder.Entity("UniversityACS.Core.Entities.Curriculum", b =>
@@ -1060,6 +1091,9 @@ namespace UniversityACS.API.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uuid");
 
+                    b.Property<Guid?>("DisciplineId")
+                        .HasColumnType("uuid");
+
                     b.Property<string>("Status")
                         .IsRequired()
                         .HasColumnType("text");
@@ -1074,6 +1108,8 @@ namespace UniversityACS.API.Migrations
                         .HasColumnType("text");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("DisciplineId");
 
                     b.HasIndex("TeacherId");
 
@@ -1233,6 +1269,25 @@ namespace UniversityACS.API.Migrations
                     b.Navigation("Department");
 
                     b.Navigation("StudentsGroup");
+                });
+
+            modelBuilder.Entity("UniversityACS.Core.Entities.ChatMessage", b =>
+                {
+                    b.HasOne("UniversityACS.Core.Entities.ApplicationUser", "Receiver")
+                        .WithMany()
+                        .HasForeignKey("ReceiverId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("UniversityACS.Core.Entities.ApplicationUser", "Sender")
+                        .WithMany()
+                        .HasForeignKey("SenderId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Receiver");
+
+                    b.Navigation("Sender");
                 });
 
             modelBuilder.Entity("UniversityACS.Core.Entities.Curriculum", b =>
@@ -1421,9 +1476,15 @@ namespace UniversityACS.API.Migrations
 
             modelBuilder.Entity("UniversityACS.Core.Entities.TeacherTest", b =>
                 {
+                    b.HasOne("UniversityACS.Core.Entities.Discipline", "Discipline")
+                        .WithMany()
+                        .HasForeignKey("DisciplineId");
+
                     b.HasOne("UniversityACS.Core.Entities.ApplicationUser", "Teacher")
                         .WithMany()
                         .HasForeignKey("TeacherId");
+
+                    b.Navigation("Discipline");
 
                     b.Navigation("Teacher");
                 });

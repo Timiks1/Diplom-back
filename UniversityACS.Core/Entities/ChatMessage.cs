@@ -10,11 +10,10 @@ namespace UniversityACS.Core.Entities
     {
         public Guid Id { get; set; }
         public string Message { get; set; } = string.Empty;
-        public Guid? TeacherId { get; set; }
-        public ApplicationUser? Teacher { get; set; }
-        public DateTime? TimeCreation { get; set; } = DateTime.Now;
-
-
-
+        public Guid SenderId { get; set; }
+        public ApplicationUser Sender { get; set; }
+        public Guid ReceiverId { get; set; }
+        public ApplicationUser Receiver { get; set; }
+        public DateTime TimeCreation { get; set; } = DateTime.Now;
     }
 }

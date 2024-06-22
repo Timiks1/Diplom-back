@@ -16,18 +16,19 @@ namespace UniversityACS.Application.Mappings
             return new ChatMessage
             {
                 Id = dto.Id,
-                TeacherId = dto.TeacherId,
                 Message = dto.Message,
+                SenderId = dto.SenderId,
+                ReceiverId = dto.ReceiverId,
                 TimeCreation = dto.TimeCreation,
             };
         }
 
         public static void UpdateEntity(this ChatMessage entity, ChatMessageDto dto)
         {
-            entity.TeacherId = dto.TeacherId;
             entity.Message = dto.Message;
+            entity.SenderId = dto.SenderId;
+            entity.ReceiverId = dto.ReceiverId;
             entity.TimeCreation = dto.TimeCreation;
-
         }
 
         public static ChatResponseDto ToDto(this ChatMessage entity)
@@ -35,10 +36,11 @@ namespace UniversityACS.Application.Mappings
             return new ChatResponseDto
             {
                 Id = entity.Id,
-                TeacherId = entity.TeacherId,
                 Message = entity.Message,
+                SenderId = entity.SenderId,
+                ReceiverId = entity.ReceiverId,
                 TimeCreation = entity.TimeCreation,
-                Teacher = entity.Teacher
+
             };
         }
     }
