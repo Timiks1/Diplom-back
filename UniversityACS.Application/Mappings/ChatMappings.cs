@@ -40,7 +40,8 @@ namespace UniversityACS.Application.Mappings
                 SenderId = entity.SenderId,
                 ReceiverId = entity.ReceiverId,
                 TimeCreation = entity.TimeCreation,
-
+                SenderName = entity.Sender.FirstName,
+                ReceiverName = entity.Receiver.FirstName,
             };
         }
     }

@@ -74,21 +74,31 @@ namespace UniversityACS.Application.Services.ChatServices
         {
             var entities = await _context.Chat
                 .Where(x => x.SenderId == userId || x.ReceiverId == userId)
+                .Include(x => x.Sender)
+                .Include(x => x.Receiver)
+                .ToListAsync(cancellationToken);
+
+            var groupedEntities = entities
                 .GroupBy(x => x.SenderId == userId ? x.ReceiverId : x.SenderId)
                 .Select(g => g.First())
-                .ToListAsync(cancellationToken);
+                .ToList();
 
             return new ListResponseDto<ChatResponseDto>()
             {
                 Success = true,
-                Items = entities.Select(x => new ChatResponseDto
+                Items = groupedEntities.Select(x => new ChatResponseDto
                 {
-                    ReceiverId = x.SenderId == userId ? x.ReceiverId : x.SenderId,
+                    Id = x.Id,
                     Message = x.Message,
+                    SenderId = x.SenderId,
+                    ReceiverId = x.ReceiverId,
+                    SenderName = x.Sender.FirstName,
+                    ReceiverName = $"{x.Receiver.FirstName} {x.Receiver.LastName}",
                     TimeCreation = x.TimeCreation
                 }).ToList(),
-                TotalCount = entities.Count
+                TotalCount = groupedEntities.Count
             };
         }
+
     }
 }

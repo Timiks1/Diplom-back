@@ -14,6 +14,7 @@ namespace UniversityACS.Core.DTOs.Responses
         public Guid SenderId { get; set; }
         public Guid ReceiverId { get; set; }
         public DateTime TimeCreation { get; set; }
-
+        public string SenderName { get; set; }
+        public string ReceiverName { get; set; }
     }
 }
